@@ -1,773 +1,145 @@
-# ESVG-DIS
-# Etsy SVG Design Intelligence System
+# Etsy SVG Design Intelligence System (ESVG-DIS)
 
-> An AI-powered research, strategy, and prompt engineering framework for creating unique, commercially viable SVG products for Etsy.
+**An open-source AI skill for commercial SVG research, strategy, and
+premium prompt engineering.**
 
----
-
-# Overview
-
-ESVG-DIS (Etsy SVG Design Intelligence System) is an open-source AI skill designed for Etsy sellers, digital product creators, and designers who want to create premium SVG products using AI-assisted workflows.
-
-The system does not simply generate random design ideas.
-
-Instead, it works as a **design intelligence layer** that analyzes:
-
-- market demand
-- buyer psychology
-- competition
-- trends
-- IP risks
-- product differentiation
-- SVG production requirements
-
-before creating powerful AI generation prompts.
-
-The goal is simple:
-
-> Help creators stop making generic SVG designs and start creating strategically researched, commercially valuable products.
+ESVG-DIS turns any capable AI assistant (ChatGPT, Claude, Gemini, Grok,
+or similar) into a commercial SVG design strategist for Etsy sellers —
+before a single image gets generated.
 
 ---
 
-# The Problem
+## What This Is
 
-Many Etsy sellers struggle with:
+Most sellers can generate an image. Few can reliably generate:
 
-- creating designs without understanding market demand
-- copying saturated trends
-- generating generic AI artwork
-- accidentally entering IP-risky niches
-- producing designs that are difficult to convert into SVG files
-- competing only on price
+- a design customers actually want
+- a design that's commercially differentiated
+- a design that avoids IP risk
+- a design suitable for SVG/vector conversion
+- a design that can compete in a saturated marketplace
 
-AI image generators made creation easier.
+ESVG-DIS solves the strategy problem *before* production begins. It
+does not replace your creative tools — it's the intelligence layer that
+guides research, concept development, and prompt engineering, then
+hands off to your existing image-generation and vectorization workflow.
 
-However:
+**This is a skill, not an app.** It's a set of markdown files you load
+into your own AI agent. No account, no API key, no installation beyond
+copying files.
 
-More designs do not automatically create better products.
+---
 
-The missing layer is:
+## What This Is Not
+
+ESVG-DIS does **not**:
+
+- generate final SVG files
+- automatically trace raster images
+- operate Illustrator or Inkscape for you
+- upload products to Etsy
+- guarantee sales
+- replace professional legal review of trademark/copyright questions
+
+Your existing tools stay in the loop for artwork generation,
+vectorization, and publishing. ESVG-DIS handles the thinking that
+happens before and around those steps.
+
+---
+
+## Who It's For
+
+- **Etsy digital product sellers** — SVG, PNG, JPG, DXF, EPS, Cricut,
+  Silhouette, printable artwork, digital bundles.
+- **AI-assisted designers** using ChatGPT, Gemini, Claude, Grok,
+  Midjourney, Flux, Ideogram, Leonardo, or similar tools.
+- **New sellers** who need help finding profitable niches, reading
+  competition, and avoiding common early mistakes.
+- **Experienced sellers** who want faster research, more scalable
+  ideation, and stronger originality/differentiation.
+
+---
+
+## Installation
+
+1. Download or clone this repository.
+2. Upload the files into your AI assistant of choice (project files,
+   custom GPT knowledge, Claude Project files, or equivalent).
+3. Paste the setup message below to activate it.
+4. Start with your first product idea, keyword, or niche.
+
+### Setup Message
 
 ```
-Research
-
-+
-
-Strategy
-
-+
-
-Creative Direction
-
-+
-
-Prompt Engineering
+You are now operating using the Etsy SVG Design Intelligence System
+(ESVG-DIS). Read SYSTEM_INSTRUCTIONS.md first and follow it exactly.
+Analyze before creating. Prioritize commercial value, originality, IP
+safety, and SVG production suitability, in that order when they
+conflict.
 ```
 
-ESVG-DIS provides that missing layer.
-
----
-
-# What ESVG-DIS Does
-
-ESVG-DIS transforms a simple user idea:
-
-Example:
+### Example
 
 ```
-"Create Halloween SVG designs"
+User: I want to create Christmas SVG designs.
+
+Agent: I'll analyze market demand, buyer motivation, competition, and
+IP risk for this niche before generating any concepts or prompts.
 ```
 
-Into a complete design strategy:
+See `examples/christmas-svg-workflow.md` for a complete worked run
+through every stage.
+
+---
+
+## How It Works
+
+ESVG-DIS follows a fixed research-to-prompt pipeline: market research →
+IP screening → buyer psychology → competition analysis → opportunity
+scoring → creative strategy → concept generation → concept-level IP
+review → concept evaluation → prompt engineering → prompt-level IP
+validation → you generate artwork → final-artwork IP review → design
+quality review → handoff to your Etsy SEO process.
+
+IP risk is checked four separate times along this path, and is always
+a pass/fail gate — never something that gets averaged away by a strong
+score elsewhere. Full detail: `SYSTEM_INSTRUCTIONS.md` and
+`workflow/02-ip-gates.md`.
+
+---
+
+## Repository Structure
 
 ```
-Market Analysis
-
-↓
-
-Buyer Understanding
-
-↓
-
-Competition Analysis
-
-↓
-
-IP Safety Review
-
-↓
-
-Creative Opportunities
-
-↓
-
-Unique Design Concepts
-
-↓
-
-Professional AI Prompts
-
-↓
-
-Production Guidance
-```
-
----
-
-# What ESVG-DIS Does NOT Do
-
-ESVG-DIS does not:
-
-- automatically create final SVG files
-- replace human design judgment
-- guarantee Etsy sales
-- bypass copyright or trademark protection
-- publish products automatically
-
-The user remains responsible for:
-
-- selecting final concepts
-- generating artwork
-- vectorizing designs
-- cleaning SVG files
-- exporting formats
-- publishing listings
-
----
-
-# Target Users
-
-ESVG-DIS is built for:
-
-## Etsy Digital Product Sellers
-
-Selling:
-
-- SVG files
-- PNG bundles
-- printable designs
-- craft files
-- cutting machine designs
-
----
-
-## AI-Assisted Designers
-
-Using:
-
-- ChatGPT
-- Gemini
-- Claude
-- Grok
-- other AI assistants
-
----
-
-## Creative Entrepreneurs
-
-Who want to:
-
-- validate ideas before creating
-- find underserved opportunities
-- create premium designs
-- build scalable product collections
-
----
-
-# Core Features
-
----
-
-# 1. Market Intelligence Analysis
-
-Before creating any design, ESVG-DIS analyzes the opportunity.
-
-It evaluates:
-
-- customer demand
-- niche potential
-- seasonal relevance
-- market saturation
-- buyer intent
-
-Output:
-
-```
-Market Intelligence Report
+README.md                    you are here
+SYSTEM_INSTRUCTIONS.md       load this into your agent first
+workflow/                    process logic — states, gates, scoring, retries
+knowledge/                   subject-matter frameworks (market, buyer psych, IP, etc.)
+prompts/                     prompt engineering + per-tool templates
+integration/                 handoff to Etsy SEO/listing systems
+examples/                    complete worked workflows
+documentation/               glossary, architecture history, roadmap
 ```
 
 ---
 
-# 2. Buyer Psychology Analysis
+## Philosophy
 
-The system identifies:
+This project is meant to stay:
 
-- who buys the product
-- why they buy it
-- emotional triggers
-- gifting opportunities
-- identity-based purchasing behavior
+- **accessible** — no paid tools required to use the core system
+- **transparent** — every scoring rule and gate is documented, not a
+  black box
+- **community-driven** — contributions, corrections, and new prompt
+  templates are welcome
 
-Example:
-
-Instead of:
-
-```
-Teacher SVG
-```
-
-The system explores:
-
-```
-A personalized identity product
-for teachers who feel pride in their profession.
-```
+See `CONTRIBUTING.md` for how to propose changes, and
+`documentation/architecture-decisions.md` for the reasoning behind the
+current design — including the mistakes that got caught and fixed
+along the way.
 
 ---
 
-# 3. Competition Analysis
+## License
 
-ESVG-DIS analyzes existing marketplace conditions.
-
-It identifies:
-
-- common designs
-- overused concepts
-- weak competitor positioning
-- differentiation opportunities
-
-The goal:
-
-Not to copy competitors.
-
-The goal:
-
-```
-Find gaps competitors are missing.
-```
-
----
-
-# 4. IP Risk Analysis
-
-The system includes multiple IP safety checkpoints.
-
-It evaluates:
-
-- trademarks
-- copyrighted characters
-- protected phrases
-- franchise references
-- recognizable imitation risks
-
-IP decisions are handled through dedicated gates:
-
-```
-PASS
-
-MODIFY
-
-BLOCK
-```
-
----
-
-# 5. Opportunity Scoring
-
-Before investing creative effort, concepts are evaluated.
-
-The Opportunity Score measures:
-
-- Market Demand
-- Buyer Appeal
-- Differentiation Potential
-- Production Suitability
-- Trend Strength
-- Competition Difficulty
-
-The purpose:
-
-Answer:
-
-> "Is this worth creating?"
-
----
-
-# 6. Creative Strategy Development
-
-ESVG-DIS converts research into creative direction.
-
-It defines:
-
-- visual style
-- emotional positioning
-- design theme
-- differentiation strategy
-- product angle
-
-Example:
-
-Instead of:
-
-```
-Dog SVG
-```
-
-The system creates:
-
-```
-Premium vintage adventure badge
-for golden retriever owners who see pets as family companions.
-```
-
----
-
-# 7. Concept Generation
-
-The system creates multiple original directions.
-
-Each concept considers:
-
-- uniqueness
-- buyer connection
-- emotional strength
-- visual impact
-- SVG suitability
-
----
-
-# 8. Advanced AI Prompt Engineering
-
-This is one of the core features.
-
-ESVG-DIS creates detailed prompts designed for AI image generation tools.
-
-Prompts include:
-
-- subject details
-- composition
-- style direction
-- line requirements
-- SVG compatibility requirements
-- vectorization considerations
-- negative prompts
-
-Example requirements:
-
-```
-Pure black and white
-
-Clean flat lines
-
-No gradients
-
-No shadows
-
-High contrast
-
-Suitable for tracing
-
-Minimal node complexity
-```
-
----
-
-# 9. SVG Production Awareness
-
-Although ESVG-DIS does not create SVG files directly, it understands SVG requirements.
-
-Prompts are optimized for designs that are easier to:
-
-- trace
-- clean
-- convert
-- export into multiple formats
-
-Including:
-
-- SVG
-- PNG
-- JPG
-- EPS
-- DXF
-- PDF
-
----
-
-# 10. Etsy SEO Integration
-
-ESVG-DIS works together with:
-
-```
-Etsy Seller SEO System
-```
-
-Repository:
-
-```
-https://github.com/moiz-za/etsy-seller-seo-system
-```
-
-The two systems have different responsibilities.
-
-ESVG-DIS:
-
-```
-Creates the right product.
-```
-
-Etsy SEO System:
-
-```
-Creates the right listing.
-```
-
-Together:
-
-```
-Research
-
-↓
-
-Design
-
-↓
-
-SEO
-
-↓
-
-Publish
-```
-
----
-
-# How It Works
-
-## Step 1 — User Provides Input
-
-Example:
-
-```
-I want to create Mother's Day SVG designs.
-```
-
----
-
-## Step 2 — Market Research
-
-The system analyzes:
-
-- demand
-- competition
-- audience
-- opportunities
-
----
-
-## Step 3 — IP Screening
-
-Potential risks are identified.
-
-Unsafe directions are:
-
-- modified
-- replaced
-- blocked
-
----
-
-## Step 4 — Opportunity Evaluation
-
-The system determines:
-
-```
-Should this idea be developed?
-```
-
----
-
-## Step 5 — Creative Strategy
-
-The AI creates:
-
-- product positioning
-- visual direction
-- unique angles
-
----
-
-## Step 6 — Concept Selection
-
-Multiple concepts are evaluated.
-
-The strongest concept is selected.
-
----
-
-## Step 7 — Prompt Creation
-
-The system generates production-ready prompts.
-
----
-
-## Step 8 — User Creates Artwork
-
-The seller uses:
-
-- ChatGPT Images
-- Gemini Image Generation
-- Midjourney
-- Flux
-- Ideogram
-- Leonardo
-
-or any preferred tool.
-
----
-
-## Step 9 — User Produces Final Files
-
-The seller:
-
-- vectorizes artwork
-- cleans SVG
-- exports formats
-- creates listing
-
----
-
-# Workflow Architecture
-
-```
-User Keyword
-
-↓
-
-Market Research
-
-↓
-
-IP Screening
-
-↓
-
-Buyer Psychology
-
-↓
-
-Competition Analysis
-
-↓
-
-Opportunity Score
-
-↓
-
-Creative Strategy
-
-↓
-
-Concept Generation
-
-↓
-
-Concept Evaluation
-
-↓
-
-Prompt Engineering
-
-↓
-
-User Artwork Generation
-
-↓
-
-Design Review
-
-↓
-
-Etsy SEO Optimization
-```
-
----
-
-# Supported AI Platforms
-
-ESVG-DIS works with any AI assistant capable of following instructions.
-
-Examples:
-
-## AI Chat Agents
-
-- ChatGPT
-- Gemini
-- Claude
-- Grok
-
-## Image Generation Tools
-
-- ChatGPT Images
-- Gemini Image Generation
-- Midjourney
-- Flux
-- Ideogram
-- Leonardo
-
----
-
-# Repository Structure
-
-```
-esvg-dis/
-
-├── README.md
-
-├── SYSTEM_INSTRUCTIONS.md
-
-├── knowledge/
-
-│   ├── buyer-psychology.md
-
-│   ├── svg-best-practices.md
-
-│   ├── typography.md
-
-│   ├── composition.md
-
-│   └── market-analysis.md
-
-├── workflows/
-
-│   └── workflow-state-machine.md
-
-├── prompts/
-
-│   └── prompt-framework.md
-
-├── examples/
-
-│   └── example-workflows.md
-
-└── documentation/
-
-    └── system-design.md
-```
-
----
-
-# Installation
-
-ESVG-DIS is designed as an AI skill.
-
-Basic setup:
-
-1. Download this repository
-
-2. Upload the files into your AI assistant
-
-3. Load the system instructions
-
-4. Start creating research-driven SVG product ideas
-
----
-
-# Example Usage
-
-User:
-
-```
-Create Christmas SVG ideas.
-```
-
-ESVG-DIS:
-
-```
-I will first analyze:
-
-- market demand
-- competition
-- buyer intent
-- IP risks
-- differentiation opportunities
-
-before creating design prompts.
-```
-
----
-
-# Design Philosophy
-
-ESVG-DIS follows this principle:
-
-```
-Do not create more designs.
-
-Create better products.
-```
-
-Successful Etsy products require:
-
-```
-Market Understanding
-
-+
-
-Creative Strategy
-
-+
-
-Strong Execution
-```
-
-AI helps accelerate the process.
-
-Human creativity makes the final decision.
-
----
-
-# Future Roadmap
-
-Future versions may include:
-
-- larger niche knowledge libraries
-- seasonal trend intelligence
-- community-contributed strategies
-- analytics feedback loops
-- optional automation integrations
-
----
-
-# Open Source Mission
-
-ESVG-DIS is designed to be:
-
-- free
-- transparent
-- customizable
-- community-driven
-
-The goal is to help independent creators compete using better strategy, not simply more output.
-
----
-
-# License
-
-Open-source license to be determined.
-
----
-
-# Final Note
-
-ESVG-DIS is not a shortcut to success.
-
-It is a framework for making smarter creative decisions.
-
-Better research.
-
-Better ideas.
-
-Better prompts.
-
-Better products.
+Open source. See `LICENSE`.
