@@ -87,8 +87,8 @@ Agent: I'll analyze market demand, buyer motivation, competition, and
 IP risk for this niche before generating any concepts or prompts.
 ```
 
-See `examples/christmas-svg-workflow.md` for a complete worked run
-through every stage.
+See `examples/worked-examples.md` for a complete worked run through
+every stage.
 
 ---
 
@@ -115,7 +115,7 @@ README.md                    you are here
 SYSTEM_INSTRUCTIONS.md       load this into your agent first
 workflow/                    process logic — states, gates, scoring, retries
 knowledge/                   subject-matter frameworks (market, buyer psych, IP, etc.)
-prompts/                     prompt engineering + per-tool templates
+prompts/                     prompt engineering + style-based templates
 integration/                 handoff to Etsy SEO/listing systems
 examples/                    complete worked workflows
 documentation/               glossary, architecture history, roadmap
