@@ -29,6 +29,10 @@ already have.
 
 - ✅ Runs a full **market intelligence** pass — demand, buyer intent,
   trend classification, market gaps — before suggesting anything.
+- ✅ Uses **live Etsy search** when available to ground research in
+  real current listings, not just training-data assumptions — and
+  falls back to a clearly labeled reasoning-based estimate when search
+  isn't available, so you always know which one you're looking at.
 - ✅ Screens for **IP/trademark risk four separate times** (keyword,
   concept, prompt, and the finished artwork itself) — not once, and
   never as something a strong design score can override.
@@ -61,13 +65,10 @@ already have.
 
 ### Option A — Claude Code / Cowork (paid, recommended for regular use)
 
-```bash
-git clone https://github.com/moiz-za/svg-design-intelligence-system.git
-cp -r svg-design-intelligence-system ~/.claude/skills/svg-design-intelligence-system
-```
-
-Restart Claude. Done — see `skill/SKILL.md` and `INSTALL.md` for
-detail.
+Fastest: download `esvg-dis.skill` from the repo root and unzip it
+into `~/.claude/skills/svg-design-intelligence-system/`. No git
+required. See `INSTALL.md` for the exact commands and the full-clone
+alternative.
 
 ### Option B — Any tool, free or paid
 
@@ -134,9 +135,12 @@ svg-design-intelligence-system/
 ├── CHANGELOG.md                       version history
 ├── LICENSE                            MIT
 ├── CONTRIBUTING.md                    how to contribute
+├── esvg-dis.skill                     packaged Claude Skill, download and unzip
 │
 ├── skill/
-│   └── SKILL.md                       Claude Skill entry point
+│   ├── SKILL.md                       Claude Skill entry point (full execution engine)
+│   └── scripts/
+│       └── bootstrap.py               idempotent state initializer
 │
 ├── portable/
 │   └── ESVG-DIS-Instructions.md       single-file condensed version, any tool
@@ -149,14 +153,20 @@ svg-design-intelligence-system/
 │   └── 04-retry-and-halt-logic.md
 │
 ├── knowledge/                         subject-matter frameworks
-│   ├── market-intelligence.md
-│   ├── competition-intelligence.md
+│   ├── market-intelligence.md         includes live Etsy search + reasoning fallback
+│   ├── competition-intelligence.md    includes live Etsy search + reasoning fallback
 │   ├── buyer-psychology.md
 │   ├── ip-risk-and-originality.md
 │   ├── commercial-opportunity-scoring.md
 │   ├── creative-strategy.md
 │   ├── concept-development.md
 │   └── design-quality-review.md
+│
+├── playbooks/                         concrete, checkable tactical rules
+│   ├── trademark-and-ip-stoplist.md
+│   ├── niche-saturation-reality-check.md
+│   ├── cutting-machine-thresholds.md
+│   └── honest-diagnosis-pointers.md
 │
 ├── prompts/                           prompt engineering + style templates
 │   ├── prompt-engineering-framework.md
@@ -172,6 +182,10 @@ svg-design-intelligence-system/
 │
 ├── integration/
 │   └── etsy-seo-handoff.md            handoff to Etsy SEO/listing systems
+│
+├── state-templates/
+│   └── esvg-research/
+│       └── research-log.md            cross-session memory template
 │
 ├── examples/
 │   └── worked-examples.md             complete pipeline walkthrough

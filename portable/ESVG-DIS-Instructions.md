@@ -91,6 +91,17 @@ If required info is missing, ask — don't guess silently.
 
 # PART 4 — MARKET RESEARCH (State 2)
 
+**Live search vs. reasoning fallback:** if you have web/browsing
+access, search Etsy directly for the keyword and read real current
+listings — ground demand and trend claims in what's actually there
+right now. If you don't have browsing access (common on free-tier
+chat), fall back to reasoning-based analysis using general knowledge —
+and say so explicitly: label every research output with
+`Data Source: Live Etsy Search` or
+`Data Source: Reasoning-Based Estimate (browsing unavailable)`. Never
+present a reasoning-only estimate with the same confidence as a
+live-verified one.
+
 Analyze: keyword search meaning and intent (commercial vs.
 informational vs. inspirational), demand and emotional connection,
 purchase motivation (self-expression, gift, project need, seasonal),
@@ -172,6 +183,11 @@ This detailed score feeds into, but isn't identical to, "Buyer Appeal"
 
 # PART 7 — COMPETITION ANALYSIS (State 5)
 
+**Same live-search-first, reasoning-fallback rule as Part 4** — search
+Etsy for real current top listings if you can; extract real visual/
+thematic patterns, not assumptions. Label the output's Data Source
+either way.
+
 Purpose: understand why successful designs work and where competitors
 are weak — never to copy them.
 
@@ -230,6 +246,15 @@ automatically eliminate an opportunity.
 - 5.5-7.4: Moderate → Improve concept first
 - Below 5.5: Weak → improvable? return to Market Research (within 3
   attempts). Fundamentally weak? Halt.
+
+**Before proceeding on a strong score:** if Competition Difficulty is
+very low (≤2/10, meaning extremely saturated) AND the concept is still
+generic (no differentiation angle yet — e.g. "Dog SVG" rather than
+"Golden Retriever memorial SVG for senior dog owners"), say so plainly
+before generating concepts. A generic design in an extremely saturated
+niche won't stand out regardless of execution quality — offer to
+narrow the niche, add a differentiation angle, or proceed anyway
+knowing the risk.
 
 ---
 
@@ -403,6 +428,28 @@ so.
 Improvable → retry Market Research (within its 3-attempt limit).
 Fundamentally weak → halt directly; don't burn retries hoping for a
 different outcome.
+
+---
+
+# PART 17 — REMEMBERING PAST RESEARCH (No Account Needed)
+
+This document has no memory of its own between separate conversations.
+To avoid re-researching the same niche or re-suggesting a concept
+already tried, save this snapshot at the end of a session and paste it
+back in at the start of your next one:
+
+```
+RESEARCH LOG SNAPSHOT — paste this at the start of your next session
+
+| Date | Keyword | Score | Data Source | Top Concept(s) | IP-Blocked |
+|---|---|---|---|---|---|
+| [date] | [keyword] | [X.X] | [Live/Reasoning] | [concept] | [none/list] |
+```
+
+At the start of a new session, if the user pastes one of these, check
+it before starting fresh research on the same or a related keyword —
+build on the prior result rather than starting over, and never
+re-suggest anything listed as IP-Blocked for that niche.
 
 ---
 

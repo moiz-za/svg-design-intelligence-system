@@ -1,5 +1,75 @@
 # Changelog
 
+## v1.1.0 — Skill Depth & Live Research
+
+Built in direct response to a gap analysis against the companion
+`etsy-seller-seo-system` repo — see
+`documentation/architecture-decisions.md` for the reasoning behind
+each addition below.
+
+**Live research:**
+- `knowledge/market-intelligence.md` and
+  `knowledge/competition-intelligence.md` now instruct live Etsy
+  search when available, with an explicit, labeled fallback to
+  reasoning-based estimates when it isn't (no browsing tool, free-tier
+  chat, or an obscure niche search returns nothing). Every research
+  output now carries a `Data Source` tag so estimates are never
+  presented with false confidence.
+
+**Cross-session memory (deliberately lightweight):**
+- New `state-templates/esvg-research/research-log.md` — a single-file
+  research log, not a multi-file database (this system does research
+  and concept development, not published-listing tracking, so it
+  doesn't need SEO's heavier structure).
+- New `skill/scripts/bootstrap.py` — idempotent state initializer for
+  Claude Code/Cowork, tested end-to-end including idempotency.
+- Free-tier equivalent: a Research Log Snapshot block printed at the
+  end of a session for the user to paste back in next time — same
+  protection, no infrastructure required.
+
+**`skill/SKILL.md` — full rewrite:**
+- From a 338-word pointer file to a ~1,800-word real execution engine:
+  input auto-detection table, 17 numbered phases mapped to the
+  canonical workflow, concrete output format templates, standalone
+  capabilities (IP screening alone, concept comparison alone, resume
+  from log), honest scope section, quick-reference numbers table.
+
+**New `playbooks/` — concrete, checkable tactical rules** (the
+knowledge files describe risk *categories* abstractly; these are the
+actual lists/thresholds to check against):
+- `trademark-and-ip-stoplist.md` — checkable franchise/brand/style-
+  imitation word list plus scan algorithm, wired into all 3 text-based
+  IP gates.
+- `niche-saturation-reality-check.md` — precise 4-criteria trigger for
+  when to honestly warn that a generic concept won't differentiate in
+  an oversaturated niche, before spending effort on concept
+  development.
+- `cutting-machine-thresholds.md` — concrete, checkable production
+  limits (minimum feature size, isolated elements, line weight,
+  detail density) replacing vague "keep it simple" guidance.
+- `honest-diagnosis-pointers.md` — a diagnostic table for repeated
+  failures, naming the likely real cause (weak niche, generic
+  strategy, wrong concept, or entirely out of this system's scope)
+  instead of defaulting to "try again."
+
+**Distribution:**
+- New `esvg-dis.skill` — a packaged, downloadable zip of exactly what
+  `SKILL.md` depends on (`workflow/`, `knowledge/`, `prompts/`,
+  `integration/`, `playbooks/`, `state-templates/`, `skill/`).
+  Verified to contain no build artifacts. Unzips directly into
+  `~/.claude/skills/` — no git clone required.
+
+**Fixed during this round:**
+- All of `skill/SKILL.md`'s internal cross-references were missing
+  their `../` prefix (the file lives one folder below repo root) —
+  every link would have silently resolved to a nonexistent path. Fixed
+  with a targeted find-replace and verified.
+- A `__pycache__` artifact from testing `bootstrap.py` briefly leaked
+  into the first packaging attempt — caught and excluded before
+  shipping.
+
+---
+
 ## v1.0.0 — Initial Release
 
 **Core system:**

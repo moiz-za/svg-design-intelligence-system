@@ -45,7 +45,11 @@ Understand the market before suggesting creative directions.
 ## 3. State 2 Process
 
 ```
+Check Research Log (state-templates/esvg-research/research-log.md)
+↓ — if this niche was already researched, see §3.1 before continuing
 Keyword Analysis
+↓
+Attempt Live Search (§3.2) — falls back to reasoning if unavailable
 ↓
 Market Demand Assessment
 ↓
@@ -55,6 +59,64 @@ Market Gap Identification
 ↓
 → hand off to State 3 (Keyword IP Screening)
 ```
+
+### 3.1 Check the Research Log First
+
+Before starting fresh research, check
+`state-templates/esvg-research/research-log.md` for the same or a
+closely related keyword. If a prior entry exists:
+
+- Show the user the prior result (date, score, top concept selected)
+  and ask whether they want fresh research (markets change, and a
+  prior reasoning-only estimate may be worth redoing with live search)
+  or to build on the prior pass.
+- Regardless of which they choose, never re-suggest a concept listed
+  in that niche's "IP-Blocked Concepts" column.
+- If proceeding, append a new row to the log rather than overwriting
+  the old one — a niche can legitimately be researched more than once
+  over time.
+
+If no prior entry exists, or this tool/session has no access to the
+log (stateless free-tier use), proceed directly to Keyword Analysis.
+
+### 3.2 Dual-Mode Research: Live Search vs. Reasoning Estimate
+
+**This is the most important addition in this file.** Wherever this
+framework calls for demand, trend, or gap analysis, attempt it in this
+order:
+
+**Live mode (preferred):** if a search/browsing tool is available,
+search Etsy directly for the keyword and closely related terms. Read
+actual current listings — what exists, how many, what themes repeat,
+what's actually being sold right now. Ground demand and trend
+assessments in what's really there, not in training-data assumptions
+about what's probably popular.
+
+**Reasoning mode (fallback):** if no search tool is available (e.g.
+free ChatGPT without browsing enabled, or this document pasted into a
+plain-text context with no tools), or live search returns nothing
+useful for an obscure niche, fall back to reasoning-based analysis —
+the same qualitative judgment this framework has always used.
+
+**Always label which mode produced the output.** Every Market
+Intelligence Report (§8) and every scoring example (§9) must carry a
+`Data Source` tag:
+
+```
+Data Source: Live Etsy Search
+```
+or
+```
+Data Source: Reasoning-Based Estimate (live search unavailable —
+treat demand/trend figures as directional, not verified)
+```
+
+Never present a reasoning-based estimate with the same apparent
+confidence as a live-search-grounded one. This is the same honesty
+principle already applied to IP risk assessments
+(`workflow/02-ip-gates.md` §9) and commercial scores
+(`knowledge/commercial-opportunity-scoring.md` §6) — a number without
+a stated confidence level is misleading by omission.
 
 ---
 
@@ -153,6 +215,7 @@ Market Intelligence Report
 6. Recommended Direction
 7. Preliminary Risk Notes (informational only — not the formal
    gate; see workflow/00-intake-and-interview.md §6)
+8. Data Source: [Live Etsy Search / Reasoning-Based Estimate]
 ```
 
 (Competition Level is added to this report after State 5 completes —
@@ -166,6 +229,7 @@ see `knowledge/competition-intelligence.md`.)
 Demand: 8/10
 Trend: 9/10
 Differentiation Opportunity: 9/10
+Data Source: Live Etsy Search
 ```
 
 These are informal, directional numbers used during State 2 — not the
@@ -196,6 +260,9 @@ Scores are guidance, not guarantees.
 ## 11. Rules
 
 - Research before creating.
+- Check the research log before starting from scratch on a niche.
+- Prefer live search over reasoning-only estimates; always label which
+  one actually produced the output.
 - Identify buyers before designing (State 4 does this in depth).
 - Search for opportunities before generating ideas.
 - Never copy successful listings — study *why* they work, not *what*

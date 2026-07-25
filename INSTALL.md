@@ -5,20 +5,35 @@ tool.
 
 ---
 
-## Option A — Claude Code / Cowork (paid: Claude Pro/Max)
+## Option A — Claude Code / Cowork (paid): fastest path, no git needed
+
+Download `esvg-dis.skill` from the repository root, then:
+
+```bash
+mkdir -p ~/.claude/skills/svg-design-intelligence-system
+unzip esvg-dis.skill -d ~/.claude/skills/svg-design-intelligence-system
+```
+
+Restart Claude Code or Cowork. `esvg-dis.skill` is just a zip archive
+(the `.skill` extension is a convention, not a different format) —
+this is the fastest path since it skips cloning the whole repository
+and only contains what the skill actually needs to run.
+
+## Option A (alternative) — Claude Code / Cowork: full git clone
 
 ```bash
 git clone https://github.com/moiz-za/svg-design-intelligence-system.git
 cp -r svg-design-intelligence-system ~/.claude/skills/svg-design-intelligence-system
 ```
 
-Restart Claude Code or Cowork. The skill is discovered automatically
-via `skill/SKILL.md`. This is the recommended path if you're on a paid
-Claude plan — no copy-pasting between sessions, and all cross-file
-references resolve correctly since the whole repo is present.
+Use this instead of the `.skill` download if you also want the
+documentation, examples, and portable doc available locally alongside
+the skill — the `.skill` package only contains the operational files
+`SKILL.md` actually references (`workflow/`, `knowledge/`, `prompts/`,
+`integration/`, `playbooks/`, `state-templates/`), not the README,
+examples, or documentation folders.
 
-**Note:** copy the entire repository folder, not just the `skill/`
-subfolder — see `skill/SKILL.md` for why.
+Either way, restart Claude Code or Cowork afterward.
 
 ---
 
@@ -49,7 +64,7 @@ required.
 | **Grok (free)** | ✅ Works | Same pattern. |
 | **Claude Pro (Projects)** | ✅ Works, improved | Upload the entire repository's markdown files to a Project's knowledge base — you get the full cross-referenced multi-file version instead of the condensed portable one. |
 | **ChatGPT Plus (Custom GPT)** | ✅ Works, improved | Same idea: create a Custom GPT, upload the repo's `.md` files under Configure → Knowledge. |
-| **Claude Code / Cowork** | Requires Claude Pro/Max | See Option A above — this is the only path that gets automatic skill discovery without manual setup each session. |
+| **Claude Code / Cowork** | Requires Claude Pro/Max | Fastest: download `esvg-dis.skill` and unzip directly into `~/.claude/skills/`. See Option A above. |
 
 ---
 

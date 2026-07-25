@@ -1,64 +1,362 @@
 ---
 name: svg-design-intelligence-system
 description: >
-  Etsy SVG Design Intelligence System (ESVG-DIS). A market research,
-  buyer psychology, IP risk screening, and prompt engineering skill for
-  creating original, commercially viable SVG product concepts for
-  Etsy. Use when the user wants to research an Etsy SVG product idea,
-  evaluate a niche's commercial opportunity, develop original design
-  concepts, screen for IP/trademark risk, or generate AI image
-  prompts for SVG production.
+  Etsy SVG Design Intelligence System (ESVG-DIS). Market research, IP
+  risk screening, buyer psychology, commercial opportunity scoring,
+  original concept development, and AI prompt engineering for Etsy SVG
+  sellers. Triggers on "research an Etsy SVG niche", "find a profitable
+  SVG idea", "check if [keyword] SVG is a good opportunity", "screen
+  this idea for trademark risk", "give me SVG concepts for [niche]",
+  "write me a prompt for [design idea]". Uses live Etsy search when
+  available; falls back to reasoning with an explicit confidence label
+  when it isn't. Maintains a single-file research log at
+  ~/esvg-research/research-log.md for cross-session memory on
+  Claude/Cowork.
 ---
 
-# SVG Design Intelligence System — Skill Entry Point
+# ESVG-DIS — SVG Design Intelligence System
 
-## Installation
+**Schema version:** 1.0
 
-**This skill depends on the rest of the repository it ships with.**
-Copy the **entire repository**, not just this folder, into your
-Claude skills directory:
+---
+
+## ⚡ HOW THE SKILL WORKS — Read first
+
+One core action, run start-to-finish or resumed partway through,
+depending on what the user gives you.
+
+| Input the user provides | What happens |
+|---|---|
+| Bare keyword/niche ("Golden Retriever SVG") | **Full pipeline** from State 1 (Intake) |
+| Keyword + explicit prior context ("I already know my audience is...") | Full pipeline, skip re-asking what's already given |
+| Pasted Research Log snapshot from a prior session | **Resume** — check it against current request before re-researching |
+| "Just check IP risk on [X]" | **Standalone IP screening** — State 3 gate only, see Capabilities |
+| "Compare these concepts: A, B, C" | **Standalone Concept Evaluation** — State 9 scoring only |
+| "Write me a prompt for [fully-specified concept]" | Confirm the concept has actually cleared IP screening first, see the note below, then go straight to Prompt Engineering (State 10) |
+| Anything genuinely ambiguous | Ask ONE question before proceeding, per `../workflow/00-intake-and-interview.md` |
+
+**Important, don't let "just give me a prompt" skip IP screening.**
+If a user asks for a prompt on a concept that hasn't been screened, run
+the Keyword IP Screening gate (State 3) on it first, briefly, before
+writing the prompt. This takes one step and prevents building a whole
+prompt around something that turns out to be blocked. See
+`../workflow/02-ip-gates.md`.
+
+---
+
+## 📦 ON EVERY FULL-PIPELINE RUN — Execution sequence
+
+### Phase 0 — Auto-bootstrap state (Cowork/Claude only, silent)
 
 ```bash
-cp -r svg-design-intelligence-system ~/.claude/skills/svg-design-intelligence-system
+python3 ~/.claude/skills/svg-design-intelligence-system/scripts/bootstrap.py
 ```
 
-Restart Claude Code or Cowork. The skill will be discovered via this
-file (`skill/SKILL.md`), but it reads its actual operating logic from
-the sibling folders one level up: `../SYSTEM_INSTRUCTIONS.md`,
-`../workflow/`, `../knowledge/`, `../prompts/`, `../integration/`.
+Idempotent. Creates `~/esvg-research/research-log.md` from the bundled
+template on first run; does nothing on subsequent runs. The user never
+sees this. For non-Cowork tools (ChatGPT/Gemini/Grok/free Claude):
+skip this, state lives in the conversation, or in a Research Log
+Snapshot the user pastes at the start (see Output Format).
 
-If you copy only this `skill/` folder without the rest of the
-repository, the skill will load but won't be able to resolve any of
-its own cross-references — it will not work correctly. This is a
-known constraint of this repo's current structure (see
-`../documentation/architecture-decisions.md` if curious why it's
-structured this way rather than fully self-contained like some other
-Claude skills).
+### Phase 1 — Load existing state (silent)
+
+Read `~/esvg-research/research-log.md` if it exists. For non-Cowork
+tools, use any pasted snapshot instead. See
+`../state-templates/esvg-research/research-log.md` section "How This Gets
+Used" for exactly what to check and when.
+
+### Phase 2 — Intake (State 1)
+
+Collect required inputs per `../workflow/00-intake-and-interview.md`:
+keyword, marketplace (default Etsy), target customer, product type,
+complexity, use case. Ask only for what's genuinely missing, don't
+re-ask what the user already gave you or what the research log already
+answers for this niche.
+
+### Phase 3 — Market Research (State 2)
+
+Per `../knowledge/market-intelligence.md`: keyword analysis, demand
+assessment, trend classification, market gap identification.
+**Attempt live Etsy search first; fall back to reasoning if
+unavailable, and label the output accordingly** (section 3.2 of that
+file). Produce the Market Intelligence Report.
+
+### Phase 4 — Keyword IP Screening (State 3) `[GATE 1 of 4]`
+
+Per `../workflow/02-ip-gates.md`. Run the keyword against
+`../playbooks/trademark-and-ip-stoplist.md` first — it's the concrete,
+checkable version of the risk categories in that gate. Decision:
+PASS / MODIFY / BLOCK.
+
+- **BLOCK** -> stop here. Produce an IP Block Report (reason, detected
+  risk, safer alternatives). Do not proceed to Phase 5. Do not
+  auto-retry, this needs a new direction from the user.
+- **PASS / MODIFY-resolved** -> continue.
+
+### Phase 5 — Buyer Psychology Analysis (State 4)
+
+Per `../knowledge/buyer-psychology.md`: purchase motivation, buyer
+persona, micro-niche identification, identity layering.
+
+### Phase 6 — Competition Analysis (State 5)
+
+Per `../knowledge/competition-intelligence.md`. **Attempt live Etsy
+search first; fall back to reasoning if unavailable, and label the
+output accordingly** (section 4 of that file). Produce the Competition
+Intelligence Report.
+
+### Phase 7 — Opportunity Scoring (State 6)
+
+Per `../workflow/03-scoring-architecture.md`, Level 1. Six weighted
+dimensions, IP excluded (already gated in Phase 4).
+
+- **Score >= 7.5** -> before proceeding, check
+  `../playbooks/niche-saturation-reality-check.md` — if its four
+  trigger criteria are all met, show that reality check before Phase 8
+  rather than after.
+- **Score 5.5-7.4** -> flag as moderate; ask the user whether to refine
+  research or proceed anyway.
+- **Score < 5.5** -> apply the judgment call in
+  `../workflow/04-retry-and-halt-logic.md` section 4: improvable -> return
+  to Phase 3 (within 3 attempts); fundamentally weak -> halt as
+  `HALTED_OPPORTUNITY_FAILURE`, produce the Opportunity Failure
+  Report, and stop. If this is a repeated failure on the same niche,
+  check `../playbooks/honest-diagnosis-pointers.md` before recommending
+  another research attempt.
+
+### Phase 8 — Creative Strategy (State 7)
+
+Per `../knowledge/creative-strategy.md`. Produce the Creative Brief:
+position, buyer, emotional goal, theme, visual language,
+differentiation strategy, SVG requirements.
+
+### Phase 9 — Concept Generation (State 8)
+
+Per `../knowledge/concept-development.md`. Generate 30-50 concepts.
+**Check the Research Log's "IP-Blocked Concepts" column for this niche
+first, never regenerate something already blocked.**
+
+### Phase 10 — Concept IP Review (State 8A) `[GATE 2 of 4]`
+
+Per `../workflow/02-ip-gates.md`. Applied per concept. BLOCKed concepts
+are removed from the portfolio (scope: single concept, not the whole
+batch), log them to the Research Log's IP-Blocked column. Continue
+with survivors.
+
+### Phase 11 — Concept Evaluation (State 9)
+
+Per `../workflow/03-scoring-architecture.md`, Level 2. Five-dimension
+score, rank the surviving portfolio, present the top 2-3 to the user
+for selection, don't auto-pick without user confirmation unless
+explicitly asked to.
+
+### Phase 12 — Prompt Engineering (State 10)
+
+Per `../prompts/prompt-engineering-framework.md` and the relevant
+`../prompts/style-templates/` file. If the use case involves a cutting
+machine, check the concept against
+`../playbooks/cutting-machine-thresholds.md` before finalizing the SVG
+technical requirements. Build the full prompt package.
+
+### Phase 13 — Prompt IP Validation (State 10A) `[GATE 3 of 4]`
+
+Per `../workflow/02-ip-gates.md`. BLOCK removes unsafe prompt elements
+only; concept doesn't need re-evaluation.
+
+### Phase 14 — User Generation + Final Artwork IP Review (States 11, 11A) `[GATE 4 of 4]`
+
+Hand off the prompt package for the user to run externally. When they
+return with generated artwork (described or shown), run the Final
+Artwork IP Review per `../workflow/02-ip-gates.md` before Phase 15.
+
+### Phase 15 — Design Review (State 12)
+
+Per `../knowledge/design-quality-review.md`, Level 3. Four dimensions —
+for the SVG Suitability dimension specifically, check against
+`../playbooks/cutting-machine-thresholds.md` if a cutting machine is
+the use case. Approved -> Phase 16. Needs improvement -> return to
+Phase 12, within retry limits. If this is a repeated failure, check
+`../playbooks/honest-diagnosis-pointers.md` before recommending
+another prompt revision.
+
+### Phase 16 — SEO Handoff (State 13)
+
+Per `../integration/etsy-seo-handoff.md`. Produce the Product
+Intelligence Package.
+
+### Phase 17 — Write state (Cowork/Claude only)
+
+Append a row to `~/esvg-research/research-log.md`: date, keyword,
+Opportunity Score, Data Source, top concept(s) selected, any
+IP-blocked concepts. For non-Cowork tools: output the Research Log
+Snapshot block instead (see Output Format).
 
 ---
 
-## What This Skill Does
+## 🎨 OUTPUT FORMAT
 
-On activation, follow `../SYSTEM_INSTRUCTIONS.md` exactly. In summary:
-research an Etsy SVG product idea through market intelligence, buyer
-psychology, competition analysis, and commercial opportunity scoring;
-screen for IP/trademark risk at four separate checkpoints; develop and
-rank original creative concepts; engineer AI image-generation prompts;
-and hand off a structured product-intelligence package once the user
-has generated and approved final artwork.
+### Research summary (after Phase 7)
 
-This skill does **not** generate SVG files, trace images, or publish
-listings — see `../SYSTEM_INSTRUCTIONS.md` §4 for the full scope
-boundary.
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OPPORTUNITY ANALYSIS — [keyword]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DATA SOURCE: [Live Etsy Search / Reasoning-Based Estimate]
+
+Market Demand: [X]/10    Buyer Appeal: [X]/10
+Differentiation: [X]/10   Production Suitability: [X]/10
+Trend Strength: [X]/10    Competition Difficulty: [X]/10
+
+OPPORTUNITY SCORE: [X.X]/10 — [Exceptional/Strong/Moderate/Weak]
+
+IP SCREENING: [PASS/MODIFY/BLOCK] — [one-line reason]
+
+RECOMMENDATION: [proceed / refine / explore alternative]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+### Concept portfolio (after Phase 11)
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TOP CONCEPTS — [keyword]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. [Concept name] — Score: [X.X]/10
+   [One-line description]
+   Originality [X] · Buyer Alignment [X] · Emotional Strength [X]
+   Visual Potential [X] · SVG Suitability [X]
+
+2. [Concept name] — Score: [X.X]/10
+   ...
+
+Which would you like to develop into a prompt?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+### Prompt package (after Phase 12)
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROMPT PACKAGE — [concept name]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DESIGN PROMPT:
+[full prompt text]
+
+NEGATIVE PROMPT:
+[full negative prompt]
+
+SVG PRODUCTION NOTES:
+Recommended complexity: [level]
+Tracing difficulty: [Low/Medium/High]
+Suggested cleanup: [notes]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+□ Paste the design prompt into your image generation tool
+□ Review the result against the negative prompt list
+□ Come back with the result for Final Artwork IP Review
+□ Vectorize and clean up per prompts/svg-production-optimization.md
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+### For non-Cowork tools — Research Log Snapshot (end of session)
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RESEARCH LOG SNAPSHOT — Save this. Paste at start of next session.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+| Date | Keyword | Score | Data Source | Top Concept(s) | IP-Blocked |
+|---|---|---|---|---|---|
+| [date] | [keyword] | [X.X] | [Live/Reasoning] | [concept] | [none/list] |
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
 
 ---
 
-## Activation
+## 🛠 CAPABILITIES TRIGGERED BY USER INPUT
 
-When this skill is loaded and the user describes a product idea,
-keyword, or niche, begin at State 1 (Intake) —
-`../workflow/00-intake-and-interview.md` — and proceed through the
-canonical workflow in `../workflow/01-canonical-state-machine.md`.
+### Standalone IP screening ("is [X] SVG safe to make?")
+Run Phase 4 (State 3, Keyword IP Screening) alone. Report PASS/MODIFY/
+BLOCK with reasoning. Doesn't require the full pipeline.
 
-Do not skip directly to concept generation or image prompts from a
-bare keyword. Research and IP screening come first.
+### Standalone concept comparison ("which of these is stronger: A vs B")
+Run Phase 11 (State 9, Concept Evaluation) alone on the user-provided
+concepts. Note in the output that these weren't screened through
+Concept IP Review (Phase 10) unless the user confirms they already
+were.
+
+### Resume from a Research Log entry
+If the user pastes a prior snapshot or the log already has this
+niche, follow `../state-templates/esvg-research/research-log.md` section
+"How This Gets Used" before deciding whether to re-research or build
+on the prior pass.
+
+---
+
+## 📚 REFERENCE FILES — Load as needed
+
+### Workflow (process logic)
+- `../workflow/01-canonical-state-machine.md` — full state definitions
+- `../workflow/02-ip-gates.md` — all 4 gates, decision vocabulary, scope
+- `../workflow/03-scoring-architecture.md` — all 3 scoring levels
+- `../workflow/04-retry-and-halt-logic.md` — retry limits, halt behavior
+
+### Knowledge (subject matter)
+- `../knowledge/market-intelligence.md`, `competition-intelligence.md`,
+  `buyer-psychology.md`, `ip-risk-and-originality.md`,
+  `commercial-opportunity-scoring.md`, `creative-strategy.md`,
+  `concept-development.md`, `design-quality-review.md`
+
+### Prompts
+- `../prompts/prompt-engineering-framework.md`,
+  `svg-production-optimization.md`, `prompt-refinement-guide.md`
+- `../prompts/style-templates/` — universal, vintage, minimalist,
+  character, typography, bundle-creation
+
+### Playbooks (concrete, checkable — not just descriptive frameworks)
+- `../playbooks/trademark-and-ip-stoplist.md` — the actual checkable
+  list behind the IP gates
+- `../playbooks/niche-saturation-reality-check.md` — when to warn
+  honestly about a generic concept in a saturated niche
+- `../playbooks/cutting-machine-thresholds.md` — concrete production
+  thresholds, not just "keep it simple"
+- `../playbooks/honest-diagnosis-pointers.md` — what to say when
+  something keeps failing, instead of defaulting to "try again"
+
+---
+
+## 🚫 HONEST SCOPE — What this skill will NOT do
+
+- Will NOT generate the final SVG file, trace an image, or operate
+  Illustrator/Inkscape.
+- Will NOT upload anything to Etsy.
+- Will NOT promise a sales outcome, scores are decision support, not
+  guarantees.
+- Will NOT give legal advice, IP screening is analytical risk
+  assessment, not trademark clearance.
+- Will NOT let a strong score override a real IP risk. Every gate can
+  override every score, never the reverse.
+- WHEN live search is unavailable -> says so directly, labels the
+  output as a reasoning-based estimate, and proceeds anyway rather than
+  refusing to help.
+
+---
+
+## 📋 QUICK-REFERENCE NUMBERS
+
+| Field | Value |
+|---|---|
+| IP gates | 4 (Keyword, Concept, Prompt, Final Artwork) |
+| Scoring levels | 3 (Opportunity, Concept, Quality) |
+| Opportunity Score weights | Demand/Buyer Appeal/Differentiation 23.5% each, Production/Trend 11.8% each, Competition 5.9% |
+| Concept Score dimensions | 5, unweighted average |
+| Quality Score dimensions | 4, unweighted average |
+| Concept Generation retry limit | 5 attempts |
+| Market Research retry limit | 3 attempts |
+| Most other retry limits | 3 attempts |
+| Recommended concept batch size | 30-50 |

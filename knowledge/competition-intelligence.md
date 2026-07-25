@@ -57,11 +57,56 @@ Develop Original Design Direction
 
 ---
 
-## 4. Data Sources
+## 4. Live Research (Preferred) with Reasoning Fallback
 
-Etsy search results, competitor listings, screenshots, titles, tags,
-reviews, product images, bestseller examples — anything the user
-provides. Never require copying competitor content to do this analysis.
+**This is the most important addition to this file.** Competition
+analysis is only as good as the evidence behind it — don't rely on
+training-data assumptions about what's "probably" saturated when real,
+current data is available.
+
+**Live mode (preferred):** if a search/browsing tool is available,
+search Etsy directly for the keyword and its close variants. Read the
+actual current top listings — not to copy them, but to extract real
+patterns:
+
+- What subject matter, styles, and compositions actually repeat across
+  the current top results?
+- Roughly how many listings compete for this term right now?
+- What do current listing titles/descriptions emphasize?
+- What do actual customer reviews (if visible) say is missing or
+  disappointing?
+
+This is the same live-evidence principle used in
+`knowledge/market-intelligence.md` §3.2, applied here to visual/
+thematic pattern extraction rather than keyword/demand data. Never
+require copying anything found this way — analyze it, don't reproduce
+it. See §9, Avoiding Competitive Copying.
+
+**Reasoning mode (fallback):** if no search tool is available (free
+ChatGPT without browsing, this document pasted into a plain-text
+context, or a niche too obscure for search to return anything useful),
+fall back to reasoning-based pattern analysis using general knowledge
+of what tends to saturate a category like this.
+
+**Always label which mode produced the analysis.** Carry the same
+`Data Source` tag used in Market Intelligence through to the
+Competition Intelligence Report (§12):
+
+```
+Data Source: Live Etsy Search
+```
+or
+```
+Data Source: Reasoning-Based Estimate (live search unavailable —
+treat competition-level and saturation claims as directional, not
+verified)
+```
+
+If the market research pass (State 2) already ran in Live mode, prefer
+running this pass in Live mode too — a report that mixes a
+live-verified demand figure with a reasoning-only competition estimate
+should say so plainly rather than presenting both with equal apparent
+confidence.
 
 ---
 
@@ -182,6 +227,7 @@ Competition Intelligence Report
 6. Market Weaknesses
 7. Differentiation Opportunities
 8. Recommended Creative Direction
+9. Data Source: [Live Etsy Search / Reasoning-Based Estimate]
 ```
 
 ---
@@ -189,6 +235,8 @@ Competition Intelligence Report
 ## 13. Rules
 
 - Study competitors strategically, not for imitation.
+- Prefer live search over reasoning-only estimates; always label which
+  one actually produced the analysis.
 - Avoid derivative designs.
 - Prioritize originality.
 - Search for underserved audiences.
