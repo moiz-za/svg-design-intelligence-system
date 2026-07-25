@@ -1,9 +1,10 @@
 # Installation & Usage Guide
 
-For quick installation steps and the setup message, see `README.md` —
-this file doesn't repeat those. It covers two things README doesn't:
-the practical seller-facing workflow (as distinct from the internal
-state machine), and the open-source contribution philosophy.
+For installation steps and per-tool setup (free and paid), see
+`INSTALL.md` at the repository root — this file doesn't repeat those.
+It covers two things neither `README.md` nor `INSTALL.md` does: the
+practical seller-facing workflow (as distinct from the internal state
+machine), and the open-source contribution philosophy.
 
 ---
 

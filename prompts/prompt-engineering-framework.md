@@ -1,8 +1,8 @@
 # Prompt Engineering Framework
 
 Used in **State 10 — Prompt Engineering**, converting an approved
-concept into a generation prompt. For model-specific formatting, see
-`prompts/model-templates/`. For the IP check that follows this stage,
+concept into a generation prompt. For style-specific templates, see
+`prompts/style-templates/`. For the IP check that follows this stage,
 see State 10A in `workflow/02-ip-gates.md`. For SVG-specific technical
 depth beyond what's here, see `prompts/svg-production-optimization.md`.
 

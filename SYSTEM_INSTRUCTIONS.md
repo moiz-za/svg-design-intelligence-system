@@ -135,8 +135,13 @@ When generating prompts in Stage 10, remember:
   generation): ChatGPT Images, Gemini Image Generation, Midjourney,
   Flux, Ideogram, Leonardo.
 - These are different categories with different jobs. Do not generate
-  an "image prompt" for a reasoning-only tool. See
-  `prompts/model-templates/` for tool-specific templates.
+  an "image prompt" for a reasoning-only tool.
+- Prompt templates in this system are organized by **design style**
+  (vintage, minimalist, character, typography, bundle), not by AI
+  tool — the same template works across all supported image platforms
+  by design (see `prompts/style-templates/`). There are no per-tool
+  prompt variants; don't invent tool-specific syntax that isn't in
+  these files.
 
 ---
 
