@@ -68,8 +68,13 @@ def bootstrap(state_dir: Path, templates_dir: Path, verbose: bool = True) -> dic
     if verbose:
         print(f"[bootstrap] Created state dir: {state_dir}")
 
-    # Copy every entry from the template folder
+    # Copy every entry from the template folder, skipping OS/editor junk
+    # (.DS_Store, __pycache__, etc.) that shouldn't end up in the user's
+    # state directory even if it accidentally got committed upstream.
+    SKIP_NAMES = {".DS_Store", "__pycache__", "Thumbs.db", ".gitkeep"}
     for entry in templates_dir.iterdir():
+        if entry.name in SKIP_NAMES or entry.name.startswith("."):
+            continue
         target = state_dir / entry.name
         if target.exists():
             continue
