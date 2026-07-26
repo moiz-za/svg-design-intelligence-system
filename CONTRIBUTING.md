@@ -1,7 +1,7 @@
 # Contributing
 
 ESVG-DIS is meant to stay accessible, transparent, reusable, and
-community-driven — see `documentation/installation-guide.md` §Open
+community-driven — see `documentation/usage-guide.md` §Open
 Source Philosophy. Contributions are welcome.
 
 ---

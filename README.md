@@ -193,7 +193,7 @@ svg-design-intelligence-system/
 └── documentation/
     ├── glossary.md
     ├── architecture-decisions.md      why things are built the way they are
-    ├── installation-guide.md
+    ├── usage-guide.md                 seller workflow + open source philosophy
     └── roadmap.md
 ```
 

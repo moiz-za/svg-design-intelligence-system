@@ -1,4 +1,4 @@
-# Installation & Usage Guide
+# Seller Workflow & Open Source Philosophy
 
 For installation steps and per-tool setup (free and paid), see
 `INSTALL.md` at the repository root — this file doesn't repeat those.
