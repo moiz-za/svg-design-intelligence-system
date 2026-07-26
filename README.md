@@ -1,151 +1,162 @@
-# Etsy SVG Design Intelligence System (ESVG-DIS)
+# Etsy SVG Design Intelligence System (ESVG-DIS) 🎨⚡
 
-> An honest, research-first AI skill for creating original, commercially
-> viable SVG product concepts for Etsy — before any image generation
-> happens. Runs inside Claude, ChatGPT, Gemini, or Grok.
+> **An honest, research-first AI skill for creating original, high-converting, and production-ready SVG product concepts for Etsy — before any image generation happens.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](CHANGELOG.md)
 [![Workflow States](https://img.shields.io/badge/workflow_states-13-blue.svg)](workflow/01-canonical-state-machine.md)
 [![IP Gates](https://img.shields.io/badge/IP_gates-4-green.svg)](workflow/02-ip-gates.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Supported Tools](https://img.shields.io/badge/compatibility-Claude%20%7C%20ChatGPT%20%7C%20Gemini%20%7C%20Grok-orange.svg)](#using-this-for-free-no-paid-account-needed)
 
 ---
 
-## What This Is
+## 🎯 What Is ESVG-DIS?
 
-Most AI-assisted design tools go straight from keyword to image. This
-one doesn't. ESVG-DIS researches the market, screens for IP risk,
-understands buyer psychology, evaluates commercial opportunity, and
-develops genuinely differentiated concepts — all before a single
-prompt gets sent to an image generator.
+Most AI tools for Etsy sellers jump straight from **Keyword ➔ Image Prompt**. This reckless approach causes digital sellers to create generic artwork, untraceable vector shapes, or trademark-infringing designs that get shop accounts suspended or earn 1-star reviews from Cricut buyers.
 
-**This is a skill, not an app.** No account, no API key, no hosted
-service. It's markdown files you load into an AI assistant you
-already have.
+**ESVG-DIS flips the script: Strategy & IP Verification First, Image Generation Last.**
+
+It functions as an expert **commercial product strategist, IP risk reviewer, buyer psychologist, and vector production specialist** combined — providing the intelligence layer before you generate a single prompt.
+
+> **💡 This is a modular AI skill, not a paid SaaS app.** No subscription, no API keys, no hosted service. It consists of open-source knowledge frameworks and state engines you load into Claude, ChatGPT, Gemini, or Grok.
 
 ---
 
-## What It Actually Does
+## 🚀 Key System Features
 
-- ✅ Runs a full **market intelligence** pass — demand, buyer intent,
-  trend classification, market gaps — before suggesting anything.
-- ✅ Uses **live Etsy search** when available to ground research in
-  real current listings, not just training-data assumptions — and
-  falls back to a clearly labeled reasoning-based estimate when search
-  isn't available, so you always know which one you're looking at.
-- ✅ Screens for **IP/trademark risk four separate times** (keyword,
-  concept, prompt, and the finished artwork itself) — not once, and
-  never as something a strong design score can override.
-- ✅ Builds an actual **buyer persona and purchase motivation**
-  analysis, not just a subject description.
-- ✅ Scores **commercial opportunity** on six weighted dimensions
-  before any creative work starts.
-- ✅ Generates and ranks **30-50 concepts** on a five-dimension model,
-  not just one idea.
-- ✅ Produces **model-independent prompts** that work across ChatGPT
-  Images, Gemini, Midjourney, Flux, Ideogram, and Leonardo.
-- ✅ Gives explicit **SVG production guidance** — traceability,
-  cutting-machine compatibility, complexity management.
-
-## What It Explicitly Will NOT Do
-
-- ❌ Won't generate the final SVG file, trace an image, or operate
-  Illustrator/Inkscape for you.
-- ❌ Won't upload anything to Etsy.
-- ❌ Won't promise a sales outcome — commercial scoring is guidance,
-  not a guarantee.
-- ❌ Won't give legal advice — IP screening is analytical risk
-  assessment, not a trademark clearance.
-- ❌ Won't let a strong visual score excuse real IP risk. Every gate
-  in this system can override every score.
+| Feature | Description |
+| :--- | :--- |
+| 🛡️ **4-Stage IP Risk Gates** | Hard legal checkpoints (Keyword, Concept, Prompt, Final Artwork). **IP is a binary gate (PASS/MODIFY/BLOCK)** — high commercial scores can *never* override legal risk. |
+| 🌐 **Dual-Mode Research** | Uses **Live Etsy Search** when web browsing is enabled; falls back to qualitative reasoning with an explicit `Data Source` tag on free/offline models. |
+| 📊 **3-Level Scoring Architecture** | Evaluates **Opportunity Score** (State 6), **Concept Score** (State 9), and **Quality Score** (State 12) across weighted commercial dimensions. |
+| ✂️ **Cricut & Vector Ready** | Enforces vector production thresholds (min detail $\ge 1/40\text{th}$ width, no tiny floating shapes, closed outlines, controlled line weight). |
+| 🎭 **Buyer Psychology Layer** | Maps purchase motivations (Identity, Gift, Hobby, Emotion) and layers micro-niches to bypass oversaturated broad keywords. |
+| 🎨 **Model-Agnostic Prompts** | Engineered prompts optimized for **ChatGPT Images, Midjourney, Flux, Ideogram, Leonardo, and Gemini**. |
+| 🆓 **100% Free Tier Compatible** | Full single-file portable edition available for free ChatGPT, Claude, Gemini, and Grok users. |
 
 ---
 
-## Quick Start
+## 🔄 The Canonical 13-State Workflow
 
-### Option A — Claude Code / Cowork (paid, recommended for regular use)
-
-Fastest: download `esvg-dis.skill` from the repo root and unzip it
-into `~/.claude/skills/svg-design-intelligence-system/`. No git
-required. See `INSTALL.md` for the exact commands and the full-clone
-alternative.
-
-### Option B — Any tool, free or paid
-
-1. Open `portable/ESVG-DIS-Instructions.md`.
-2. Upload it as a file (or paste its contents) into a new chat with
-   ChatGPT, Claude, Gemini, or Grok.
-3. Paste the activation message at the end of that file.
-4. Describe your product idea.
-
-Full per-tool instructions: `INSTALL.md`.
-
----
-
-## Using This for Free (No Paid Account Needed)
-
-You don't need Claude Pro, ChatGPT Plus, or any subscription to use
-the complete system. The `portable/` document contains the entire
-workflow condensed into one file, designed specifically to work in a
-plain, free-tier chat.
-
-| Tool | Free tier works? | Notes |
-|---|---|---|
-| **Claude.ai (free)** | Yes | Upload or paste the portable doc in a regular chat. |
-| **ChatGPT (free)** | Yes | Same pattern. |
-| **Gemini (free)** | Yes | Same pattern. |
-| **Grok (free)** | Yes | Same pattern. |
-
-**What you keep on the free path:** the entire workflow — all four IP
-gates, full scoring architecture, all prompt engineering guidance.
-
-**What you lose on the free path:** cross-session memory (re-upload
-the portable doc each new conversation) and the deeper per-topic
-detail that lives in the full `knowledge/` files. See `INSTALL.md` for
-the complete breakdown.
-
----
-
-## How You Use It
-
-**Researching a new product idea:**
-> "I want to create Golden Retriever SVG designs for Etsy."
-
-The system researches the market, screens the keyword for IP risk,
-analyzes buyer psychology, evaluates the competition, and only then
-scores the opportunity and starts developing concepts.
-
-**Once you've picked a concept:**
-The system engineers a complete generation prompt — subject, style,
-composition, SVG requirements, negative prompt — ready to paste into
-your image generator of choice.
-
-See `examples/worked-examples.md` for a full pipeline walkthrough with
-real scores at every stage.
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           1. INTAKE (State 1)                           │
+│      Collect product idea, target customer, product type, & style       │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     2. MARKET RESEARCH (State 2)                        │
+│         Analyze demand, buyer intent, trends, & market gaps             │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│               3. KEYWORD IP SCREENING (State 3) [GATE 1]                │
+│    Check against Trademark/Copyright Stoplist ➔ PASS / MODIFY / BLOCK   │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │ (Pass)
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                   4. BUYER PSYCHOLOGY (State 4)                         │
+│           Identify buyer personas, identity layers, & micro-niches      │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    5. COMPETITION ANALYSIS (State 5)                    │
+│             Extract market weaknesses & differentiation angles          │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    6. OPPORTUNITY SCORING (State 6)                     │
+│         Calculate Level 1 Score across 6 commercial dimensions          │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │ (Score >= 7.5)
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│               7. CREATIVE STRATEGY & CONCEPT DEV (States 7-9)           │
+│     Build 30-50 concepts ➔ [GATE 2: Concept IP] ➔ Score & Rank Level 2  │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                   10. PROMPT ENGINEERING (State 10)                     │
+│   Build Vector-Optimized Prompt Package ➔ [GATE 3: Prompt IP Screening] │
+└────────────────────────────────────┬────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│               11. ARTWORK & VECTOR PRODUCTION (States 11-13)            │
+│   User Generates ➔ [GATE 4: Final IP] ➔ State 12 Review ➔ SEO Handoff   │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## What's in the Box
+## ⚡ Quick Start & Installation
+
+### Option A — Claude Code / Cowork (Paid, Recommended)
+
+Fastest setup for Claude Code or Cowork users:
+
+1. Download **`esvg-dis.skill`** from the repository root.
+2. Unzip into your skills folder:
+   ```bash
+   mkdir -p ~/.claude/skills/svg-design-intelligence-system
+   unzip esvg-dis.skill -d ~/.claude/skills/svg-design-intelligence-system
+   ```
+3. Restart Claude Code/Cowork. The skill activates automatically when you ask about Etsy SVG product research!
+
+### Option B — Any AI Model, Free or Paid (No Setup Needed)
+
+Works on **ChatGPT (Free/Plus), Claude.ai (Free/Pro), Gemini (Free/Advanced), or Grok**:
+
+1. Open [`portable/ESVG-DIS-Instructions.md`](portable/ESVG-DIS-Instructions.md).
+2. Copy the entire file content (or upload it as a document in a new chat).
+3. Paste the activation prompt found at the bottom of the file.
+4. Describe your initial product keyword!
+
+*(See [`INSTALL.md`](INSTALL.md) for detailed per-tool setup and troubleshooting.)*
+
+---
+
+## ⚖️ Why ESVG-DIS Beats Generic Prompting
+
+| Dimension | Typical AI Prompting | ESVG-DIS System |
+| :--- | :--- | :--- |
+| **Workflow Starting Point** | Keyword ➔ Instant Image Generation | Research ➔ IP Gate ➔ Strategy ➔ Concept ➔ Prompt |
+| **IP Protection** | Ignored or checked post-generation | **4 Mandatory Binary Gates** (Never averaged into a score) |
+| **Commercial Intent** | Optimizes for visual aesthetics only | Evaluates Demand, Buyer Persona, Giftability, & Saturation |
+| **Concept Variety** | Single prompt generation | Generates **30-50 concepts** scored across 5 dimensions |
+| **Vector Production** | Complex gradients & untraceable textures | Enforces closed paths, flat fills, & cutting machine thresholds |
+| **Cost / Platform** | Often tied to specific paid SaaS tools | **100% Free Tier Compatible** (Claude, ChatGPT, Gemini, Grok) |
+
+---
+
+## 📦 Repository Structure
 
 ```
 svg-design-intelligence-system/
 ├── README.md                          you're here
-├── SYSTEM_INSTRUCTIONS.md             entry point for the full multi-file version
-├── INSTALL.md                         setup steps, free and paid
+├── SYSTEM_INSTRUCTIONS.md             entry point for full multi-file version
+├── INSTALL.md                         setup instructions (free and paid)
 ├── CHANGELOG.md                       version history
-├── LICENSE                            MIT
-├── CONTRIBUTING.md                    how to contribute
-├── esvg-dis.skill                     packaged Claude Skill, download and unzip
+├── LICENSE                            MIT License
+├── CONTRIBUTING.md                    contribution guidelines
+├── esvg-dis.skill                     packaged Claude Skill distribution archive
 │
 ├── skill/
-│   ├── SKILL.md                       Claude Skill entry point (full execution engine)
+│   ├── SKILL.md                       Claude Skill execution engine (17 phases)
 │   └── scripts/
-│       └── bootstrap.py               idempotent state initializer
+│       └── bootstrap.py               state initializer (~/esvg-research/)
 │
 ├── portable/
-│   └── ESVG-DIS-Instructions.md       single-file condensed version, any tool
+│   └── ESVG-DIS-Instructions.md       single-file edition for free-tier users
 │
-├── workflow/                          process logic: states, IP gates, scoring, retries
+├── workflow/                          process logic, IP gates, & scoring
 │   ├── 00-intake-and-interview.md
 │   ├── 01-canonical-state-machine.md
 │   ├── 02-ip-gates.md
@@ -153,8 +164,8 @@ svg-design-intelligence-system/
 │   └── 04-retry-and-halt-logic.md
 │
 ├── knowledge/                         subject-matter frameworks
-│   ├── market-intelligence.md         includes live Etsy search + reasoning fallback
-│   ├── competition-intelligence.md    includes live Etsy search + reasoning fallback
+│   ├── market-intelligence.md         live search + reasoning fallback
+│   ├── competition-intelligence.md    live search + reasoning fallback
 │   ├── buyer-psychology.md
 │   ├── ip-risk-and-originality.md
 │   ├── commercial-opportunity-scoring.md
@@ -163,100 +174,43 @@ svg-design-intelligence-system/
 │   └── design-quality-review.md
 │
 ├── playbooks/                         concrete, checkable tactical rules
-│   ├── trademark-and-ip-stoplist.md
-│   ├── niche-saturation-reality-check.md
-│   ├── cutting-machine-thresholds.md
-│   └── honest-diagnosis-pointers.md
+│   ├── trademark-and-ip-stoplist.md   checkable wordlist & visual IP rules
+│   ├── niche-saturation-reality-check.md 4-criteria saturation warning
+│   ├── cutting-machine-thresholds.md   physical feature size limits (1/40th rule)
+│   └── honest-diagnosis-pointers.md   diagnostic table for repeated failures
 │
-├── prompts/                           prompt engineering + style templates
+├── prompts/                           prompt engineering & style templates
 │   ├── prompt-engineering-framework.md
 │   ├── svg-production-optimization.md
 │   ├── prompt-refinement-guide.md
-│   └── style-templates/
-│       ├── universal.md
-│       ├── vintage.md
-│       ├── minimalist.md
-│       ├── character.md
-│       ├── typography.md
-│       └── bundle-creation.md
+│   └── style-templates/               universal, vintage, minimalist, etc.
 │
 ├── integration/
-│   └── etsy-seo-handoff.md            handoff to Etsy SEO/listing systems
-│
-├── state-templates/
-│   └── esvg-research/
-│       └── research-log.md            cross-session memory template
+│   └── etsy-seo-handoff.md            handoff to etsy-seller-seo-system
 │
 ├── examples/
-│   └── worked-examples.md             complete pipeline walkthrough
+│   └── worked-examples.md             full pipeline walkthrough with real scores
 │
 └── documentation/
     ├── glossary.md
-    ├── architecture-decisions.md      why things are built the way they are
-    ├── usage-guide.md                 seller workflow + open source philosophy
+    ├── architecture-decisions.md      ADR records & design choices
+    ├── usage-guide.md                 practical seller workflow
     └── roadmap.md
 ```
 
 ---
 
-## Who This Is For
+## 🤝 Companion Repository
 
-- **Etsy digital product sellers** — SVG, PNG, DXF, EPS, Cricut,
-  Silhouette, printable products.
-- **AI-assisted designers** using any of the reasoning or image
-  generation tools listed above.
-- **New sellers** who need help finding a viable niche and avoiding
-  common early mistakes (generic designs, IP risk, oversaturated
-  markets).
-- **Experienced sellers** who want faster, more structured research
-  and stronger differentiation.
+ESVG-DIS is designed to pair seamlessly with [`etsy-seller-seo-system`](https://github.com/moiz-za/etsy-seller-seo-system).
+* **ESVG-DIS** creates the right *product*.
+* **Etsy SEO System** creates the right *listing* (tags, title, description, ranking).
+
+Neither depends on the other; use either independently or together (see [`integration/etsy-seo-handoff.md`](integration/etsy-seo-handoff.md)).
 
 ---
 
-## What Makes It Different
+## 📜 License & Disclaimer
 
-| | Typical AI design prompting | This system |
-|---|---|---|
-| Starting point | Keyword to image | Keyword, research, strategy, concept, prompt |
-| IP risk | Checked once, if at all | Checked 4 times, always as a hard gate, never averaged into a score |
-| Concept generation | One idea | 30-50 concepts, ranked on 5 dimensions |
-| Originality | Assumed | Actively engineered via a 4-layer differentiation model |
-| Tool dependency | Often tool-specific prompts | Model-independent, same template across 6 image tools |
-| Cost | Often requires a paid account | Full system works on free tiers |
-| Scope honesty | Often implies it does everything | Explicit about what it won't do, no fake SVG automation |
-
----
-
-## Realistic Expectations
-
-This system makes research and creative strategy dramatically more
-rigorous. It does not guarantee a design will sell, and it does not
-replace your own judgment about your brand, your audience, or your
-production capabilities. Scores throughout this system are decision
-support, not verdicts — see `knowledge/commercial-opportunity-scoring.md`
-§6.
-
----
-
-## Companion Repository
-
-Designed to work alongside
-[`etsy-seller-seo-system`](https://github.com/moiz-za/etsy-seller-seo-system)
-— that repo handles listing/SEO optimization once you have a finished
-product. Neither depends on the other; use either independently or
-together. See `integration/etsy-seo-handoff.md`.
-
----
-
-## Contributing
-
-See `CONTRIBUTING.md`. Before changing anything in `workflow/`, read
-`documentation/architecture-decisions.md` — several design choices
-that look simplifiable were already tried that way and reverted for a
-specific, documented reason.
-
----
-
-## License
-
-MIT — see `LICENSE`. Not affiliated with Etsy.
+* **License:** Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+* **Disclaimer:** ESVG-DIS provides commercial analysis and trademark awareness risk screening, not legal advice. The seller remains responsible for final trademark verification and marketplace compliance. Not affiliated with Etsy, Inc.
