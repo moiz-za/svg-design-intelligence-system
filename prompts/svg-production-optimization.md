@@ -103,6 +103,10 @@ exact format depends on customer requirements. ESVG-DIS's job ends at
 guiding toward a design that *can* become these formats cleanly, not
 producing the files itself.
 
+**Etsy Digital Delivery Policy Note:**
+- Etsy instant download allows up to 5 digital files per listing, max 20MB per file.
+- If producing multi-format bundles exceeding 20MB, deliver via a PDF download page containing secure cloud storage links (Google Drive / Dropbox).
+
 ---
 
 ## 8. Production Notes Output

@@ -80,6 +80,7 @@ Package**:
 - Design Description
 - Keyword Context
 - Differentiation Points
+- AI Creation Disclosure Note (Etsy Creativity Standards: disclose AI assistance in listing description)
 ```
 
 This is what gets passed into the Etsy SEO System — it's the
