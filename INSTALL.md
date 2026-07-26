@@ -27,11 +27,11 @@ cp -r svg-design-intelligence-system ~/.claude/skills/svg-design-intelligence-sy
 ```
 
 Use this instead of the `.skill` download if you also want the
-documentation, examples, and portable doc available locally alongside
+documentation, and portable doc available locally alongside
 the skill — the `.skill` package only contains the operational files
 `SKILL.md` actually references (`workflow/`, `knowledge/`, `prompts/`,
-`integration/`, `playbooks/`, `state-templates/`), not the README,
-examples, or documentation folders.
+`integration/`, `playbooks/`, `state-templates/`, `examples/`), not the
+README or documentation folders.
 
 Either way, restart Claude Code or Cowork afterward.
 
