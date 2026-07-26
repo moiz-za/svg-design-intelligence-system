@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.1.0 — Skill Depth & Live Research
+## v1.1.0 — Skill Depth, Live Research & Policy Alignment
 
 Built in direct response to a gap analysis against the companion
 `etsy-seller-seo-system` repo — see
@@ -15,6 +15,39 @@ each addition below.
   chat, or an obscure niche search returns nothing). Every research
   output now carries a `Data Source` tag so estimates are never
   presented with false confidence.
+
+**Policy & Etsy 2026 Compliance:**
+- Integrated August 11, 2026 Etsy Creativity Standards enforcement rules (mandatory original design requirement for Cricut, CNC, laser, and sublimation digital products) into `knowledge/ip-risk-and-originality.md`.
+- Added AI Creation Disclosure guidance to the Product Intelligence Handoff Package (`integration/etsy-seo-handoff.md`) per Etsy's listing description requirements.
+- Updated digital file delivery guidance in `prompts/svg-production-optimization.md` to specify Etsy's 5-file / 20MB instant download limit (and PDF cloud-link fallback for large bundles).
+
+**Cross-session memory (deliberately lightweight):**
+- New `state-templates/esvg-research/research-log.md` — a single-file
+  research log, not a multi-file database (this system does research
+  and concept development, not published-listing tracking, so it
+  doesn't need SEO's heavier structure).
+- New `skill/scripts/bootstrap.py` — idempotent state initializer for
+  Claude Code/Cowork, with dual-layout path resolution supporting both
+  `.skill` zip archives and full git clone installs.
+
+**`skill/SKILL.md` — full rewrite:**
+- From a 338-word pointer file to a ~1,800-word real execution engine:
+  input auto-detection table, 17 numbered phases mapped to the
+  canonical workflow, concrete output format templates, standalone
+  capabilities (IP screening alone, concept comparison alone, resume
+  from log), honest scope section, quick-reference numbers table.
+
+**New `playbooks/` — concrete, checkable tactical rules:**
+- `trademark-and-ip-stoplist.md` — checkable franchise/brand/style-imitation word list plus scan algorithm.
+- `niche-saturation-reality-check.md` — precise 4-criteria trigger for when to honestly warn that a generic concept won't differentiate in an oversaturated niche.
+- `cutting-machine-thresholds.md` — concrete, checkable production limits (1/40th width feature limit, isolated element checks).
+- `honest-diagnosis-pointers.md` — diagnostic table for repeated failures, naming the likely real cause instead of defaulting to "try again."
+
+**Distribution & Tool Polish:**
+- Repackaged `esvg-dis.skill` distribution archive containing all operational dependencies (`SKILL.md`, `scripts/`, `workflow/`, `knowledge/`, `prompts/`, `integration/`, `playbooks/`, `state-templates/`, `examples/`).
+- Added `package.sh` — reproducible packaging script for future updates.
+- Overhauled `README.md` for GitHub SEO, visual badges, and high conversion.
+- Untracked `.DS_Store` artifacts from the git index and added `.gitignore` coverage.
 
 **Cross-session memory (deliberately lightweight):**
 - New `state-templates/esvg-research/research-log.md` — a single-file
