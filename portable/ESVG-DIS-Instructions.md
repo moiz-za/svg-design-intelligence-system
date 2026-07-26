@@ -13,6 +13,10 @@ that same content into one document — if anything here ever
 contradicts the main repo, the main repo is correct and this file
 should be updated to match.
 
+> **Sync marker:** last updated to match main repo **v1.1.0**.
+> If you're reading this on a newer version, check whether this file
+> has been updated — open an issue or PR if it's out of date.
+
 ---
 
 # PART 1 — WHAT YOU ARE

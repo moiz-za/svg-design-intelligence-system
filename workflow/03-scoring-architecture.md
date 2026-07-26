@@ -42,7 +42,7 @@ Opportunity Score = (
 + (Differentiation Potential × 23.5)
 + (Production Suitability × 11.8)
 + (Trend Strength × 11.8)
-+ (Competition Difficulty × 5.9)
++ (Competition Difficulty × 5.9)   ← INVERTED: 10=easy market, 1=hard market
 ) ÷ 100
 ```
 
@@ -53,9 +53,15 @@ less. Competition Difficulty carries the least weight — high
 competition doesn't automatically eliminate an opportunity, it just
 raises the bar for differentiation.
 
-**Competition Difficulty** is scored inversely: higher difficulty score
-= lower opportunity. Don't confuse this with "Competition Opportunity"
-— that name doesn't exist; use "Competition Difficulty" everywhere.
+**Competition Difficulty** is scored on an **inverted scale**: a
+*harder* market gets a *lower* number. Plug the inverted number
+directly into the formula above — do not invert it again.
+- 10 = virtually no competition, easy entry
+- 5 = moderate competition, room to differentiate
+- 1 = extremely saturated, dominant sellers, very hard to break in
+
+Don't confuse this with "Competition Opportunity" — that name doesn't
+exist; use "Competition Difficulty" everywhere.
 
 **Output:** Proceed, or Reject Opportunity.
 
