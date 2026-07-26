@@ -16,7 +16,7 @@ description: >
 
 # ESVG-DIS — SVG Design Intelligence System
 
-**Schema version:** 1.0
+**Schema version:** 1.1
 
 ---
 
@@ -327,6 +327,11 @@ on the prior pass.
   thresholds, not just "keep it simple"
 - `../playbooks/honest-diagnosis-pointers.md` — what to say when
   something keeps failing, instead of defaulting to "try again"
+
+### Examples
+- `../examples/worked-examples.md` — complete pipeline walkthrough with
+  real scores, plus two shorter illustrative sketches. Useful for
+  calibrating expected output format and seeing real decisions in context.
 
 ---
 

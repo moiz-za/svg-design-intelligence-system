@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 bootstrap.py — One-time state initialization for the
-svg-design-intelligence-system skill (v1.0).
+svg-design-intelligence-system skill (v1.1).
 
 Detects whether the user's research log exists at ~/esvg-research/.
 If not, creates it from the bundled template in state-templates/.
@@ -14,7 +14,7 @@ Usage:
 
 Default paths:
     state-dir:     ~/esvg-research
-    templates-dir: <skill-dir>/../../state-templates/esvg-research (auto-detected)
+    templates-dir: auto-detected (supports both git-clone and .skill zip layouts)
 
 Deliberately minimal compared to a full listing-tracking system — this
 skill does design research and concept development, not published-
@@ -29,9 +29,19 @@ from pathlib import Path
 
 
 def find_default_templates_dir(script_dir: Path) -> Path:
-    """The state-templates folder is at the package root, two levels above this script."""
-    # script_dir = .../skill/scripts/
-    # templates  = .../state-templates/esvg-research/
+    """Locate state-templates, handling two different install layouts.
+
+    Git-clone layout:  repo/skill/scripts/bootstrap.py
+                       repo/state-templates/esvg-research/   ← two levels up
+
+    .skill zip layout: ~/.claude/skills/<name>/scripts/bootstrap.py
+                       ~/.claude/skills/<name>/state-templates/esvg-research/ ← one level up
+
+    Try one level up first (zip layout); fall back to two levels up (repo layout).
+    """
+    one_up = script_dir.parent / "state-templates" / "esvg-research"
+    if one_up.exists():
+        return one_up
     return script_dir.parent.parent / "state-templates" / "esvg-research"
 
 
@@ -94,7 +104,7 @@ def bootstrap(state_dir: Path, templates_dir: Path, verbose: bool = True) -> dic
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Bootstrap svg-design-intelligence-system skill state (v1.0).")
+    parser = argparse.ArgumentParser(description="Bootstrap svg-design-intelligence-system skill state (v1.1).")
     parser.add_argument("--state-dir", type=Path, default=None,
                         help="Where to create state (default: ~/esvg-research)")
     parser.add_argument("--templates-dir", type=Path, default=None,

@@ -5,7 +5,7 @@
 > happens. Runs inside Claude, ChatGPT, Gemini, or Grok.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](CHANGELOG.md)
 [![Workflow States](https://img.shields.io/badge/workflow_states-13-blue.svg)](workflow/01-canonical-state-machine.md)
 [![IP Gates](https://img.shields.io/badge/IP_gates-4-green.svg)](workflow/02-ip-gates.md)
 

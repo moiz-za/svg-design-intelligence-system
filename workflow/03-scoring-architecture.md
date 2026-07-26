@@ -36,14 +36,14 @@ Competition Difficulty      5.9%
 **Formula:**
 
 ```
-Opportunity Score =
+Opportunity Score = (
   (Market Demand × 23.5)
 + (Buyer Appeal × 23.5)
 + (Differentiation Potential × 23.5)
 + (Production Suitability × 11.8)
 + (Trend Strength × 11.8)
 + (Competition Difficulty × 5.9)
-÷ 100
+) ÷ 100
 ```
 
 **Why these weights:** Demand, Buyer Appeal, and Differentiation carry
