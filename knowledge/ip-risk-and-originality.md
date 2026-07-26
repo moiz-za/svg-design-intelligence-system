@@ -22,6 +22,14 @@ Avoiding risk alone is not enough — a design can be perfectly safe and
 still be commercially worthless because it's generic. The system must
 actively *increase* uniqueness, not just screen out infringement.
 
+> **Etsy Creativity Standards Policy Note (August 11, 2026 Enforcement):**
+> Etsy strictly enforces that digital products and items made with
+> computerized tools (Cricut, CNC, laser cutters, sublimation) must be
+> based on the seller's **own original design**. Listing un-modified
+> third-party clipart or pre-made cut files bought elsewhere is no
+> longer compliant under "Designed by a seller". Originality
+> engineering is mandatory for platform longevity.
+
 ---
 
 ## 2. Risk Categories (Summary)
