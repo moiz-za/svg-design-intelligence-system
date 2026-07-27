@@ -28,14 +28,11 @@ Competition Difficulty score ≤ 2/10 (per
 `../knowledge/competition-intelligence.md` §10 — remember this scale
 is inverted, low score = hard market).
 
-**Criterion 2 — Generic concept, no differentiation angle:**
-The user's original input describes the product without a
-distinguishing modifier.
-- Generic (triggers): "Dog SVG," "Coffee mug SVG," "Halloween
-  stickers."
-- Not generic (skip this check): "Golden Retriever memorial SVG for
-  senior dog owners," "vintage botanical coffee house emblem," "kawaii
-  Halloween stickers with chibi black cats."
+**Criterion 2 — Generic concept OR trend-cliché modifier:**
+The user's original input lacks a genuine differentiation angle because it meets either (a) or (b):
+- **(a) Bare generic input (triggers):** "Dog SVG," "Coffee mug SVG," "Halloween stickers."
+- **(b) Trend-cliché modifier (triggers):** The input contains a modifier (e.g. "Cottagecore," "Boho," "Groovy 70s," "Y2K"), BUT current market listings show that this modifier itself has become an oversaturated, cliché default formula (e.g. "Cottagecore Frog SVG" where 30+ top sellers already execute the exact same mushroom/frog formula).
+- **Not generic / genuine angle (skip this check):** "Golden Retriever memorial SVG for senior dog owners," "vintage botanical coffee house emblem," "goblincore apothecary label SVG bundle for potion bottles."
 
 **Criterion 3 — Mature, homogeneous competition (if live search ran):**
 If Phase 6 (Competition Analysis) ran in Live mode, this criterion

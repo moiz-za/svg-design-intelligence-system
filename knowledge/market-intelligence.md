@@ -85,30 +85,26 @@ log (stateless free-tier use), proceed directly to Keyword Analysis.
 framework calls for demand, trend, or gap analysis, attempt it in this
 order:
 
-**Live mode (preferred):** if a search/browsing tool is available,
-search Etsy directly for the keyword and closely related terms. Read
-actual current listings — what exists, how many, what themes repeat,
-what's actually being sold right now. Ground demand and trend
-assessments in what's really there, not in training-data assumptions
-about what's probably popular.
+### 3.2 Three-Tier Data Source Model: Live (Full) vs. Live (Partial) vs. Reasoning
 
-**Reasoning mode (fallback):** if no search tool is available (e.g.
-free ChatGPT without browsing enabled, or this document pasted into a
-plain-text context with no tools), or live search returns nothing
-useful for an obscure niche, fall back to reasoning-based analysis —
-the same qualitative judgment this framework has always used.
+Wherever this framework calls for demand, trend, or gap analysis, evaluate in this order and explicitly label the output confidence:
 
-**Always label which mode produced the output.** Every Market
-Intelligence Report (§8) and every scoring example (§9) must carry a
-`Data Source` tag:
+1. **Live Etsy Search (Full):** if a search/browsing tool is available and returns rich, structured current listings (multiple top sellers, active sales signals, clear visual patterns).
+2. **Live Etsy Search (Partial / Thin Data):** if live search runs, but returns sparse, thin, or unstructured listings (common in niche long-tail queries). Signals must be treated as directional/qualitative rather than fully verified — avoid presenting thin search data as full-confidence market proof.
+3. **Reasoning-Based Estimate (Fallback):** if no search tool is available (e.g. free ChatGPT without browsing enabled, or plain-text context), or live search fails completely. Ground analysis in qualitative reasoning using general marketplace knowledge.
+
+**Always label which tier produced the output.** Every Market Intelligence Report (§8) and scoring output must carry one of these tags:
 
 ```
-Data Source: Live Etsy Search
+Data Source: Live Etsy Search (Full)
 ```
 or
 ```
-Data Source: Reasoning-Based Estimate (live search unavailable —
-treat demand/trend figures as directional, not verified)
+Data Source: Live Etsy Search (Partial / Thin Data — treat signals as directional)
+```
+or
+```
+Data Source: Reasoning-Based Estimate (live search unavailable — directional estimate)
 ```
 
 Never present a reasoning-based estimate with the same apparent

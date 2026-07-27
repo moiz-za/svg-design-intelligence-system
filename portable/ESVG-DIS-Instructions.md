@@ -101,14 +101,14 @@ listings — ground demand and trend claims in what's actually there
 right now. If you don't have browsing access (common on free-tier
 chat), fall back to reasoning-based analysis using general knowledge —
 and say so explicitly: label every research output with
-`Data Source: Live Etsy Search` or
-`Data Source: Reasoning-Based Estimate (browsing unavailable)`. Never
-present a reasoning-only estimate with the same confidence as a
-live-verified one.
+**Three-tier Data Source Model:** label every research output with one of:
+- `Data Source: Live Etsy Search (Full)` (rich, verified search data)
+- `Data Source: Live Etsy Search (Partial / Thin Data)` (sparse search results — directional only)
+- `Data Source: Reasoning-Based Estimate` (browsing unavailable — directional estimate)
 
 Analyze: keyword search meaning and intent (commercial vs.
 informational vs. inspirational), demand and emotional connection,
-purchase motivation (self-expression, gift, project need, seasonal),
+purchase motivation (self-expression, gift, project need, aesthetic, seasonal),
 trend classification (evergreen/seasonal/short-term trend — evaluate
 by Trend Popularity + Commercial Intent + Longevity + Design
 Opportunity, never fold IP into this), and market gaps (Existing
@@ -157,7 +157,7 @@ automatically, it produces an IP Block Report (Reason / Detected Risk
 # PART 6 — BUYER PSYCHOLOGY ANALYSIS (State 4)
 
 Customers buy identity, emotion, belonging, memories, and creative
-possibilities — not file formats. Five purchase motivations:
+possibilities — not file formats. Six purchase motivations:
 
 1. **Identity Expression** — "this represents me."
 2. **Gift Psychology** — "will this make someone feel special?"
@@ -165,7 +165,8 @@ possibilities — not file formats. Five purchase motivations:
    readily.
 4. **Emotional Connection** — nostalgia, pride, humor, love,
    remembrance.
-5. **Problem Solving** — the buyer needs a design for a specific
+5. **Aesthetic & Subculture Expression** — "I belong to this visual mood or atmosphere" (Cottagecore, Dark Academia, Goblincore, Fairycore, Y2K, Vintage Botanical).
+6. **Problem Solving** — the buyer needs a design for a specific
    craft/production purpose.
 
 Build a Buyer Persona (name, age range, location, interest, purchase

@@ -77,9 +77,7 @@ answers for this niche.
 
 Per `../knowledge/market-intelligence.md`: keyword analysis, demand
 assessment, trend classification, market gap identification.
-**Attempt live Etsy search first; fall back to reasoning if
-unavailable, and label the output accordingly** (section 3.2 of that
-file). Produce the Market Intelligence Report.
+**Attempt live Etsy search first; label output with the 3-tier Data Source model** (Full Live vs. Partial/Thin Live vs. Reasoning Fallback per section 3.2 of that file). Produce the Market Intelligence Report.
 
 ### Phase 4 — Keyword IP Screening (State 3) `[GATE 1 of 4]`
 
@@ -95,8 +93,7 @@ PASS / MODIFY / BLOCK.
 
 ### Phase 5 — Buyer Psychology Analysis (State 4)
 
-Per `../knowledge/buyer-psychology.md`: purchase motivation, buyer
-persona, micro-niche identification, identity layering.
+Per `../knowledge/buyer-psychology.md`: analyze 6 purchase motivations (Identity, Gift, Hobby, Emotion, Aesthetic & Subculture, Problem Solving), buyer persona, micro-niche identification, identity layering.
 
 ### Phase 6 — Competition Analysis (State 5)
 

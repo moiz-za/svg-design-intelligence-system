@@ -19,7 +19,7 @@ this design *mean* to the buyer?"
 
 ---
 
-## 2. Five Purchase Motivations
+## 2. Six Purchase Motivations
 
 Analyze every product idea through one or more of these:
 
@@ -44,7 +44,11 @@ Analyze every product idea through one or more of these:
    "Forever My Adventure Buddy" — the second connects to a personal
    story, not just a subject.
 
-5. **Problem Solving** — some buyers are creators who need a design for
+5. **Aesthetic & Subculture Expression** — "I belong to this visual mood or atmosphere."
+   (Cottagecore, Dark Academia, Goblincore, Fairycore, Vintage Botanical, Y2K,
+   Coquette, Minimalist Boho.) Buyers are drawn to an aesthetic subculture or interior decor mood — neither tied strictly to a profession ("Teacher") nor an active physical hobby ("Camping"). Design implication: emphasize signature subculture iconography, atmospheric storytelling, specialized palettes, and decorative harmony.
+
+6. **Problem Solving** — some buyers are creators who need a design for
    a shirt, mug, sticker, sign, craft, or gift. The design solves a
    production need, not an identity need.
 
