@@ -30,7 +30,7 @@ It functions as an expert **commercial product strategist, IP risk reviewer, buy
 | 🛡️ **4-Stage IP Risk Gates** | Hard legal checkpoints (Keyword, Concept, Prompt, Final Artwork). **IP is a binary gate (PASS/MODIFY/BLOCK)** — high commercial scores can *never* override legal risk. |
 | 🌐 **Dual-Mode Research** | Uses **Live Etsy Search** when web browsing is enabled; falls back to qualitative reasoning with an explicit `Data Source` tag on free/offline models. |
 | 📊 **3-Level Scoring Architecture** | Evaluates **Opportunity Score** (State 6), **Concept Score** (State 9), and **Quality Score** (State 12) across weighted commercial dimensions. |
-| ✂️ **Cricut & Vector Ready** | Enforces vector production thresholds (min detail $\ge 1/40\text{th}$ width, no tiny floating shapes, closed outlines, controlled line weight). |
+| ✂️ **Cricut & Vector Ready** | Enforces vector production thresholds (min detail ≥ 1/40th width, no tiny floating shapes, closed outlines, controlled line weight). |
 | 🎭 **Buyer Psychology Layer** | Maps purchase motivations (Identity, Gift, Hobby, Emotion) and layers micro-niches to bypass oversaturated broad keywords. |
 | 🎨 **Model-Agnostic Prompts** | Engineered prompts optimized for **ChatGPT Images, Midjourney, Flux, Ideogram, Leonardo, and Gemini**. |
 | 🆓 **100% Free Tier Compatible** | Full single-file portable edition available for free ChatGPT, Claude, Gemini, and Grok users. |

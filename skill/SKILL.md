@@ -83,8 +83,7 @@ assessment, trend classification, market gap identification.
 
 Per `../workflow/02-ip-gates.md`. Run the keyword against
 `../playbooks/trademark-and-ip-stoplist.md` first — it's the concrete,
-checkable version of the risk categories in that gate. Decision:
-PASS / MODIFY / BLOCK.
+checkable version of the risk categories in that gate. **Mandatory Fallback:** Do not treat a stoplist miss as automatic PASS — evaluate general trademark/franchise knowledge for un-listed brands (e.g. Dungeons & Dragons, Warhammer, Pokémon). Decision: PASS / MODIFY / BLOCK.
 
 - **BLOCK** -> stop here. Produce an IP Block Report (reason, detected
   risk, safer alternatives). Do not proceed to Phase 5. Do not

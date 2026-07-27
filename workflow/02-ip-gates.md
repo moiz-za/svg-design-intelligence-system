@@ -80,6 +80,9 @@ upstream of it already passed review.
 Runs after Market Research, before Buyer Psychology. Catches unsafe
 inputs at the source.
 
+> **Mandatory General IP Fallback Rule (Do Not Rely Solely on Stoplist Matches):**
+> The `playbooks/trademark-and-ip-stoplist.md` is a quick-scan reference, NOT an exhaustive registry. An agent MUST NOT treat a stoplist miss as an automatic PASS. In addition to scanning the stoplist, the agent MUST explicitly evaluate general trademark, franchise, and brand knowledge against the 5 Risk Categories. If a keyword or concept references a known trademarked brand, tabletop/video game franchise, movie/TV property, corporate mark, or character (e.g., "Dungeons & Dragons", "Warhammer", "Pokémon", "Squishmallows") — regardless of whether it appears on the stoplist — it MUST trigger **BLOCK** (or **MODIFY**).
+
 ```
 Input: "Disney Halloween SVG"
 

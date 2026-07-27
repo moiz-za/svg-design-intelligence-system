@@ -82,31 +82,27 @@ thematic pattern extraction rather than keyword/demand data. Never
 require copying anything found this way — analyze it, don't reproduce
 it. See §9, Avoiding Competitive Copying.
 
-**Reasoning mode (fallback):** if no search tool is available (free
-ChatGPT without browsing, this document pasted into a plain-text
-context, or a niche too obscure for search to return anything useful),
-fall back to reasoning-based pattern analysis using general knowledge
-of what tends to saturate a category like this.
+### 4. Three-Tier Data Source Model: Live (Full) vs. Live (Partial) vs. Reasoning
 
-**Always label which mode produced the analysis.** Carry the same
-`Data Source` tag used in Market Intelligence through to the
-Competition Intelligence Report (§12):
+Carry the exact same 3-tier Data Source model used in Market Intelligence through to the Competition Intelligence Report (§12) and scoring:
+
+1. **Live Etsy Search (Full):** search tool returned rich, structured competitor listings and active sales signals.
+2. **Live Etsy Search (Partial / Thin Data):** live search ran, but returned sparse or thin competitor results (common in obscure long-tail queries). Treat competition and saturation signals as directional/qualitative rather than fully verified proof.
+3. **Reasoning-Based Estimate (Fallback):** no search tool available or live search failed. Fall back to qualitative reasoning using general knowledge.
+
+Every Competition Intelligence Report (§12) must carry one of these tags:
 
 ```
-Data Source: Live Etsy Search
+Data Source: Live Etsy Search (Full)
 ```
 or
 ```
-Data Source: Reasoning-Based Estimate (live search unavailable —
-treat competition-level and saturation claims as directional, not
-verified)
+Data Source: Live Etsy Search (Partial / Thin Data — treat signals as directional)
 ```
-
-If the market research pass (State 2) already ran in Live mode, prefer
-running this pass in Live mode too — a report that mixes a
-live-verified demand figure with a reasoning-only competition estimate
-should say so plainly rather than presenting both with equal apparent
-confidence.
+or
+```
+Data Source: Reasoning-Based Estimate (live search unavailable — directional estimate)
+```
 
 ---
 
@@ -190,9 +186,12 @@ Extreme: Dominated by a small number of major established sellers,
 
 **Converting to the Level 1 formula:** Opportunity Score
 (`workflow/03-scoring-architecture.md`) needs a numeric **Competition
-Difficulty** score, 0-10, where higher = *easier* (this is inverted —
-see that file's note on why). Rough mapping: Low ≈ 8-10, Medium ≈ 5-7,
-High ≈ 2-4, Extreme ≈ 0-1.
+Difficulty** score, 1-10, where higher = *easier* (this is inverted —
+see that file's note on why). Unified scale mapping across the system:
+- **Low Competition (Easy Entry):** 8 – 10
+- **Moderate Competition (Balanced):** 5 – 7
+- **High Competition (Saturated):** 3 – 4
+- **Extreme Saturation (Hard Entry):** 1 – 2 (triggers Saturation Reality Check per `playbooks/niche-saturation-reality-check.md`)
 
 ---
 

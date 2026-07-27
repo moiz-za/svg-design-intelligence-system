@@ -138,6 +138,7 @@ Check the keyword itself against five risk categories:
    gate.)
 
 **Decision: PASS / MODIFY / BLOCK.**
+- **Mandatory General IP Fallback Rule:** Do NOT treat a stoplist miss as an automatic PASS. Evaluate general trademark and franchise knowledge for un-listed brands (e.g. Dungeons & Dragons, Warhammer, Pokémon).
 - PASS: original/generic/independently created → continue.
 - MODIFY: influenced by common themes, unclear similarity → revise.
 - BLOCK: direct trademark, famous characters, franchise references,
@@ -205,12 +206,12 @@ Develop Original Design Direction
 Analyze: what designs exist, why customers buy them, what makes them
 successful, where competitors are weak, how to differentiate.
 
-Competition Level (qualitative): Low / Medium / High / Extreme
-(dominated by a small number of major established sellers, leaving
-little room for a new independent listing). Convert to the numeric
-Competition Difficulty score (0-10, inverted: higher = easier) needed
-for Opportunity Scoring: Low ≈ 8-10, Medium ≈ 5-7, High ≈ 2-4,
-Extreme ≈ 0-1.
+Competition Level (qualitative): Low / Medium / High / Extreme.
+Convert to the numeric Competition Difficulty score (1-10, inverted: higher = easier) needed for Opportunity Scoring using the unified scale:
+- Low Competition (Easy Entry): 8–10
+- Moderate Competition (Balanced): 5–7
+- High Competition (Saturated): 3–4
+- Extreme Saturation (Hard Entry): 1–2 (triggers Saturation Reality Check if concept is generic/cliché)
 
 **Never copy layouts, recreate artwork, copy phrases, or imitate
 unique styles.**

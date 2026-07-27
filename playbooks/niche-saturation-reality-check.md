@@ -30,7 +30,9 @@ Competition Difficulty score ≤ 2/10 (per
 **Criterion 2 — Generic concept OR trend-cliché modifier:**
 The user's original input lacks a genuine differentiation angle because it meets either (a) or (b):
 - **(a) Bare generic input (triggers):** "Dog SVG," "Coffee mug SVG," "Halloween stickers."
-- **(b) Trend-cliché modifier (triggers):** The input contains a modifier (e.g. "Cottagecore," "Boho," "Groovy 70s," "Y2K"), BUT current market listings show that this modifier itself has become an oversaturated, cliché default formula (e.g. "Cottagecore Frog SVG" where 30+ top sellers already execute the exact same mushroom/frog formula).
+- **(b) Trend-cliché modifier (triggers):** The input contains a modifier (e.g. "Cottagecore," "Boho," "Groovy 70s," "Y2K"), BUT this modifier itself has become an oversaturated default formula:
+  * *In Live Mode:* verified if live search shows 20+ top listings executing the exact same visual formula (e.g., "Cottagecore Frog & Mushroom").
+  * *In Reasoning Mode:* evaluate whether the modifier is a recognized marketplace trend cliché where the default visual formula is known to be saturated across Etsy/Pinterest. Do not skip Criterion 2(b) in Reasoning Mode simply because live search was unavailable.
 - **Not generic / genuine angle (skip this check):** "Golden Retriever memorial SVG for senior dog owners," "vintage botanical coffee house emblem," "goblincore apothecary label SVG bundle for potion bottles."
 
 **Criterion 3 — Mature, homogeneous competition (if live search ran):**

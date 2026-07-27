@@ -10,7 +10,8 @@ way the categories become checkable in practice.
 **Where it runs:** Keyword IP Screening (State 3), Concept IP Review
 (State 8A), and Prompt IP Validation (State 10A). Not needed at Final
 Artwork IP Review (State 11A) — that gate evaluates the generated
-image itself, not text.
+> **CRITICAL EXECUTION RULE — Mandatory General IP Fallback:**
+> This list is non-exhaustive. Do NOT treat a stoplist miss as an automatic PASS. If a keyword, concept, or prompt contains a well-known brand name, tabletop/video game franchise, entertainment property, team name, or corporate mark that is NOT explicitly printed on this list (e.g. "Dungeons & Dragons", "Warhammer", "Pokémon", "Squishmallows", "Barbie"), the executing agent MUST apply broader trademark knowledge and trigger **BLOCK** (or **MODIFY**). Never wave an un-listed trademark through simply because it isn't printed on this page.
 
 ---
 
