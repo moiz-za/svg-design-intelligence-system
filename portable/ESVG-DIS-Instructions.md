@@ -331,15 +331,13 @@ Every prompt needs: Subject + Concept + Audience + Style + Composition
 + SVG Requirements + Technical Restrictions + Originality Requirements
 + Negative Prompt.
 
-**SVG technical requirements to always include:** black and white
-only, flat vector appearance, clean outlines, consistent line weight,
-closed shapes, high contrast, trace-friendly, minimal unnecessary
-detail, no gradients/shadows/realistic textures.
+**SVG technical requirements to always include:** solid flat black artwork on pure stark white background #FFFFFF, zero shadows, zero drop shadows, zero 3D embossing, zero paper texture, clean flat 2D vector appearance with zero gray shading, strong readable silhouette, clear closed shapes, consistent line weight (min 2-3pt), feature size limit >= 1/40th width.
 
-**Negative prompt should always include:** color, gradients,
-photorealism, 3D rendering, shadows, watermarks, logos, copyrighted
-characters, messy details, AI artifacts, uneven lines, complex
-backgrounds.
+**Multi-Tool Output Package:** Generate tailored prompt variants for the seller's specific AI engine:
+1. **Google Gemini / Imagen 3:** Positive inline anti-shadow directive ("Pure 2D flat black ink graphic vector on solid stark white background #FFFFFF. Zero shadows, zero paper texture, zero 3D embossing...")
+2. **Midjourney v6:** Use `--no color, shading, gradients, shadows, 3d, paper texture --style raw --v 6.0`
+3. **ChatGPT / DALL-E 3:** Use DALL-E anti-rewrite directive ("DALL-E Instruction: Do not alter or embellish technical vector constraints...")
+4. **Flux 1.1 / Flux Pro:** Use natural language line-art precision ("A sharp 2D vector silhouette cut file...")
 
 **Template:**
 ```

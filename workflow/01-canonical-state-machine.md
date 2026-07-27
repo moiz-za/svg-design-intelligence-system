@@ -222,14 +222,13 @@ future research may reveal a use for them later.
 
 ## STATE 10 — PROMPT ENGINEERING
 
-**Purpose:** Convert the selected concept into a high-performance AI
-generation prompt.
-Full detail: `prompts/prompt-engineering-framework.md`.
+**Purpose:** Convert the selected concept into a high-performance, tool-tailored AI generation prompt package.
+Full detail: `prompts/prompt-engineering-framework.md` and `prompts/engine-tuning-guide.md`.
 
 **Prompt must include:** subject, concept, audience, style,
-composition, SVG requirements, technical restrictions, negative prompt.
+composition, SVG requirements, technical restrictions, negative prompt, and anti-shadow inline rules.
 
-**Output:** AI Generation Prompt Package.
+**Output:** Multi-Tool AI Generation Prompt Package (providing tailored prompt variants for Google Gemini/Imagen 3, Midjourney v6, ChatGPT/DALL-E 3, and Flux 1.1).
 **Transition:** → **State 10A**
 
 ---

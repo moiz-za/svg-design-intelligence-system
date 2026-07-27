@@ -48,15 +48,14 @@ COMPOSITION:
 [Layout and structure]
 
 SVG REQUIREMENTS:
-- black and white only
-- clean flat vector appearance
-- strong silhouette
-- clear closed shapes
-- smooth outlines
-- consistent line thickness
-- suitable for tracing
-- suitable for Cricut and cutting machines
-- minimal unnecessary complexity
+- solid flat black artwork on pure stark white background #FFFFFF
+- zero shadows, zero drop shadows, zero 3D embossing, zero paper background texture
+- clean flat 2D vector appearance with zero gray shading
+- strong readable silhouette
+- clear fully closed shapes and smooth outer outlines
+- consistent line thickness (min 2-3pt for Cricut vinyl cutting)
+- suitable for vector tracing and laser cutting
+- feature size limit >= 1/40th width (no fragile micro-dots or floating shapes)
 
 ORIGINALITY REQUIREMENTS:
 - create a unique interpretation
@@ -74,10 +73,11 @@ NEGATIVE REQUIREMENTS:
 Avoid:
 - color
 - gradients
-- shadows
+- shadows and drop shadows
+- paper texture and parchment texture
 - realistic rendering
 - photographs
-- 3D effects
+- 3D effects and beveling
 - logos
 - trademarks
 - copyrighted characters

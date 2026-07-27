@@ -126,17 +126,24 @@ one input to generation, not a review step.
 
 ---
 
-## 9. Final Prompt Structure
+## 9. Multi-Tool Engine Optimization Architecture
 
-```
-DESIGN PROMPT
-[Complete generation prompt]
+Different AI engines (Google Gemini, Midjourney, ChatGPT/DALL-E, Flux) interpret vector prompts differently. To prevent Gemini paper textures or DALL-E prompt-rewriting from adding shadows/gradients, **State 10 must output a Multi-Tool Prompt Package tailored for the user's specific engine** (see `prompts/engine-tuning-guide.md` for deep technical tuning):
 
-NEGATIVE PROMPT
-[Restrictions]
+```markdown
+### 🎨 Multi-Tool AI Generation Prompts
 
-SVG PRODUCTION NOTES
-[Tracing and cleanup guidance]
+#### Option A: Google Gemini / Imagen 3 (Anti-Shadow & Anti-Texture Tuned)
+"Pure 2D flat black ink graphic vector on a solid stark white background #FFFFFF. Zero shadows, zero drop shadows, zero paper texture, zero 3D embossing, zero gray shading. High-contrast single-color flat black artwork only. [Insert Subject, Composition & Style Details]."
+
+#### Option B: Midjourney v6 (Parameter Tuned)
+"Flat 2D monochrome vector illustration, [Insert Subject, Composition & Style Details], bold black outlines on clean white background, high contrast, SVG trace ready --no color, shading, gradients, shadows, 3d, realistic textures, paper texture, drop shadows --style raw --v 6.0 --ar 1:1"
+
+#### Option C: ChatGPT / DALL-E 3 (Anti-Rewrite Directive)
+"DALL-E Instruction: Do not alter or embellish the technical vector constraints. Generate a flat 2D graphic design vector outline of [Insert Subject, Composition & Style Details]. Solid black ink artwork on pure stark white background. No color, no gradients, no shadows, no 3D effects, no paper background texture."
+
+#### Option D: Flux 1.1 / Flux Pro (Precision Line Art)
+"A sharp 2D vector silhouette cut file of [Insert Subject, Composition & Style Details], featuring uniform bold black strokes on a clean white background. High contrast, fully closed paths, zero gradients, zero shadows, zero paper grain."
 ```
 
 ---
