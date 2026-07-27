@@ -56,9 +56,10 @@ raises the bar for differentiation.
 **Competition Difficulty** is scored on an **inverted scale**: a
 *harder* market gets a *lower* number. Plug the inverted number
 directly into the formula above — do not invert it again.
-- 10 = virtually no competition, easy entry
-- 5 = moderate competition, room to differentiate
-- 1 = extremely saturated, dominant sellers, very hard to break in
+- **8 – 10 (Low Competition / Easy Entry):** Few competitors, weak designs, open gap.
+- **5 – 7 (Moderate Competition / Balanced):** Active market, room to differentiate.
+- **3 – 4 (High Competition / Saturated):** Heavy competition, dominant sellers; high differentiation bar.
+- **1 – 2 (Extreme Saturation / Hard Entry):** Overwhelmed market; triggers Saturation Reality Check (Criterion 1).
 
 Don't confuse this with "Competition Opportunity" — that name doesn't
 exist; use "Competition Difficulty" everywhere.

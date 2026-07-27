@@ -23,10 +23,9 @@ are true.
 ALL four must be true. If any one is false, skip this check and
 proceed normally.
 
-**Criterion 1 — Competition Difficulty very low (Extreme saturation):**
+**Criterion 1 — Competition Difficulty in Extreme Saturation tier (score ≤ 2):**
 Competition Difficulty score ≤ 2/10 (per
-`../knowledge/competition-intelligence.md` §10 — remember this scale
-is inverted, low score = hard market).
+`../workflow/03-scoring-architecture.md` — scores 1–2 represent Extreme Saturation, while scores 3–4 represent High Competition without triggering mandatory saturation halt).
 
 **Criterion 2 — Generic concept OR trend-cliché modifier:**
 The user's original input lacks a genuine differentiation angle because it meets either (a) or (b):

@@ -57,7 +57,13 @@ High competition doesn't automatically mean a bad opportunity — it can
 mean proven demand. Evaluate: number of competitors, quality of
 existing products, seller dominance, uniqueness opportunities.
 **Scored inversely: 10 = easy opportunity, 1 = extremely difficult
-market.** Don't invert this twice when it flows into the formula — the
+market.**
+- **8 – 10 (Low Competition / Easy Entry):** Few competitors, weak designs.
+- **5 – 7 (Moderate Competition):** Active market, room to differentiate.
+- **3 – 4 (High Competition):** Heavy competition, dominant sellers.
+- **1 – 2 (Extreme Saturation):** Overwhelmed market (triggers Saturation Reality Check).
+
+Don't invert this twice when it flows into the formula — the
 formula in `workflow/03-scoring-architecture.md` already expects the
 inverted number.
 
