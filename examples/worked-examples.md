@@ -23,6 +23,10 @@ highly saturated — most existing listings are simple breed outlines.
 Opportunity exists in emotional pet identity rather than literal
 depiction.
 
+```
+Data Source: Live Etsy Search (Full)
+```
+
 ### State 3 — Keyword IP Screening `[GATE]`
 
 "Golden Retriever" is a breed name, not a protected term.
@@ -52,6 +56,7 @@ breeds — most competition is flat and decorative, not narrative.
 
 ```
 Competition Level: High → Competition Difficulty: 4/10 (inverted scale)
+Data Source: Live Etsy Search (Full)
 ```
 
 ### State 6 — Opportunity Scoring
