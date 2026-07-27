@@ -63,13 +63,13 @@ trace poorly regardless of how good the prompt was.
 
 ## 5. Cricut / Cutting Machine Considerations
 
-Designs intended for cutting machines should avoid: extremely thin
-lines, tiny isolated elements, excessive internal details, fragile
-structures — these either fail to cut cleanly or produce pieces too
-delicate to handle.
+Designs intended for vinyl cutting machines (Cricut, Silhouette, CNC, laser) must enforce strict vector thresholds:
+- **Minimum feature size ≥ 1/40th width:** avoids fragile micro-dots or tiny isolated islands that tear during weeding or fail to adhere to surfaces.
+- **Controlled line weight (min 2-3pt):** prevents hairline strokes that snap during vinyl cutting or laser engraving.
+- **Fully closed outer paths:** ensures shapes can be converted into solid compound paths without open gaps or stray anchor points.
+- **No floating micro-islands:** every shape must be connected to the main graphic or be large enough to cut as a standalone piece.
 
-Recommend instead: stronger shapes, larger connected areas, practical
-cutting paths.
+Recommend: stronger silhouettes, connected internal counters, and practical weedable cutting paths.
 
 ---
 
