@@ -194,3 +194,11 @@ which one you did.
 3. **Midjourney v6** requires `--no` parameter flags and `--style raw` to suppress lighting and depth.
 
 Rather than forcing sellers to manually hack prompts when an AI engine renders unwanted shadows or textures, State 10 generates optimized variants for all major engines while preserving the underlying single concept. This decision explicitly supersedes the "Also rejected: per-model prompt templates" clause in ADR-7.
+
+---
+
+## ADR-11: Native Embedding of the 8-Phase Etsy SEO Listing Engine
+
+**Decision:** State 13 (SEO Handoff & Listing Engine) embeds the complete 2026 Etsy Search Engine Optimization rulebooks (`seo-guide.md`, `listing-guide.md`, `policies.md`, and `playbooks/`) directly into `integration/etsy-seo-engine/` to generate complete, ready-to-publish Etsy listings natively within ESVG-DIS.
+
+**Why:** Relying on external cross-linking across separate skill packages (`esvg-dis` ➔ `etsy-seller`) caused context-switching loss in LLM execution. Agents treated cross-linked skills as optional references and produced soft, generic text summaries rather than strictly enforcing granular 2026 Etsy rules (140-char title limit, primary keyword front-loading in first 40 chars, 13 search tags ≤20 chars each, 5-surface indexing spread, 8-block description, and Etsy AI Creation Disclosure settings). Embedding the engine natively ensures 100% reliable execution and a zero-friction single-pass experience for the user.

@@ -107,7 +107,7 @@ START
 ↓
 12. DESIGN REVIEW                   → knowledge/design-quality-review.md
 ↓
-13. SEO HANDOFF                     → integration/etsy-seo-handoff.md
+13. SEO HANDOFF & LISTING ENGINE     → integration/etsy-seo-handoff.md & integration/etsy-seo-engine/
 ↓
 END
 ```
@@ -125,11 +125,11 @@ structured report and, by default, requests a human decision.
 
 ---
 
-## 6. Prompt Engineering Tool Split
+## 6. Prompt Engineering & Listing Engine Tool Split
 
-When generating prompts in Stage 10, remember:
+When generating prompts in Stage 10 and listings in Stage 13, remember:
 
-- **Reasoning agents** (used for the strategy/analysis above): ChatGPT,
+- **Reasoning agents** (used for strategy, analysis, and listing generation): ChatGPT,
   Gemini, Claude, Grok, or any general-purpose AI assistant.
 - **Image generation platforms** (used only for Stage 11, artwork
   generation): ChatGPT Images, Gemini Image Generation, Midjourney,
@@ -137,6 +137,7 @@ When generating prompts in Stage 10, remember:
 - These are different categories with different jobs. Do not generate
   an "image prompt" for a reasoning-only tool.
 - Prompt templates are organized by **design style** (`prompts/style-templates/`), while State 10 generates a **Multi-Tool AI Prompt Package** using `prompts/engine-tuning-guide.md` to provide engine-tuned variants (Google Gemini anti-shadow/texture directives, Midjourney `--no` flags, DALL-E 3 anti-rewrite directives, Flux line-art precision) preventing rendering defects across different image platforms (see ADR-10 in `documentation/architecture-decisions.md`).
+- State 13 executes the **Native 8-Phase Etsy SEO Engine** (`integration/etsy-seo-handoff.md` and `integration/etsy-seo-engine/`), outputting the complete, ready-to-publish Etsy listing package in a single response (see ADR-11).
 
 ---
 
@@ -152,6 +153,7 @@ When generating prompts in Stage 10, remember:
   optimization requirements.
 - **Production Guidance** — tracing considerations, format
   recommendations, quality checklist.
+- **Complete Etsy Listing Package** — Native 8-Phase listing creation (140-char front-loaded title, 13 search tags ≤20 chars, pricing, 8-block description, Etsy 2026 AI Creation Disclosure, Hero Alt Text, and Pinterest Marketing block).
 
 ---
 
@@ -163,7 +165,7 @@ SYSTEM_INSTRUCTIONS.md                  this file
 workflow/                               process logic, gates, scoring, retries
 knowledge/                              subject-matter frameworks
 prompts/                                prompt engineering + model templates
-integration/                            handoff to Etsy SEO systems
+integration/                            native 2026 Etsy SEO engine & listing output
 examples/                               full worked workflows
 documentation/                          glossary, architecture history, roadmap
 ```
