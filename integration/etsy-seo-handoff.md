@@ -1,40 +1,36 @@
 # Native Etsy SEO & Listing Engine
 
-Used in **State 13 — SEO Handoff & Listing Creation**, the final state of the canonical workflow (`workflow/01-canonical-state-machine.md`).
+Used in **State 13 — SEO Handoff & Listing Engine**, the final state of the canonical workflow (`workflow/01-canonical-state-machine.md`).
 
-This module embeds the complete 2026 Etsy SEO listing engine directly into ESVG-DIS (drawing from native frameworks in `integration/etsy-seo-engine/seo-guide.md`, `listing-guide.md`, and `policies.md`), ensuring every product engineered by ESVG-DIS is delivered as a 100% complete, fully optimized Etsy listing.
+This module embeds the complete 2026 Etsy SEO listing engine natively into ESVG-DIS (drawing from native frameworks in `integration/etsy-seo-engine/seo-guide.md`, `listing-guide.md`, and `policies.md`). Every product engineered by ESVG-DIS is delivered as a 100% complete, production-ready, fully optimized Etsy listing.
 
 ---
 
-## 1. Native Listing Output Requirements
-
-State 13 MUST generate a complete, production-ready Etsy listing package in a single response, enforcing strict 2026 Etsy SEO rules:
+## 1. 2026 Etsy Search Engine Optimization Rules
 
 ### 📌 A. Title Optimization Rules (`integration/etsy-seo-engine/seo-guide.md`)
-- **Character Limit:** Maximum 140 characters.
-- **Primary Keyword Front-Loading:** The primary high-intent search phrase MUST appear within the **first 40 characters** (critical for mobile search cards & Etsy algorithm indexing).
-- **Formatting:** Front-loaded, high-converting long-tail phrases separated by clean pipes (`|`) or slashes (`/`).
-- **No Keyword Stuffing:** Avoid repetitive word salads or unnatural phrasing.
+- **Maximum Length:** 140 characters.
+- **Primary Keyword Front-Loading:** The primary high-intent search phrase MUST appear within the **first 40 characters** (critical for mobile truncated search cards & Etsy algorithm indexing).
+- **Structure:** Natural, high-converting long-tail phrases separated by clean pipes (`|`) or slashes (`/`).
+- **No Keyword Stuffing:** Avoid repetitive word salads or subjective buzzwords (*beautiful, amazing, perfect*).
 
 ### 🏷️ B. 13 Search Tags Rules (`integration/etsy-seo-engine/playbooks/`)
 - **Exact Count:** Exactly 13 tags (never leave available tag slots empty).
-- **Tag Character Limit:** Every single tag MUST be **≤ 20 characters**.
+- **Tag Character Limit:** Every single tag MUST be **≤ 20 characters** (including spaces). Tags >20 chars are silently rejected by Etsy's system.
 - **Zero Duplicates:** No repeated tags or redundant phrases across the 13 slots.
-- **Tag Diversity:** Mix primary keywords, niche modifiers, craft machine terms (`cricut file`, `shirt svg`), and buyer/occasion terms.
+- **Tag Indexing Spread:** Combine primary keywords, subculture/niche modifiers, craft machine terms (`cricut file`, `shirt svg`), and recipient/occasion terms.
 
-### 💰 C. Pricing Engine (`integration/etsy-seo-engine/listing-guide.md`)
+### 🌐 C. The 5-Surface Indexing Spread Principle
+A keyword is indexed most strongly by Etsy's algorithm when the same phrase cluster appears across **5 distinct surfaces**:
+1. **Title:** First 40 characters (primary keyword present).
+2. **Tags:** At least 3 of the 13 tags contain words from the primary cluster.
+3. **Attributes:** At least 1 attribute value echoes a primary-cluster word (Style, Occasion, Recipient).
+4. **Description Meta Zone:** First 160 characters include the primary keyword.
+5. **Hero Image Alt Text:** Includes the primary keyword.
+
+### 💰 D. Pricing Engine (`integration/etsy-seo-engine/listing-guide.md`)
 - **Single SVG Design:** $2.50 – $4.99 (based on visual complexity and buyer appeal).
 - **SVG Bundle / Collection:** $5.99 – $12.99 (based on set size and market demand).
-
-### 📋 D. Full Listing Description & Disclosure (`integration/etsy-seo-engine/policies.md`)
-Every output must include a fully structured listing description containing:
-1. **Hook & Value Proposition:** High-converting opening paragraph targeting the buyer persona.
-2. **Included File Formats:** SVG, PNG (300 DPI high resolution, transparent background), EPS, DXF, PDF.
-3. **Machine & Software Compatibility:** Cricut Design Space, Silhouette Studio (Designer Edition+), Brother ScanNCut, Laser Cutters, Sublimation Printers.
-4. **Commercial & Personal License Terms:** Personal & Small Business commercial usage rights.
-5. **Etsy 2026 AI Creation Disclosure Section:**
-   - **Listing Dropdowns:** *"I did"* | *"Made to order"* | *"Finished product or digital file"*
-   - **Factual Description Transparency Note:** *"Original vector illustration engineered with AI assistance and hand-curated vector cleanup per Etsy Creativity Standards."*
 
 ---
 
@@ -53,7 +49,7 @@ Prompt Engineering & Engine Tuning (State 10)
 ↓
 Design Quality & Vector Review (States 11-12)
 ↓
-Native Etsy SEO Listing Engine (State 13)  ← Complete Title, 13 Tags, Pricing & Description
+Native Etsy SEO Listing Engine (State 13)  ← Complete Title, 13 Tags, Attributes, Description, & Alt Text
 ```
 
 ---
@@ -63,33 +59,42 @@ Native Etsy SEO Listing Engine (State 13)  ← Complete Title, 13 Tags, Pricing 
 When State 13 executes, the executing agent MUST NOT output a brief summary or generic text. The agent MUST populate and render the following **exact Markdown structure**:
 
 ```markdown
-# 🛒 Complete Etsy Listing Package
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NATIVE ETSY LISTING PACKAGE — STATE 13
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-## 1. 📌 Optimized Etsy Listing Title
-[Insert 140-character front-loaded title here. Primary focus keyword MUST be within the first 40 characters.]
-*(Character Count: [XX]/140)*
+PRIMARY KEYWORD: [Primary Keyword] · difficulty: [Low-Medium / Medium] · ~[N] search results
 
-## 2. 🏷️ 13 Search Tags
-1. [Tag 1 — max 20 chars]
-2. [Tag 2 — max 20 chars]
-3. [Tag 3 — max 20 chars]
-4. [Tag 4 — max 20 chars]
-5. [Tag 5 — max 20 chars]
-6. [Tag 6 — max 20 chars]
-7. [Tag 7 — max 20 chars]
-8. [Tag 8 — max 20 chars]
-9. [Tag 9 — max 20 chars]
-10. [Tag 10 — max 20 chars]
-11. [Tag 11 — max 20 chars]
-12. [Tag 12 — max 20 chars]
-13. [Tag 13 — max 20 chars]
-*(Verification Check: Exactly 13 tags, 0 duplicates, all ≤20 characters)*
+TITLE:
+[Insert 140-character front-loaded title here]
 
-## 3. 💰 Pricing & Positioning Recommendation
-- **Recommended Price:** $[X.XX]
-- **Pricing Rationale:** [Market positioning rationale based on visual complexity and competitor price tier]
+📱 Mobile Preview Card (First 40 chars):
+┌───────────────────────────────────────┐
+│ [First 40 characters of title]...     │
+└───────────────────────────────────────┘
+Word count: [X] words (aim 6-12) ✅  ·  Char count: [X] / 140 ✅
 
-## 4. 📋 Full High-Converting Listing Description
+TAGS (13/13):
+1.  [Tag 1] ([X] chars ✅)
+2.  [Tag 2] ([X] chars ✅)
+3.  [Tag 3] ([X] chars ✅)
+4.  [Tag 4] ([X] chars ✅)
+5.  [Tag 5] ([X] chars ✅)
+6.  [Tag 6] ([X] chars ✅)
+7.  [Tag 7] ([X] chars ✅)
+8.  [Tag 8] ([X] chars ✅)
+9.  [Tag 9] ([X] chars ✅)
+10. [Tag 10] ([X] chars ✅)
+11. [Tag 11] ([X] chars ✅)
+12. [Tag 12] ([X] chars ✅)
+13. [Tag 13] ([X] chars ✅)
+*(Verification Check: Exactly 13 tags, 0 duplicates, all ≤20 characters including spaces)*
+
+ATTRIBUTES:
+Style: [Value]    Occasion: [Value]    Recipient: [Value]    Category: Craft Supplies & Tools > Canvas & Surfaces > Stencils, Templates & Transfers > Cut Files
+
+DESCRIPTION:
+[Meta zone — first 160 chars: "..."] ✅
 
 ### 🌟 [Attention-Grabbing Product Hook Title]
 [2-3 sentences targeting buyer persona, emotional trigger, and core craft use case]
@@ -113,11 +118,33 @@ When State 13 executes, the executing agent MUST NOT output a brief summary or g
 - **Commercial Use:** Small Business Commercial License included for up to 500 physical end-products (t-shirts, mugs, totes, decals).
 - **Restrictions:** Reselling, sharing, or redistributing digital files in any format is strictly prohibited.
 
-## 5. 🛡️ Etsy 2026 AI Creation Disclosure & Listing Settings
+## 🛡️ Etsy 2026 AI Creation Disclosure & Settings
 - **About this listing dropdowns:**
   - *Who made it?* **I did**
   - *What is it?* **A finished product or digital file**
   - *When was it made?* **Made to order / Recently made**
 - **Factual Description Transparency Note:**
   *"Original vector illustration engineered with AI assistance and hand-curated vector path cleanup per Etsy 2026 Creativity Standards."*
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HERO IMAGE ALT TEXT (Etsy + Pinterest):
+[100-150 characters containing primary keyword for accessibility & search indexing]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PINTEREST MARKETING BLOCK:
+PIN TITLE: [Pin title ≤100 chars]
+BOARD NAME: [Board name 25-40 chars]
+BOARD DESCRIPTION: [Board description 150-300 chars]
+PIN DESCRIPTION: [Pin description 220-232 chars, no hashtags]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INDEXING SPREAD: Title ✅  ·  Tags (3+) ✅  ·  Attributes ✅  ·  Meta Zone ✅  ·  Alt Text ✅
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BEFORE YOU PUBLISH CHECKLIST:
+□ Title updated on Etsy (verify mobile preview card)
+□ All 13 tags updated (verify all ≤20 chars)
+□ Description updated (copy first 160 chars carefully into meta section)
+□ Attributes updated (Style / Occasion / Recipient)
+□ Hero image alt text updated (includes primary keyword)
+□ Category set to Cut Files
+□ Save ➔ preview ➔ confirm no tags got truncated
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```

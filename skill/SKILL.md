@@ -171,14 +171,15 @@ another prompt revision.
 
 ### Phase 16 — SEO Handoff & Listing Engine (State 13)
 
-Per `../integration/etsy-seo-handoff.md` and `../integration/etsy-seo-engine/`. **Mandatory Listing Output Protocol:** You MUST render the complete, production-ready **Complete Etsy Listing Package** using the exact Markdown template in `../integration/etsy-seo-handoff.md` §3.
+Per `../integration/etsy-seo-handoff.md` and `../integration/etsy-seo-engine/`. **Mandatory Listing Output Protocol:** You MUST render the complete, production-ready **Native Etsy Listing Package** using the exact Markdown template in `../integration/etsy-seo-handoff.md` §3.
 
 **Strict Enforcement Rules:**
-1. **Title:** Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters**.
-2. **13 Search Tags:** Exactly 13 tags, every single tag **≤ 20 characters**, zero duplicates across tags.
-3. **Pricing:** Recommend price ($2.50-$4.99 single, $5.99-$12.99 bundle) based on market positioning.
-4. **Full Description:** Hook, file formats (SVG, PNG 300 DPI, EPS, DXF, PDF), Cricut/Silhouette compatibility, usage rights, and **Etsy 2026 AI Creation Disclosure settings** (*"I did"* / *"Made to order"*).
-5. **No Short Summaries:** Do NOT output a soft summary or generic text — output the full, ready-to-copy listing package.
+1. **Title:** Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters** (verify mobile card preview).
+2. **13 Search Tags:** Exactly 13 tags, every single tag **≤ 20 characters** (including spaces), zero duplicates across tags.
+3. **5-Surface Indexing Spread Check:** Ensure the primary keyword cluster touches Title (first 40 chars), Tags (3+ tags), Attributes (Style/Occasion/Recipient), Description Meta Zone (first 160 chars), and Hero Image Alt Text.
+4. **Full 8-Block Description:** Opening Hook, File Formats (SVG, PNG 300 DPI, EPS, DXF, PDF), Cricut/Silhouette compatibility, usage rights, and **Etsy 2026 AI Creation Disclosure settings** (*"I did"* / *"Made to order"*).
+5. **Hero Alt Text & Pinterest Block:** 100-150 char alt text containing primary keyword, Pin title, Board name, Board description, and Pin description (220-232 chars).
+6. **No Short Summaries:** Do NOT output a soft summary or generic text — output the full, ready-to-copy listing package and pre-publish checklist.
 
 ### Phase 17 — Write state (Cowork/Claude only)
 
