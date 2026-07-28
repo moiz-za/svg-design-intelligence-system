@@ -33,7 +33,7 @@ It functions as an expert **commercial product strategist, IP risk reviewer, buy
 | ✂️ **Cricut & Vector Ready** | Enforces vector production thresholds (min detail ≥ 1/40th width, no tiny floating shapes, closed outlines, controlled line weight). |
 | 🎭 **Buyer Psychology Layer** | Maps purchase motivations (Identity, Gift, Hobby, Emotion) and layers micro-niches to bypass oversaturated broad keywords. |
 | 🎨 **Model-Agnostic Prompts** | Engineered prompts optimized for **ChatGPT Images, Midjourney, Flux, Ideogram, Leonardo, and Gemini** using `prompts/engine-tuning-guide.md`. |
-| 🏷️ **Native 2026 Etsy SEO Engine** | Embedded complete listing creation engine in State 13 (140-char title, 13 search tags ≤20 chars, pricing, description, and Etsy AI Creation Disclosure). |
+| 🏷️ **Native 8-Phase Etsy SEO Engine** | State 13 executes an 8-phase listing engine: Policy Check, Keyword Overlap Scan, 140-char Front-Loaded Title, 13 Search Tags ≤20 chars, 5-Surface Indexing Spread, 8-Block Description with Etsy AI Disclosure, Alt Text & Pinterest Block, and Research Log Sync. |
 | 🆓 **100% Free Tier Compatible** | Full single-file portable edition available for free ChatGPT, Claude, Gemini, and Grok users. |
 
 ---
