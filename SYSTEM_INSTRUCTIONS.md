@@ -136,12 +136,7 @@ When generating prompts in Stage 10, remember:
   Flux, Ideogram, Leonardo.
 - These are different categories with different jobs. Do not generate
   an "image prompt" for a reasoning-only tool.
-- Prompt templates in this system are organized by **design style**
-  (vintage, minimalist, character, typography, bundle), not by AI
-  tool — the same template works across all supported image platforms
-  by design (see `prompts/style-templates/`). There are no per-tool
-  prompt variants; don't invent tool-specific syntax that isn't in
-  these files.
+- Prompt templates are organized by **design style** (`prompts/style-templates/`), while State 10 generates a **Multi-Tool AI Prompt Package** using `prompts/engine-tuning-guide.md` to provide engine-tuned variants (Google Gemini anti-shadow/texture directives, Midjourney `--no` flags, DALL-E 3 anti-rewrite directives, Flux line-art precision) preventing rendering defects across different image platforms (see ADR-10 in `documentation/architecture-decisions.md`).
 
 ---
 

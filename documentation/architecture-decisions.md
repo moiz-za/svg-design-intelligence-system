@@ -181,3 +181,16 @@ checked every case" are different claims, and it's easy to
 accidentally present the first as if it were the second. If you're
 doing a correction pass on this system in the future, say explicitly
 which one you did.
+
+---
+
+## ADR-10: Multi-Tool Prompt Engineering Extensions (Superseding ADR-7's per-tool rejection)
+
+**Decision:** While prompt *concepts* and baseline prompt architectures remain strictly model-agnostic, State 10 (Prompt Engineering) and `prompts/engine-tuning-guide.md` explicitly output **Multi-Tool AI Generation Prompt Packages** providing tailored syntax variants for Google Gemini / Imagen 3, Midjourney v6, ChatGPT / DALL-E 3, and Flux 1.1.
+
+**Why:** Empirical testing across real image generation engines revealed that strict single-template model independence failed in practice:
+1. **Google Gemini / Imagen 3** frequently added unwanted paper textures, 3D embossing, and drop shadows unless given positive inline anti-shadow commands (`"Pure 2D flat black ink graphic vector on solid white #FFFFFF background. Zero shadows, zero paper texture..."`).
+2. **ChatGPT / DALL-E 3** automatically rewrote prompts under the hood unless given an explicit anti-rewrite directive (`"DALL-E Instruction: Do not alter or embellish..."`).
+3. **Midjourney v6** requires `--no` parameter flags and `--style raw` to suppress lighting and depth.
+
+Rather than forcing sellers to manually hack prompts when an AI engine renders unwanted shadows or textures, State 10 generates optimized variants for all major engines while preserving the underlying single concept. This decision explicitly supersedes the "Also rejected: per-model prompt templates" clause in ADR-7.

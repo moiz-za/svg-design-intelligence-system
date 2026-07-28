@@ -142,7 +142,7 @@ explicitly asked to.
 
 ### Phase 12 — Prompt Engineering (State 10)
 
-Per `../prompts/prompt-engineering-framework.md`, `../prompts/engine-tuning-guide.md`, and the relevant `../prompts/style-templates/` file. Check concept against `../playbooks/cutting-machine-thresholds.md` for Cricut limits ($\ge 1/40\text{th}$ width, min 2-3pt line weight). Build the **Multi-Tool AI Prompt Package** providing engine-tuned variants for:
+Per `../prompts/prompt-engineering-framework.md`, `../prompts/engine-tuning-guide.md`, and the relevant `../prompts/style-templates/` file. Check concept against `../playbooks/cutting-machine-thresholds.md` for Cricut limits (≥ 1/40th width, min 2-3pt line weight). Build the **Multi-Tool AI Prompt Package** providing engine-tuned variants for:
 1. **Google Gemini / Imagen 3** (anti-shadow, zero paper texture inline directive)
 2. **Midjourney v6** (`--no` parameter flags)
 3. **ChatGPT / DALL-E 3** (anti-rewrite directive)
