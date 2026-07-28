@@ -32,7 +32,7 @@ It functions as an expert **commercial product strategist, IP risk reviewer, buy
 | 📊 **3-Level Scoring Architecture** | Evaluates **Opportunity Score** (State 6), **Concept Score** (State 9), and **Quality Score** (State 12) across weighted commercial dimensions. |
 | ✂️ **Cricut & Vector Ready** | Enforces vector production thresholds (min detail ≥ 1/40th width, no tiny floating shapes, closed outlines, controlled line weight). |
 | 🎭 **Buyer Psychology Layer** | Maps purchase motivations (Identity, Gift, Hobby, Emotion) and layers micro-niches to bypass oversaturated broad keywords. |
-| 🎨 **Model-Agnostic Prompts** | Engineered prompts optimized for **ChatGPT Images, Midjourney, Flux, Ideogram, Leonardo, and Gemini** using `prompts/engine-tuning-guide.md`. |
+| 🎨 **Multi-Tool Engine Prompts** | Engineered prompts optimized for **ChatGPT Images, Midjourney, Flux, Ideogram, Leonardo, and Gemini** using `prompts/engine-tuning-guide.md`. |
 | 🏷️ **Native 8-Phase Etsy SEO Engine** | State 13 executes an 8-phase listing engine: Policy Check, Keyword Overlap Scan, 140-char Front-Loaded Title, 13 Search Tags ≤20 chars, 5-Surface Indexing Spread, 8-Block Description with Etsy AI Disclosure, Alt Text & Pinterest Block, and Research Log Sync. |
 | 🆓 **100% Free Tier Compatible** | Full single-file portable edition available for free ChatGPT, Claude, Gemini, and Grok users. |
 
