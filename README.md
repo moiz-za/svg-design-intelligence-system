@@ -32,7 +32,8 @@ It functions as an expert **commercial product strategist, IP risk reviewer, buy
 | 📊 **3-Level Scoring Architecture** | Evaluates **Opportunity Score** (State 6), **Concept Score** (State 9), and **Quality Score** (State 12) across weighted commercial dimensions. |
 | ✂️ **Cricut & Vector Ready** | Enforces vector production thresholds (min detail ≥ 1/40th width, no tiny floating shapes, closed outlines, controlled line weight). |
 | 🎭 **Buyer Psychology Layer** | Maps purchase motivations (Identity, Gift, Hobby, Emotion) and layers micro-niches to bypass oversaturated broad keywords. |
-| 🎨 **Model-Agnostic Prompts** | Engineered prompts optimized for **ChatGPT Images, Midjourney, Flux, Ideogram, Leonardo, and Gemini**. |
+| 🎨 **Model-Agnostic Prompts** | Engineered prompts optimized for **ChatGPT Images, Midjourney, Flux, Ideogram, Leonardo, and Gemini** using `prompts/engine-tuning-guide.md`. |
+| 🏷️ **Native 2026 Etsy SEO Engine** | Embedded complete listing creation engine in State 13 (140-char title, 13 search tags ≤20 chars, pricing, description, and Etsy AI Creation Disclosure). |
 | 🆓 **100% Free Tier Compatible** | Full single-file portable edition available for free ChatGPT, Claude, Gemini, and Grok users. |
 
 ---
@@ -90,7 +91,8 @@ It functions as an expert **commercial product strategist, IP risk reviewer, buy
                                      ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
 │               11. ARTWORK & VECTOR PRODUCTION (States 11-13)            │
-│   User Generates ➔ [GATE 4: Final IP] ➔ State 12 Review ➔ SEO Handoff   │
+│   User Generates ➔ [GATE 4: Final IP] ➔ State 12 Review ➔ State 13 SEO  │
+│   (Native 140-Char Title, 13 Search Tags ≤20 Chars, Pricing, & Disclosure)│
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -186,7 +188,8 @@ svg-design-intelligence-system/
 │   └── style-templates/               universal, vintage, minimalist, etc.
 │
 ├── integration/
-│   └── etsy-seo-handoff.md            handoff to etsy-seller-seo-system
+│   ├── etsy-seo-handoff.md            native listing engine & single-pass execution
+│   └── etsy-seo-engine/               native 2026 Etsy SEO rulebooks (seo-guide, listing-guide, policies, playbooks)
 │
 ├── examples/
 │   └── worked-examples.md             full pipeline walkthrough with real scores
@@ -200,13 +203,11 @@ svg-design-intelligence-system/
 
 ---
 
-## 🤝 Companion Repository
+## 🏷️ Complete Self-Contained Etsy System
 
-ESVG-DIS is designed to pair seamlessly with [`etsy-seller-seo-system`](https://github.com/moiz-za/etsy-seller-seo-system).
-* **ESVG-DIS** creates the right *product*.
-* **Etsy SEO System** creates the right *listing* (tags, title, description, ranking).
+ESVG-DIS is a **100% self-contained suite** that handles both product creation and full Etsy listing generation natively out-of-the-box.
 
-Neither depends on the other; use either independently or together (see [`integration/etsy-seo-handoff.md`](integration/etsy-seo-handoff.md)).
+For non-SVG physical/digital products (mugs, t-shirts, physical crafts), a standalone companion repository [`etsy-seller-seo-system`](https://github.com/moiz-za/etsy-seller-seo-system) is also available.
 
 ---
 
