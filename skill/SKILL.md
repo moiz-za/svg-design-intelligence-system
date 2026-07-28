@@ -171,15 +171,17 @@ another prompt revision.
 
 ### Phase 16 — SEO Handoff & Listing Engine (State 13)
 
-Per `../integration/etsy-seo-handoff.md` and `../integration/etsy-seo-engine/`. **Mandatory Listing Output Protocol:** You MUST render the complete, production-ready **Native Etsy Listing Package** using the exact Markdown template in `../integration/etsy-seo-handoff.md` §3.
+Per `../integration/etsy-seo-handoff.md` and `../integration/etsy-seo-engine/`. Execute all **8 Mandatory Execution Phases**:
 
-**Strict Enforcement Rules:**
-1. **Title:** Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters** (verify mobile card preview).
-2. **13 Search Tags:** Exactly 13 tags, every single tag **≤ 20 characters** (including spaces), zero duplicates across tags.
-3. **5-Surface Indexing Spread Check:** Ensure the primary keyword cluster touches Title (first 40 chars), Tags (3+ tags), Attributes (Style/Occasion/Recipient), Description Meta Zone (first 160 chars), and Hero Image Alt Text.
-4. **Full 8-Block Description:** Opening Hook, File Formats (SVG, PNG 300 DPI, EPS, DXF, PDF), Cricut/Silhouette compatibility, usage rights, and **Etsy 2026 AI Creation Disclosure settings** (*"I did"* / *"Made to order"*).
-5. **Hero Alt Text & Pinterest Block:** 100-150 char alt text containing primary keyword, Pin title, Board name, Board description, and Pin description (220-232 chars).
-6. **No Short Summaries:** Do NOT output a soft summary or generic text — output the full, ready-to-copy listing package and pre-publish checklist.
+1. **Policy & Algorithm Freshness Check:** Verify output against August 11, 2026 Etsy Creativity Standards.
+2. **Keyword Cannibalization Prevention:** Check candidate primary keyword against `~/esvg-research/research-log.md`; issue overlap warning if already used.
+3. **Title Construction:** Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters** (6-12 words, no subjective filler buzzwords).
+4. **13 Search Tags:** Exactly 13 tags, every tag **≤ 20 characters** (including spaces), zero 2+ word phrase duplicates, character count listed per tag (`[Tag] ([X] chars ✅)`).
+5. **Attributes & Category Mapping:** Style, Occasion, Recipient mapped to Cut Files category (`Craft Supplies & Tools > Canvas & Surfaces > Stencils, Templates & Transfers > Cut Files`).
+6. **5-Surface Indexing Spread Check:** Verify primary keyword touches Title (first 40 chars), Tags (3+ tags), Attributes, Description Meta Zone (first 160 chars), and Hero Alt Text.
+7. **Full 8-Block Description:** Hook, File Formats (SVG, PNG 300 DPI, EPS, DXF, PDF), Cricut/Silhouette/Laser compatibility, License Terms (Personal & Small Business Commercial), and **Etsy 2026 AI Creation Disclosure settings** (*"I did"* / *"Made to order"*).
+8. **Hero Alt Text & Pinterest Marketing Block:** 100-150 char alt text containing primary keyword, Pin title, Board name, Board description, Pin description (220-232 chars), and Pre-Publish Checklist.
+9. **No Short Summaries:** Do NOT output a soft summary or generic text — output the full, ready-to-copy listing package.
 
 ### Phase 17 — Write state (Cowork/Claude only)
 

@@ -2,55 +2,66 @@
 
 Used in **State 13 — SEO Handoff & Listing Engine**, the final state of the canonical workflow (`workflow/01-canonical-state-machine.md`).
 
-This module embeds the complete 2026 Etsy SEO listing engine natively into ESVG-DIS (drawing from native frameworks in `integration/etsy-seo-engine/seo-guide.md`, `listing-guide.md`, and `policies.md`). Every product engineered by ESVG-DIS is delivered as a 100% complete, production-ready, fully optimized Etsy listing.
+This module embeds the complete 2026 Etsy SEO listing engine natively into ESVG-DIS (drawing from native frameworks in `integration/etsy-seo-engine/seo-guide.md`, `listing-guide.md`, `policies.md`, and `playbooks/`). Every product engineered by ESVG-DIS is delivered as a 100% complete, production-ready, fully optimized Etsy listing.
 
 ---
 
-## 1. 2026 Etsy Search Engine Optimization Rules
+## 1. The 8 Mandatory Execution Phases
 
-### 📌 A. Title Optimization Rules (`integration/etsy-seo-engine/seo-guide.md`)
-- **Maximum Length:** 140 characters.
-- **Primary Keyword Front-Loading:** The primary high-intent search phrase MUST appear within the **first 40 characters** (critical for mobile truncated search cards & Etsy algorithm indexing).
-- **Structure:** Natural, high-converting long-tail phrases separated by clean pipes (`|`) or slashes (`/`).
-- **No Keyword Stuffing:** Avoid repetitive word salads or subjective buzzwords (*beautiful, amazing, perfect*).
+When State 13 executes, the agent MUST run through all 8 execution phases sequentially:
 
-### 🏷️ B. 13 Search Tags Rules (`integration/etsy-seo-engine/playbooks/`)
-- **Exact Count:** Exactly 13 tags (never leave available tag slots empty).
-- **Tag Character Limit:** Every single tag MUST be **≤ 20 characters** (including spaces). Tags >20 chars are silently rejected by Etsy's system.
-- **Zero Duplicates:** No repeated tags or redundant phrases across the 13 slots.
-- **Tag Indexing Spread:** Combine primary keywords, subculture/niche modifiers, craft machine terms (`cricut file`, `shirt svg`), and recipient/occasion terms.
+### 📋 Phase 1: Policy & Algorithm Freshness Check
+- Verify current Etsy seller policies (`integration/etsy-seo-engine/policies.md`).
+- Ensure output complies with August 11, 2026 Etsy Creativity Standards (computerized tool usage disclosure rules).
 
-### 🌐 C. The 5-Surface Indexing Spread Principle
+### 🔍 Phase 2: Keyword Overlap & Cannibalization Prevention
+- Read existing keywords from `~/esvg-research/research-log.md`.
+- If candidate primary keyword overlaps with a previously created listing in the user's log, issue a **Keyword Overlap Warning** offering 3 pivot choices:
+  - `[a]` Pivot to a sibling phrase from Phase 4 research
+  - `[b]` Keep phrase anyway (Etsy de-duplication risk)
+  - `[c]` Re-keyword previous listing
+
+### 📌 Phase 3: Title Construction & Character Limit Validation
+- **Length:** ≤ 140 characters (including spaces).
+- **Word Count:** 6 to 12 words (aim under 15 words).
+- **Primary Keyword Front-Loading:** Primary search phrase MUST appear within the **first 40 characters**.
+- **No Comma-Chain Stuffing:** Natural phrasing separated by clean pipes (`|`) or slashes (`/`).
+- **No Subjective Fillers:** Strip buzzwords (*beautiful, amazing, stunning, incredible, perfect*).
+
+### 🏷️ Phase 4: 13 Tags Construction & Character Limit / Duplication Audit
+- **Exact Count:** Exactly 13 tags (never leave tag slots blank).
+- **Character Limit:** Every tag MUST be **≤ 20 characters** (including spaces). Tags >20 chars are silently rejected by Etsy.
+- **Zero Phrase Duplicates:** No exact 2+ word phrase repeats across tags.
+- **No Single Word Tags:** Use multi-word long-tail phrases (`softball mom svg`, not `svg`).
+- **Verification Audit:** Output the exact character count per tag (`[Tag] ([X] chars ✅)`).
+
+### 📂 Phase 5: Attributes & Category Mapping
+- **Category:** `Craft Supplies & Tools > Canvas & Surfaces > Stencils, Templates & Transfers > Cut Files`
+- **Attributes:** Style, Occasion, Recipient. At least 1 attribute value MUST echo a word from the primary keyword cluster.
+
+### 📝 Phase 6: Full 8-Block Description & 160-Char Meta Zone
+- **Meta Zone (First 160 chars):** Must contain the primary keyword and function as a complete product pitch.
+- **Length:** 250 to 700 words.
+- **No Generic Openers:** Prohibit "Thank you for visiting" or "This listing is for".
+- **Structure:** Opening Hook → Value & Features → Included File Formats (SVG, PNG 300 DPI 4000x4000px, EPS, DXF, PDF) → Instant Delivery → Machine Compatibility (Cricut, Silhouette, Laser, Sublimation) → Usage License (Personal & Small Business Commercial up to 500 items) → Etsy 2026 AI Creation Disclosure → Closing.
+
+### 🖼️ Phase 7: Hero Image Alt Text & Pinterest Marketing Block
+- **Hero Alt Text:** 100–150 chars containing primary keyword.
+- **Pinterest Block:** Pin title (≤100 chars), Board name (25–40 chars), Board description (150–300 chars), Pin description (220–232 chars, no hashtags).
+
+### 💾 Phase 8: Log Maintenance & Database Sync
+- Automatically append/update the listing entry in `~/esvg-research/research-log.md` with: Date, Keyword, Primary Keyword, Title, Tags, Price, Status, and Data Source tag.
+
+---
+
+## 2. The 5-Surface Indexing Spread Principle
+
 A keyword is indexed most strongly by Etsy's algorithm when the same phrase cluster appears across **5 distinct surfaces**:
 1. **Title:** First 40 characters (primary keyword present).
 2. **Tags:** At least 3 of the 13 tags contain words from the primary cluster.
 3. **Attributes:** At least 1 attribute value echoes a primary-cluster word (Style, Occasion, Recipient).
 4. **Description Meta Zone:** First 160 characters include the primary keyword.
-5. **Hero Image Alt Text:** Includes the primary keyword.
-
-### 💰 D. Pricing Engine (`integration/etsy-seo-engine/listing-guide.md`)
-- **Single SVG Design:** $2.50 – $4.99 (based on visual complexity and buyer appeal).
-- **SVG Bundle / Collection:** $5.99 – $12.99 (based on set size and market demand).
-
----
-
-## 2. Integrated Workflow
-
-```
-Market Research (State 2)
-↓
-IP Screening & Buyer Psychology (States 3-4)
-↓
-Opportunity Scoring & Saturation Check (States 6-7)
-↓
-Concept Development & Ranking (States 8-9)
-↓
-Prompt Engineering & Engine Tuning (State 10)
-↓
-Design Quality & Vector Review (States 11-12)
-↓
-Native Etsy SEO Listing Engine (State 13)  ← Complete Title, 13 Tags, Attributes, Description, & Alt Text
-```
+5. **Hero Image Alt Text:** Includes the primary keyword for accessibility & search indexing.
 
 ---
 
@@ -146,5 +157,6 @@ BEFORE YOU PUBLISH CHECKLIST:
 □ Hero image alt text updated (includes primary keyword)
 □ Category set to Cut Files
 □ Save ➔ preview ➔ confirm no tags got truncated
+□ Log entry saved to ~/esvg-research/research-log.md
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
