@@ -302,14 +302,12 @@ it is not one of these four dimensions.)
 
 ---
 
-## STATE 13 — SEO HANDOFF
+## STATE 13 — SEO HANDOFF & LISTING ENGINE
 
-**Purpose:** Transfer product intelligence to Etsy listing
-optimization.
-Full detail: `integration/etsy-seo-handoff.md`.
+**Purpose:** Generate the complete, native 2026 Etsy listing optimization package for the created SVG design product.
+Full detail: `integration/etsy-seo-handoff.md` and `integration/etsy-seo-engine/`.
 
-**Output:** Product Intelligence File — buyer persona, product angle,
-keywords, positioning, design description.
+**Output:** Complete Native Etsy Listing Package — 140-character front-loaded title, 13 search tags (≤20 chars each, zero duplicates), competitive pricing recommendation, full listing description with file formats & machine compatibility, and Etsy 2026 AI Creation Disclosure settings ("I did" / "Made to order").
 
 **Transition:** → **END**
 

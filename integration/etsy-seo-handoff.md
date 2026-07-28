@@ -1,120 +1,57 @@
-# Etsy SEO Handoff
+# Native Etsy SEO & Listing Engine
 
-Used in **State 13 — SEO Handoff**, the final state of the canonical
-workflow. See `workflow/01-canonical-state-machine.md`.
+Used in **State 13 — SEO Handoff & Listing Creation**, the final state of the canonical workflow (`workflow/01-canonical-state-machine.md`).
 
----
-
-## 1. Purpose
-
-Defines how ESVG-DIS connects with external listing optimization
-systems once design strategy and creative development are complete.
-ESVG-DIS focuses on product intelligence, design strategy, and prompt
-engineering — it does not duplicate listing optimization functionality.
+This module embeds the complete 2026 Etsy SEO listing engine directly into ESVG-DIS (drawing from native frameworks in `integration/etsy-seo-engine/seo-guide.md`, `listing-guide.md`, and `policies.md`), ensuring every product engineered by ESVG-DIS is delivered as a 100% complete, fully optimized Etsy listing.
 
 ---
 
-## 2. Separation of Responsibilities
+## 1. Native Listing Output Requirements
 
-Two systems, two different jobs:
+State 13 MUST generate a complete, production-ready Etsy listing package in a single response, enforcing strict 2026 Etsy SEO rules:
 
-```
-ESVG-DIS           → creates the right product
-Etsy SEO System     → creates the right listing
-```
+### 📌 A. Title Optimization Rules (`integration/etsy-seo-engine/seo-guide.md`)
+- **Character Limit:** Maximum 140 characters.
+- **Primary Keyword Front-Loading:** The primary high-intent search phrase MUST appear within the **first 40 characters** (critical for mobile search cards & Etsy algorithm indexing).
+- **Formatting:** Front-loaded, high-converting long-tail phrases separated by clean pipes (`|`) or slashes (`/`).
+- **No Keyword Stuffing:** Avoid repetitive word salads or unnatural phrasing.
 
----
+### 🏷️ B. 13 Search Tags Rules (`integration/etsy-seo-engine/playbooks/`)
+- **Exact Count:** Exactly 13 tags (never leave available tag slots empty).
+- **Tag Character Limit:** Every single tag MUST be **≤ 20 characters**.
+- **Zero Duplicates:** No repeated tags or redundant phrases across the 13 slots.
+- **Tag Diversity:** Mix primary keywords, niche modifiers, craft machine terms (`cricut file`, `shirt svg`), and buyer/occasion terms.
 
-## 3. Why Both Matter
+### 💰 C. Pricing Engine (`integration/etsy-seo-engine/listing-guide.md`)
+- **Single SVG Design:** $2.50 – $4.99 (based on visual complexity and buyer appeal).
+- **SVG Bundle / Collection:** $5.99 – $12.99 (based on set size and market demand).
 
-```
-Product Quality + Marketplace Visibility = Commercial Opportunity
-```
-
-A beautiful SVG without discoverability will struggle. A perfectly
-optimized listing wrapped around a weak product will also struggle.
-Neither system is sufficient alone — this is exactly why ESVG-DIS
-stays scoped to product creation and hands off rather than trying to
-own listing optimization too.
-
----
-
-## 4. Full Workflow, End to End
-
-```
-Keyword Research
-↓
-ESVG-DIS Market Analysis
-↓
-Design Concept Development
-↓
-AI Generation Prompt
-↓
-User Creates Final Artwork
-↓
-User Creates SVG Files
-↓
-Etsy SEO System
-↓
-Listing Optimization
-↓
-Publishing
-```
-
-Everything from "Keyword Research" through "User Creates SVG Files" is
-ESVG-DIS's scope. Everything from "Etsy SEO System" onward is handed
-off — see `SYSTEM_INSTRUCTIONS.md` §4 for the explicit scope boundary.
+### 📋 D. Full Listing Description & Disclosure (`integration/etsy-seo-engine/policies.md`)
+Every output must include a fully structured listing description containing:
+1. **Hook & Value Proposition:** High-converting opening paragraph targeting the buyer persona.
+2. **Included File Formats:** SVG, PNG (300 DPI high resolution, transparent background), EPS, DXF, PDF.
+3. **Machine & Software Compatibility:** Cricut Design Space, Silhouette Studio (Designer Edition+), Brother ScanNCut, Laser Cutters, Sublimation Printers.
+4. **Commercial & Personal License Terms:** Personal & Small Business commercial usage rights.
+5. **Etsy 2026 AI Creation Disclosure Section:**
+   - **Listing Dropdowns:** *"I did"* | *"Made to order"* | *"Finished product or digital file"*
+   - **Factual Description Transparency Note:** *"Original vector illustration engineered with AI assistance and hand-curated vector cleanup per Etsy Creativity Standards."*
 
 ---
 
-## 5. The Handoff Package
-
-After design approval, ESVG-DIS provides a **Product Intelligence
-Package**:
+## 2. Integrated Workflow
 
 ```
-- Target Audience
-- Buyer Persona
-- Product Positioning
-- Emotional Angle
-- Design Description
-- Keyword Context
-- Differentiation Points
-- AI Creation Disclosure Note (Etsy Creativity Standards: disclose AI assistance in listing description)
+Market Research (State 2)
+↓
+IP Screening & Buyer Psychology (States 3-4)
+↓
+Opportunity Scoring & Saturation Check (States 6-7)
+↓
+Concept Development & Ranking (States 8-9)
+↓
+Prompt Engineering & Engine Tuning (State 10)
+↓
+Design Quality & Vector Review (States 11-12)
+↓
+Native Etsy SEO Listing Engine (State 13)  ← Complete Title, 13 Tags, Pricing & Description
 ```
-
-This is what gets passed into the Etsy SEO System — it's the
-distilled output of States 1-12, not a raw dump of every intermediate
-report.
-
-> **Automated Execution Rule (Seamless Single-Pass Output):**
-> During State 13 (SEO Handoff), the executing agent MUST NOT stop at displaying the raw handoff package. If the companion `etsy-seller` skill is detected in the environment (or if the user asked for full product creation), the agent MUST automatically invoke the listing optimization phase immediately — generating the final 140-character Etsy listing title, 13 search tags, pricing recommendation, description format, and Etsy disclosure dropdown settings in a single automated response.
-
----
-
-## 6. Relationship to the Companion Repository
-
-ESVG-DIS is designed to work alongside `moiz-za/etsy-seller-seo-system`
-as a separate, complementary, independent repository:
-
-```
-svg-design-intelligence-system + etsy-seller-seo-system
-= Complete Etsy Product Creation Workflow
-```
-
-Neither repository depends on the other to function — a user could use
-ESVG-DIS with any SEO process, or none at all, and still get a
-complete product. The combination is a recommendation, not a
-requirement.
-
----
-
-## 7. Future Possibilities (Not Current Scope)
-
-Future versions may explore: automated handoff files, shared knowledge
-modules, a unified seller workflow, product analytics feedback. None
-of these are current scope — see `documentation/roadmap.md`. In
-particular, analytics feedback would require marketplace publishing
-integration, which is explicitly out of scope for the core system (see
-`SYSTEM_INSTRUCTIONS.md` §4) — any future analytics capability would
-need to live in an optional adapter, not the core.
