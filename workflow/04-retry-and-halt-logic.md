@@ -78,13 +78,21 @@ back low, ask:
   `HALTED_OPPORTUNITY_FAILURE`, don't burn remaining research attempts
   on something that won't improve.
 
+> **Saturation-Driven Low Score Rule (Cross-Wired Guidance):**
+> When Opportunity Score comes back low (<5.5), explicitly inspect **Competition Difficulty**:
+> - If **Competition Difficulty ≤ 2 (Extreme Saturation tier)**, the weak score is driven directly by market saturation.
+> - **Action:** Do NOT output a generic, non-actionable `Opportunity Failure Report`. Instead, route directly to `playbooks/niche-saturation-reality-check.md` to provide the 3 actionable paths forward:
+>   1. **`[a]` Proceed anyway:** Build hyper-differentiated concepts (pushing 3 of 4 originality layers).
+>   2. **`[b]` Narrow the niche:** Pivot to a specific micro-niche / subculture layer and re-evaluate.
+>   3. **`[c]` Explore a different direction:** Abandon the saturated keyword and explore an open niche.
+
 In practice: if you've already used all 3 Market Research attempts and
-the opportunity still scores low, treat that as settled — don't keep
+the opportunity still scores low (and CD > 2), treat that as settled — don't keep
 re-researching past the limit hoping for a different outcome. The
 distinction above is for judgment *before* exhausting retries, not a
 way to extend them.
 
-**Output on halt:**
+**Output on halt (when CD > 2):**
 
 ```
 Opportunity Failure Report

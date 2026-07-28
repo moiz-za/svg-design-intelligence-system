@@ -148,10 +148,9 @@ input here. See `workflow/02-ip-gates.md` §7 for why IP and scoring
 stay separate.)
 
 **Decision:**
-- High score → continue → **State 7**
-- Low score → improvement possible? → return to **State 2** (retry,
-  see `workflow/04-retry-and-halt-logic.md`); not possible? →
-  `HALTED_OPPORTUNITY_FAILURE`
+- **High score (≥ 7.5):** check Competition Difficulty. If CD ≤ 2 & generic concept → trigger Niche Saturation Reality Check (`playbooks/niche-saturation-reality-check.md`), then continue → **State 7**.
+- **Moderate score (5.5 – 7.4):** improve concept angle / research → return to **State 2**.
+- **Low score (< 5.5):** check Competition Difficulty. If CD ≤ 2 (Extreme Saturation), trigger 3-Path Niche Saturation Guidance (`playbooks/niche-saturation-reality-check.md` & `workflow/04-retry-and-halt-logic.md` §4) offering Proceed / Narrow / Redirect choices. If CD > 2 & non-improvable → `HALTED_OPPORTUNITY_FAILURE`.
 
 ---
 

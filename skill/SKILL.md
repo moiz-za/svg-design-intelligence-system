@@ -112,13 +112,9 @@ dimensions, IP excluded (already gated in Phase 4).
   rather than after.
 - **Score 5.5-7.4** -> flag as moderate; ask the user whether to refine
   research or proceed anyway.
-- **Score < 5.5** -> apply the judgment call in
-  `../workflow/04-retry-and-halt-logic.md` section 4: improvable -> return
-  to Phase 3 (within 3 attempts); fundamentally weak -> halt as
-  `HALTED_OPPORTUNITY_FAILURE`, produce the Opportunity Failure
-  Report, and stop. If this is a repeated failure on the same niche,
-  check `../playbooks/honest-diagnosis-pointers.md` before recommending
-  another research attempt.
+- **Score < 5.5** -> check **Competition Difficulty**:
+  * **If CD ≤ 2 (Extreme Saturation):** Do NOT halt silently or output a generic failure report. Cross-wire directly to `../playbooks/niche-saturation-reality-check.md` and present the 3 actionable paths forward (`[a]` Proceed with heavy differentiation, `[b]` Narrow to a micro-niche, `[c]` Explore a different keyword) per `../workflow/04-retry-and-halt-logic.md` §4.
+  * **If CD > 2:** Apply the judgment call in `../workflow/04-retry-and-halt-logic.md` §4: improvable -> return to Phase 3 (within 3 attempts); fundamentally weak -> halt as `HALTED_OPPORTUNITY_FAILURE`, produce the Opportunity Failure Report, and stop. Check `../playbooks/honest-diagnosis-pointers.md` if this is a repeated failure.
 
 ### Phase 8 — Creative Strategy (State 7)
 

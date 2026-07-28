@@ -250,17 +250,11 @@ automatically eliminate an opportunity.
 - 9.0-10: Exceptional → Proceed
 - 7.5-8.9: Strong → Proceed with refinement
 - 5.5-7.4: Moderate → Improve concept first
-- Below 5.5: Weak → improvable? return to Market Research (within 3
-  attempts). Fundamentally weak? Halt.
+- Below 5.5: Weak → Check Competition Difficulty:
+  * If CD ≤ 2 (Extreme Saturation): Do not halt with a generic failure report. Present the 3-path Niche Saturation Guidance (1. Proceed with heavy differentiation, 2. Pivot to micro-niche, 3. Redirect to new topic).
+  * If CD > 2: Improvable → return to Market Research (within 3 attempts). Fundamentally weak → Halt.
 
-**Before proceeding on a strong score:** if Competition Difficulty is
-very low (≤2/10, meaning extremely saturated) AND the concept is still
-generic (no differentiation angle yet — e.g. "Dog SVG" rather than
-"Golden Retriever memorial SVG for senior dog owners"), say so plainly
-before generating concepts. A generic design in an extremely saturated
-niche won't stand out regardless of execution quality — offer to
-narrow the niche, add a differentiation angle, or proceed anyway
-knowing the risk.
+**Dual-Branch Saturation Check:** If Competition Difficulty is ≤ 2/10 (Extreme Saturation), present the Niche Saturation Reality Check for BOTH high scores (≥ 7.5 warning before generating concepts) and low scores (< 5.5 actionable diagnosis). A generic design in an extremely saturated niche won't stand out regardless of execution quality — offer to narrow the niche, add a differentiation angle, or proceed anyway knowing the risk.
 
 ---
 

@@ -12,9 +12,11 @@ difficulty at Opportunity Scoring (State 6), before Creative Strategy
 and Concept Generation spend effort on something unlikely to stand
 out.
 
-**Where it triggers:** after Phase 7 (Opportunity Scoring,
-`../workflow/03-scoring-architecture.md`), when ALL of the following
-are true.
+**Dual-Branch Triggering:** This playbook applies to **BOTH**:
+1. **Strong Opportunity Scores ($\ge 7.5$) with Saturation Risk ($\text{CD} \le 2$):** Warns the seller before spending effort on generic concepts.
+2. **Weak Opportunity Scores ($< 5.5$) Driven by Extreme Saturation ($\text{CD} \le 2$):** Replaces generic, unhelpful halt logic with actionable 3-path guidance (*Proceed / Narrow / Redirect*) per `../workflow/04-retry-and-halt-logic.md` §4.
+
+**Where it triggers:** after Opportunity Scoring (State 6), when ALL four criteria below hit.
 
 ---
 
