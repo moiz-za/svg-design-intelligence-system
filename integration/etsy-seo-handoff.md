@@ -55,3 +55,69 @@ Design Quality & Vector Review (States 11-12)
 ↓
 Native Etsy SEO Listing Engine (State 13)  ← Complete Title, 13 Tags, Pricing & Description
 ```
+
+---
+
+## 3. Mandatory Listing Output Template & Execution Protocol
+
+When State 13 executes, the executing agent MUST NOT output a brief summary or generic text. The agent MUST populate and render the following **exact Markdown structure**:
+
+```markdown
+# 🛒 Complete Etsy Listing Package
+
+## 1. 📌 Optimized Etsy Listing Title
+[Insert 140-character front-loaded title here. Primary focus keyword MUST be within the first 40 characters.]
+*(Character Count: [XX]/140)*
+
+## 2. 🏷️ 13 Search Tags
+1. [Tag 1 — max 20 chars]
+2. [Tag 2 — max 20 chars]
+3. [Tag 3 — max 20 chars]
+4. [Tag 4 — max 20 chars]
+5. [Tag 5 — max 20 chars]
+6. [Tag 6 — max 20 chars]
+7. [Tag 7 — max 20 chars]
+8. [Tag 8 — max 20 chars]
+9. [Tag 9 — max 20 chars]
+10. [Tag 10 — max 20 chars]
+11. [Tag 11 — max 20 chars]
+12. [Tag 12 — max 20 chars]
+13. [Tag 13 — max 20 chars]
+*(Verification Check: Exactly 13 tags, 0 duplicates, all ≤20 characters)*
+
+## 3. 💰 Pricing & Positioning Recommendation
+- **Recommended Price:** $[X.XX]
+- **Pricing Rationale:** [Market positioning rationale based on visual complexity and competitor price tier]
+
+## 4. 📋 Full High-Converting Listing Description
+
+### 🌟 [Attention-Grabbing Product Hook Title]
+[2-3 sentences targeting buyer persona, emotional trigger, and core craft use case]
+
+### 📁 Included File Formats
+- **1x SVG File:** Clean, layered vector paths optimized for Cricut & Silhouette cutting.
+- **1x PNG File:** High-resolution 300 DPI transparent background (4000x4000px).
+- **1x EPS File:** Professional vector graphics editing format.
+- **1x DXF File:** Silhouette Studio Basic Edition format.
+- **1x PDF File:** Vector print & preview format.
+
+### ✂️ Machine & Software Compatibility
+- Cricut Design Space
+- Silhouette Studio (Designer & Basic Editions)
+- Brother ScanNCut
+- Laser Cutters (Glowforge, xTool, Omtech)
+- Sublimation Printers & Heat Press software
+
+### 📜 Usage Rights & Commercial License
+- **Personal Use:** Unlimited personal crafting & gifts.
+- **Commercial Use:** Small Business Commercial License included for up to 500 physical end-products (t-shirts, mugs, totes, decals).
+- **Restrictions:** Reselling, sharing, or redistributing digital files in any format is strictly prohibited.
+
+## 5. 🛡️ Etsy 2026 AI Creation Disclosure & Listing Settings
+- **About this listing dropdowns:**
+  - *Who made it?* **I did**
+  - *What is it?* **A finished product or digital file**
+  - *When was it made?* **Made to order / Recently made**
+- **Factual Description Transparency Note:**
+  *"Original vector illustration engineered with AI assistance and hand-curated vector path cleanup per Etsy 2026 Creativity Standards."*
+```

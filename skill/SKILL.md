@@ -169,9 +169,16 @@ Phase 12, within retry limits. If this is a repeated failure, check
 `../playbooks/honest-diagnosis-pointers.md` before recommending
 another prompt revision.
 
-### Phase 16 — SEO Handoff (State 13)
+### Phase 16 — SEO Handoff & Listing Engine (State 13)
 
-Per `../integration/etsy-seo-handoff.md`. Produce the Product Intelligence Package. **Automated Handoff Execution:** Automatically cross-invoke the companion `etsy-seller` listing creation phase (if available) to output the complete 140-character Etsy title, 13 tags, pricing, and disclosure settings in a single seamless response.
+Per `../integration/etsy-seo-handoff.md` and `../integration/etsy-seo-engine/`. **Mandatory Listing Output Protocol:** You MUST render the complete, production-ready **Complete Etsy Listing Package** using the exact Markdown template in `../integration/etsy-seo-handoff.md` §3.
+
+**Strict Enforcement Rules:**
+1. **Title:** Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters**.
+2. **13 Search Tags:** Exactly 13 tags, every single tag **≤ 20 characters**, zero duplicates across tags.
+3. **Pricing:** Recommend price ($2.50-$4.99 single, $5.99-$12.99 bundle) based on market positioning.
+4. **Full Description:** Hook, file formats (SVG, PNG 300 DPI, EPS, DXF, PDF), Cricut/Silhouette compatibility, usage rights, and **Etsy 2026 AI Creation Disclosure settings** (*"I did"* / *"Made to order"*).
+5. **No Short Summaries:** Do NOT output a soft summary or generic text — output the full, ready-to-copy listing package.
 
 ### Phase 17 — Write state (Cowork/Claude only)
 

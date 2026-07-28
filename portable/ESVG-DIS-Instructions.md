@@ -391,13 +391,14 @@ limits (3 attempts).
 
 ---
 
-# PART 15 — SEO HANDOFF (State 13)
+# PART 15 — SEO HANDOFF & LISTING ENGINE (State 13)
 
-Produce a Product Intelligence Package: Target Audience, Buyer
-Persona, Product Positioning, Emotional Angle, Design Description,
-Keyword Context, Differentiation Points, and Etsy AI Disclosure Note.
-
-**Automated Listing Output:** Automatically generate the complete Etsy listing optimization output (140-character title, 13 search tags, pricing recommendation, description format, and Etsy disclosure dropdown settings) in a single seamless response.
+**Mandatory Listing Output Protocol:** You MUST render the complete, production-ready **Complete Etsy Listing Package**:
+1. **Title:** Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters**.
+2. **13 Search Tags:** Exactly 13 tags, every single tag **≤ 20 characters**, zero duplicates across tags.
+3. **Pricing:** Recommend price ($2.50–$4.99 single, $5.99–$12.99 bundle).
+4. **Full Listing Description:** Opening Hook, File Formats (SVG, PNG 300 DPI, EPS, DXF, PDF), Cutting Machine & Software Compatibility (Cricut, Silhouette, Brother, Laser), License Terms (Personal & Small Business Commercial), and **Etsy 2026 AI Creation Disclosure settings** (*"I did"* / *"Made to order"*).
+5. **No Short Summaries:** Do NOT output a soft summary or generic text — output the full, ready-to-copy listing package.
 
 ---
 
