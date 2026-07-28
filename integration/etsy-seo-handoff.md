@@ -8,7 +8,7 @@ This module embeds the complete 2026 Etsy SEO listing engine natively into ESVG-
 
 ## 1. The 8 Mandatory Execution Phases
 
-When State 13 executes, the agent MUST run through all 8 execution phases sequentially:
+When State 13 executes, the agent MUST run through all 8 execution phases sequentially, strictly following `integration/etsy-seo-engine/listing-guide.md`:
 
 ### 📋 Phase 1: Policy & Algorithm Freshness Check
 - Verify current Etsy seller policies (`integration/etsy-seo-engine/policies.md`).
@@ -21,31 +21,35 @@ When State 13 executes, the agent MUST run through all 8 execution phases sequen
   - `[b]` Keep phrase anyway (Etsy de-duplication risk)
   - `[c]` Re-keyword previous listing
 
-### 📌 Phase 3: Title Construction & Character Limit Validation
-- **Length:** ≤ 140 characters (including spaces).
-- **Word Count:** 6 to 12 words (aim under 15 words).
-- **Primary Keyword Front-Loading:** Primary search phrase MUST appear within the **first 40 characters**.
-- **No Comma-Chain Stuffing:** Natural phrasing separated by clean pipes (`|`) or slashes (`/`).
-- **No Subjective Fillers:** Strip buzzwords (*beautiful, amazing, stunning, incredible, perfect*).
+### 📌 Phase 3: Title Construction & Validation (`listing-guide.md` §1)
+- **Title Formula:** `[Primary Keyword] [Style/Theme Descriptor] | [Format or Use-Case]`
+- **SVG Example:** `Funny Cat Mom SVG Bundle | Cricut Clipart PNG EPS`
+- **Hard Limits:**
+  - **Length:** ≤ 140 characters (including spaces).
+  - **Word Count:** 6 to 12 words (fewer than 15 words).
+  - **Primary Keyword Front-Loading:** Primary search phrase MUST appear within the **first 40 characters** (critical for mobile display and search indexing).
+  - **No Comma-Chain Stuffing:** Natural phrasing separated by clean pipes (`|`) or slashes (`/`).
+  - **No Subjective Fillers:** Strip subjective adjectives (*beautiful, perfect, stunning, amazing, incredible*) and promo words (*on sale, free, best seller*).
+  - **No Trademarks:** Zero brand names or trademarked terms.
 
-### 🏷️ Phase 4: 13 Tags Construction & Character Limit / Duplication Audit
+### 🏷️ Phase 4: 13 Tags Construction & Character Limit / Duplication Audit (`listing-guide.md` §2)
 - **Exact Count:** Exactly 13 tags (never leave tag slots blank).
 - **Character Limit:** Every tag MUST be **≤ 20 characters** (including spaces). Tags >20 chars are silently rejected by Etsy.
 - **Zero Phrase Duplicates:** No exact 2+ word phrase repeats across tags.
 - **No Single Word Tags:** Use multi-word long-tail phrases (`softball mom svg`, not `svg`).
 - **Verification Audit:** Output the exact character count per tag (`[Tag] ([X] chars ✅)`).
 
-### 📂 Phase 5: Attributes & Category Mapping
+### 📂 Phase 5: Attributes & Category Mapping (`listing-guide.md` §3 & §5)
 - **Category:** `Craft Supplies & Tools > Canvas & Surfaces > Stencils, Templates & Transfers > Cut Files`
 - **Attributes:** Style, Occasion, Recipient. At least 1 attribute value MUST echo a word from the primary keyword cluster.
 
-### 📝 Phase 6: Full 8-Block Description & 160-Char Meta Zone
+### 📝 Phase 6: Full 8-Block Description & 160-Char Meta Zone (`listing-guide.md` §4)
 - **Meta Zone (First 160 chars):** Must contain the primary keyword and function as a complete product pitch.
 - **Length:** 250 to 700 words.
 - **No Generic Openers:** Prohibit "Thank you for visiting" or "This listing is for".
 - **Structure:** Opening Hook → Value & Features → Included File Formats (SVG, PNG 300 DPI 4000x4000px, EPS, DXF, PDF) → Instant Delivery → Machine Compatibility (Cricut, Silhouette, Laser, Sublimation) → Usage License (Personal & Small Business Commercial up to 500 items) → Etsy 2026 AI Creation Disclosure → Closing.
 
-### 🖼️ Phase 7: Hero Image Alt Text & Pinterest Marketing Block
+### 🖼️ Phase 7: Hero Image Alt Text & Pinterest Marketing Block (`listing-guide.md` §6)
 - **Hero Alt Text:** 100–150 chars containing primary keyword.
 - **Pinterest Block:** Pin title (≤100 chars), Board name (25–40 chars), Board description (150–300 chars), Pin description (220–232 chars, no hashtags).
 
@@ -67,7 +71,7 @@ A keyword is indexed most strongly by Etsy's algorithm when the same phrase clus
 
 ## 3. Mandatory Listing Output Template & Execution Protocol
 
-When State 13 executes, the executing agent MUST NOT output a brief summary or generic text. The agent MUST populate and render the following **exact Markdown structure**:
+When State 13 executes, the executing agent MUST NOT output a brief summary or generic text. The agent MUST populate and render the following **exact Markdown structure matching `listing-guide.md`**:
 
 ```markdown
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -77,13 +81,14 @@ NATIVE ETSY LISTING PACKAGE — STATE 13
 PRIMARY KEYWORD: [Primary Keyword] · difficulty: [Low-Medium / Medium] · ~[N] search results
 
 TITLE:
-[Insert 140-character front-loaded title here]
+[Title using formula: Primary Keyword + Style Descriptor | Format or Use-Case]
 
-📱 Mobile Preview Card (First 40 chars):
+📱 Mobile Preview Card & Title Verification:
 ┌───────────────────────────────────────┐
 │ [First 40 characters of title]...     │
 └───────────────────────────────────────┘
-Word count: [X] words (aim 6-12) ✅  ·  Char count: [X] / 140 ✅
+First 40 chars: "[First 40 chars text...]" ✅
+Word count: [X] words (aim 6-12 words) ✅  ·  Char count: [X] / 140 ✅
 
 TAGS (13/13):
 1.  [Tag 1] ([X] chars ✅)
