@@ -171,8 +171,7 @@ another prompt revision.
 
 ### Phase 16 — SEO Handoff (State 13)
 
-Per `../integration/etsy-seo-handoff.md`. Produce the Product
-Intelligence Package.
+Per `../integration/etsy-seo-handoff.md`. Produce the Product Intelligence Package. **Automated Handoff Execution:** Automatically cross-invoke the companion `etsy-seller` listing creation phase (if available) to output the complete 140-character Etsy title, 13 tags, pricing, and disclosure settings in a single seamless response.
 
 ### Phase 17 — Write state (Cowork/Claude only)
 

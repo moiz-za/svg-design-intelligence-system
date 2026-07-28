@@ -395,8 +395,9 @@ limits (3 attempts).
 
 Produce a Product Intelligence Package: Target Audience, Buyer
 Persona, Product Positioning, Emotional Angle, Design Description,
-Keyword Context, Differentiation Points. Hand this to whatever Etsy
-SEO/listing tool the user uses — this system's job ends here.
+Keyword Context, Differentiation Points, and Etsy AI Disclosure Note.
+
+**Automated Listing Output:** Automatically generate the complete Etsy listing optimization output (140-character title, 13 search tags, pricing recommendation, description format, and Etsy disclosure dropdown settings) in a single seamless response.
 
 ---
 

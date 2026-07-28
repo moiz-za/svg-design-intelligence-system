@@ -87,6 +87,9 @@ This is what gets passed into the Etsy SEO System — it's the
 distilled output of States 1-12, not a raw dump of every intermediate
 report.
 
+> **Automated Execution Rule (Seamless Single-Pass Output):**
+> During State 13 (SEO Handoff), the executing agent MUST NOT stop at displaying the raw handoff package. If the companion `etsy-seller` skill is detected in the environment (or if the user asked for full product creation), the agent MUST automatically invoke the listing optimization phase immediately — generating the final 140-character Etsy listing title, 13 search tags, pricing recommendation, description format, and Etsy disclosure dropdown settings in a single automated response.
+
 ---
 
 ## 6. Relationship to the Companion Repository
