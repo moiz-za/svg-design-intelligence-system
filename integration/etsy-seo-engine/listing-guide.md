@@ -16,25 +16,26 @@
 
 ## 1. Title Rules
 
-### Hard Limits
-- **Fewer than 15 words** — aim for 6–12 meaningful words
-- **Maximum 140 characters** — spaces count
-- **Primary keyword in first 40 characters** — critical for mobile display and Google preview
-- No trademarked names, brand names, celebrity names
-- No subjective adjectives: beautiful, perfect, stunning, amazing, incredible
-- No sales/shipping/price information — Etsy badges these automatically
-- No promotional language: "on sale", "free", "best seller"
+### Hard Limits & Prohibitions
+- **STRICT WORD COUNT GUARDRAIL: MUST be 6–12 words. ABSOLUTE MAXIMUM: 14 words.** Any title with 15 or more words is INVALID and MUST be rejected and rewritten immediately.
+- **Maximum 140 characters** — spaces count.
+- **Primary keyword in first 40 characters** — critical for mobile display and search algorithm indexing.
+- **PROHIBITED SUBJECTIVE WORDS STOPLIST (ZERO ALLOWED):** Do NOT use filler adjectives or subjective fluff: `cute`, `adorable`, `beautiful`, `perfect`, `stunning`, `amazing`, `incredible`, `pretty`, `awesome`, `gorgeous`, `lovely`, `sweet`, `unique`, `best`, `top`, `wonderful`, `charming`. Subjective fluff wastes character space, dilutes search relevance, and triggers Etsy promotional filters.
+- No trademarked names, brand names, or celebrity names.
+- No sales/shipping/price information — Etsy badges these automatically.
+- No promotional language: "on sale", "free", "best seller".
 
-### Formula
+### Mandatory Formula
 ```
 [Primary Keyword] [Style/Theme Descriptor] | [Format or Use-Case]
 ```
 
-### Title Verification (display in output)
+### Title Verification (MUST display in output)
 ```
 [First 40 chars: "Primary keyword appears here..."] ✅
-[Word count: X] ✅
-[Char count: X] ✅
+[Word count: X words (MUST be 6–12, MAX 14)] ✅
+[Char count: X / 140] ✅
+[Subjective words check: 0 subjective words used] ✅
 ```
 
 ### Title Examples by Product Type

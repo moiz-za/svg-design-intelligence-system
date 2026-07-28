@@ -22,15 +22,15 @@ When State 13 executes, the agent MUST run through all 8 execution phases sequen
   - `[c]` Re-keyword previous listing
 
 ### 📌 Phase 3: Title Construction & Validation (`listing-guide.md` §1)
-- **Title Formula:** `[Primary Keyword] [Style/Theme Descriptor] | [Format or Use-Case]`
+- **Mandatory Title Formula:** `[Primary Keyword] [Style/Theme Descriptor] | [Format or Use-Case]`
 - **SVG Example:** `Funny Cat Mom SVG Bundle | Cricut Clipart PNG EPS`
-- **Hard Limits:**
-  - **Length:** ≤ 140 characters (including spaces).
-  - **Word Count:** 6 to 12 words (fewer than 15 words).
-  - **Primary Keyword Front-Loading:** Primary search phrase MUST appear within the **first 40 characters** (critical for mobile display and search indexing).
+- **Hard Limits & Prohibitions:**
+  - **Word Count Limit:** MUST be **6 to 12 words**. ABSOLUTE MAXIMUM: **14 words**. Any title with 15 or more words is INVALID and MUST be rejected and rewritten immediately.
+  - **Length Limit:** ≤ 140 characters (including spaces).
+  - **Primary Keyword Front-Loading:** Primary search phrase MUST appear within the **first 40 characters** (critical for mobile display and search algorithm indexing).
+  - **PROHIBITED SUBJECTIVE WORDS STOPLIST (ZERO ALLOWED):** Do NOT use filler adjectives or subjective fluff: `cute`, `adorable`, `beautiful`, `perfect`, `stunning`, `amazing`, `incredible`, `pretty`, `awesome`, `gorgeous`, `lovely`, `sweet`, `unique`, `best`, `top`, `wonderful`, `charming`.
   - **No Comma-Chain Stuffing:** Natural phrasing separated by clean pipes (`|`) or slashes (`/`).
-  - **No Subjective Fillers:** Strip subjective adjectives (*beautiful, perfect, stunning, amazing, incredible*) and promo words (*on sale, free, best seller*).
-  - **No Trademarks:** Zero brand names or trademarked terms.
+  - **No Trademarks or Sales Words:** Zero brand names, celebrity names, or promotional words (*on sale, free, best seller*).
 
 ### 🏷️ Phase 4: 13 Tags Construction & Character Limit / Duplication Audit (`listing-guide.md` §2)
 - **Exact Count:** Exactly 13 tags (never leave tag slots blank).
@@ -88,7 +88,9 @@ TITLE:
 │ [First 40 characters of title]...     │
 └───────────────────────────────────────┘
 First 40 chars: "[First 40 chars text...]" ✅
-Word count: [X] words (aim 6-12 words) ✅  ·  Char count: [X] / 140 ✅
+Word count: [X] words (MUST be 6–12 words, MAX 14) ✅
+Char count: [X] / 140 ✅
+Subjective words check: 0 subjective words used ✅
 
 TAGS (13/13):
 1.  [Tag 1] ([X] chars ✅)

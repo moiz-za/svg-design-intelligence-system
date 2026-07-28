@@ -175,7 +175,7 @@ Per `../integration/etsy-seo-handoff.md` and `../integration/etsy-seo-engine/`. 
 
 1. **Policy & Algorithm Freshness Check:** Verify output against August 11, 2026 Etsy Creativity Standards.
 2. **Keyword Cannibalization Prevention:** Check candidate primary keyword against `~/esvg-research/research-log.md`; issue overlap warning if already used.
-3. **Title Construction:** Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters** (6-12 words, no subjective filler buzzwords).
+3. **Title Construction:** Formula: `[Primary Keyword] [Style/Theme Descriptor] | [Format or Use-Case]`. Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters**. **Word Count Guardrail: MUST be 6–12 words (MAXIMUM 14 words).** Reject any title with 15+ words. **Prohibited Subjective Words Stoplist (ZERO ALLOWED):** `cute`, `adorable`, `beautiful`, `perfect`, `stunning`, `amazing`, `incredible`, `pretty`, `awesome`, `gorgeous`, `lovely`, `sweet`, `unique`, `best`, `top`, `wonderful`, `charming`.
 4. **13 Search Tags:** Exactly 13 tags, every tag **≤ 20 characters** (including spaces), zero 2+ word phrase duplicates, character count listed per tag (`[Tag] ([X] chars ✅)`).
 5. **Attributes & Category Mapping:** Style, Occasion, Recipient mapped to Cut Files category (`Craft Supplies & Tools > Canvas & Surfaces > Stencils, Templates & Transfers > Cut Files`).
 6. **5-Surface Indexing Spread Check:** Verify primary keyword touches Title (first 40 chars), Tags (3+ tags), Attributes, Description Meta Zone (first 160 chars), and Hero Alt Text.
