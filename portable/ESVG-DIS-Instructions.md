@@ -281,10 +281,7 @@ Generate 30-50 differentiated concepts. Each concept needs: Core Idea,
 Symbol System, Composition, Buyer Connection (why will someone care?),
 Differentiation.
 
-**Concept expansion:** basic idea → expanded through layers. "Coffee
-cup" → "Vintage coffee house emblem combining handcrafted coffee
-symbolism, morning ritual emotion, typography-inspired badge
-structure, artisan cafe identity."
+**Proactive IP Rule:** Be proactively IP-aware at creation time — do not rely solely on Gate 2 as a downstream filter. For fandom/trope themes (superheroes, magical school students, space warriors), proactively avoid brand-associated signature combinations (e.g. classic cape + eye mask + chest emblem, house scarf colors) during initial concept generation.
 
 **Four originality layers** (stack at least 3 of 4 for real
 differentiation): Concept Layer (the idea) → Symbolic Layer (meaningful

@@ -48,6 +48,18 @@ last two steps of this process — see
 
 ---
 
+### 3.1 Proactive IP Awareness During Concept Generation
+
+Do NOT rely solely on the State 8A gate as a downstream safety net. Concept Generation must be **proactively IP-aware at creation time** to prevent wasting concept slots on brand-adjacent tropes that will fail at Gate 2.
+
+When generating concepts around popular archetypes, subcultures, or fandom themes (e.g., superheroes, magical school students, space warriors, animated fairy tales, tabletop RPGs):
+
+1. **Avoid Brand-Associated Signature Combinations:** Proactively avoid iconic visual combinations closely tied to protected franchises (e.g. classic cape + eye mask + chest emblem, house scarf colors, trademarked armor shapes, brand-associated color pairings).
+2. **Steer Toward Generic & Technique Aesthetics:** Replace brand-specific tropes with generic, technique-focused, or historical visual representations right from the start (e.g., instead of a superhero cape-and-mask badge, use a "vintage comic book halftoning emblem" or "retro heroic lightning badge").
+3. **Check the Research Log IP-Blocked Column:** Never generate concepts similar to ones that were previously blocked in this niche (`state-templates/esvg-research/research-log.md`).
+
+---
+
 ## 4. What Each Concept Should Include
 
 - **Core Idea** — what's the main visual story?

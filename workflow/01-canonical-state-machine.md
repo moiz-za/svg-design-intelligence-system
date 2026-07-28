@@ -171,9 +171,7 @@ emotional direction, differentiation strategy, SVG requirements.
 **Purpose:** Create multiple original design directions.
 Full detail: `knowledge/concept-development.md`.
 
-**Rules:** concepts must match buyer psychology, avoid IP risk (see
-State 8A immediately after), provide differentiation, remain SVG
-feasible.
+**Rules:** concepts must match buyer psychology, be **proactively IP-aware at creation time** (avoiding brand-associated signature combinations like cape+mask+emblem for superhero tropes, see `knowledge/concept-development.md` §3.1), provide differentiation, and remain SVG feasible. Do not rely solely on State 8A gate as a downstream safety net.
 
 **Output:** Concept Portfolio (multiple concepts).
 **Transition:** → **State 8A**

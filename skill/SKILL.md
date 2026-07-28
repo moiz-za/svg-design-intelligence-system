@@ -124,9 +124,7 @@ differentiation strategy, SVG requirements.
 
 ### Phase 9 — Concept Generation (State 8)
 
-Per `../knowledge/concept-development.md`. Generate 30-50 concepts.
-**Check the Research Log's "IP-Blocked Concepts" column for this niche
-first, never regenerate something already blocked.**
+Per `../knowledge/concept-development.md`. Generate 30-50 concepts. **Proactive IP Rule:** Be proactively IP-aware at creation time (section 3.1) — avoid brand-associated signature combinations (e.g. cape+mask+chest emblem) during initial generation rather than relying solely on Gate 2 as a filter. **Check the Research Log's "IP-Blocked Concepts" column for this niche first, never regenerate something already blocked.**
 
 ### Phase 10 — Concept IP Review (State 8A) `[GATE 2 of 4]`
 
