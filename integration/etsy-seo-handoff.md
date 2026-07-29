@@ -13,7 +13,8 @@ When State 13 executes, the agent MUST run through all 8 execution phases sequen
 ### 📋 Phase 1: Policy & Algorithm Freshness Check & Automated Sync
 - Verify current Etsy seller policies (`integration/etsy-seo-engine/policies.md`).
 - Ensure output complies with August 11, 2026 Etsy Creativity Standards (computerized tool usage disclosure rules).
-- Run `python3 scripts/sync_etsy_policy.py` to auto-sync policy and engine rulebooks bidirectionally between ESVG-DIS (`integration/etsy-seo-engine/`) and the standalone Etsy Seller SEO System (`skill/references/`) to guarantee zero policy drift.
+- **Portable / Web Mode:** When web browsing is enabled, execute a live web search for `"Etsy seller policies 2026"` / `"Etsy creativity standards"` to verify active marketplace rules before generating the listing package. Apply any newly detected policy rules directly to the output.
+- **Full System / CLI Mode:** Run `python3 scripts/sync_etsy_policy.py` to auto-sync policy and engine rulebooks bidirectionally between ESVG-DIS (`integration/etsy-seo-engine/`) and the standalone Etsy Seller SEO System (`skill/references/`) to guarantee zero policy drift.
 
 ### 🔍 Phase 2: Keyword Overlap & Cannibalization Prevention
 - Read existing keywords from `~/esvg-research/research-log.md`.

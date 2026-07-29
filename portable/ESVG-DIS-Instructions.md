@@ -394,7 +394,9 @@ limits (3 attempts).
 # PART 15 — SEO HANDOFF & LISTING ENGINE (State 13)
 
 **Mandatory Execution Protocol:** Execute all 8 Etsy SEO Listing Phases:
-1. **Policy & Algorithm Freshness Check & Automated Sync:** Verify compliance with 2026 Etsy Creativity Standards. Run `python3 scripts/sync_etsy_policy.py` to auto-sync policy rulebooks bidirectionally across repositories with zero drift.
+1. **Policy & Algorithm Freshness Check & Automated Sync:** Verify compliance with 2026 Etsy Creativity Standards.
+   - *Portable Single-File / Web Mode:* When web browsing is available, execute a live web search for `"Etsy seller policies 2026"` / `"Etsy creativity standards"` to verify active marketplace rules before generating the listing. Apply any newly detected policy requirements directly to the output.
+   - *Full System / CLI Mode:* Run `python3 scripts/sync_etsy_policy.py` to auto-sync local policy rulebooks bidirectionally across repositories with zero drift.
 2. **Keyword Cannibalization Check:** Verify candidate primary keyword is not already used; issue overlap warning if duplicated.
 3. **Title Construction:** Formula: `[Primary Keyword] [Style/Theme Descriptor] | [Format or Use-Case]` (e.g. `Funny Cat Mom SVG Bundle | Cricut Clipart PNG EPS`). Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters**. **Word Count Guardrail: MUST be 6–12 words (MAXIMUM 14 words).** Reject any title with 15+ words. **PROHIBITED SUBJECTIVE WORDS STOPLIST (ZERO ALLOWED):** `cute`, `adorable`, `beautiful`, `perfect`, `stunning`, `amazing`, `incredible`, `pretty`, `awesome`, `gorgeous`, `lovely`, `sweet`, `unique`, `best`, `top`, `wonderful`, `charming`. Verify mobile preview card, word count, char count, and zero subjective words check.
 4. **13 Search Tags:** Exactly 13 tags, every tag **≤ 20 characters** (including spaces), no exact 2+ word phrase shared across more than 2 tags, character count listed per tag (`[Tag] ([X] chars ✅)`).
