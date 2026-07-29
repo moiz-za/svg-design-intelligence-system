@@ -397,11 +397,11 @@ limits (3 attempts).
 1. **Policy & Algorithm Freshness Check:** Verify compliance with 2026 Etsy Creativity Standards.
 2. **Keyword Cannibalization Check:** Verify candidate primary keyword is not already used; issue overlap warning if duplicated.
 3. **Title Construction:** Formula: `[Primary Keyword] [Style/Theme Descriptor] | [Format or Use-Case]` (e.g. `Funny Cat Mom SVG Bundle | Cricut Clipart PNG EPS`). Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters**. **Word Count Guardrail: MUST be 6–12 words (MAXIMUM 14 words).** Reject any title with 15+ words. **PROHIBITED SUBJECTIVE WORDS STOPLIST (ZERO ALLOWED):** `cute`, `adorable`, `beautiful`, `perfect`, `stunning`, `amazing`, `incredible`, `pretty`, `awesome`, `gorgeous`, `lovely`, `sweet`, `unique`, `best`, `top`, `wonderful`, `charming`. Verify mobile preview card, word count, char count, and zero subjective words check.
-4. **13 Search Tags:** Exactly 13 tags, every tag **≤ 20 characters** (including spaces), zero 2+ word phrase duplicates, character count listed per tag (`[Tag] ([X] chars ✅)`).
+4. **13 Search Tags:** Exactly 13 tags, every tag **≤ 20 characters** (including spaces), no exact 2+ word phrase shared across more than 2 tags, character count listed per tag (`[Tag] ([X] chars ✅)`).
 5. **Attributes & Category:** Style, Occasion, Recipient mapped to Cut Files category.
 6. **5-Surface Indexing Spread Check:** Verify primary keyword touches Title (first 40 chars), Tags (3+ tags), Attributes, Description Meta Zone (first 160 chars), and Hero Alt Text.
 7. **Full 8-Block Description:** Hook, File Formats (SVG, PNG 300 DPI, EPS, DXF, PDF), Cricut/Silhouette/Laser compatibility, License Terms (Personal & Small Business Commercial), and **Etsy 2026 AI Creation Disclosure settings** (*"I did"* / *"Made to order"*).
-8. **Hero Alt Text & Pinterest Marketing Block:** 100-150 char alt text containing primary keyword, Pin title, Board name, Board description, Pin description (220-232 chars), and Pre-Publish Checklist.
+8. **Hero Alt Text & Pinterest Marketing Block:** 100-150 char alt text containing primary keyword, Pin title, Board name, Board description, Pin description (220-232 chars — write naturally first, then count characters and explicitly expand/trim to land within 220-232 chars before finalizing), and Pre-Publish Checklist.
 9. **No Short Summaries:** Output the full, ready-to-copy listing package and sync to log.
 
 ---

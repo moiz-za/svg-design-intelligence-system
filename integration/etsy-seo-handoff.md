@@ -35,7 +35,7 @@ When State 13 executes, the agent MUST run through all 8 execution phases sequen
 ### 🏷️ Phase 4: 13 Tags Construction & Character Limit / Duplication Audit (`listing-guide.md` §2)
 - **Exact Count:** Exactly 13 tags (never leave tag slots blank).
 - **Character Limit:** Every tag MUST be **≤ 20 characters** (including spaces). Tags >20 chars are silently rejected by Etsy.
-- **Zero Phrase Duplicates:** No exact 2+ word phrase repeats across tags.
+- **Phrase Overlap Limit:** No exact 2+ word phrase may repeat across more than 2 tags (maximum 2 tags may share a 2-word phrase cluster).
 - **No Single Word Tags:** Use multi-word long-tail phrases (`softball mom svg`, not `svg`).
 - **Verification Audit:** Output the exact character count per tag (`[Tag] ([X] chars ✅)`).
 
@@ -51,7 +51,7 @@ When State 13 executes, the agent MUST run through all 8 execution phases sequen
 
 ### 🖼️ Phase 7: Hero Image Alt Text & Pinterest Marketing Block (`listing-guide.md` §6)
 - **Hero Alt Text:** 100–150 chars containing primary keyword.
-- **Pinterest Block:** Pin title (≤100 chars), Board name (25–40 chars), Board description (150–300 chars), Pin description (220–232 chars, no hashtags).
+- **Pinterest Block:** Pin title (≤100 chars), Board name (25–40 chars), Board description (150–300 chars), Pin description (220–232 chars, no hashtags — write naturally first, then count characters and explicitly expand/trim to land within 220–232 chars before finalizing).
 
 ### 💾 Phase 8: Log Maintenance & Database Sync
 - Automatically append/update the listing entry in `~/esvg-research/research-log.md` with: Date, Keyword, Primary Keyword, Title, Tags, Price, Status, and Data Source tag.
@@ -106,7 +106,7 @@ TAGS (13/13):
 11. [Tag 11] ([X] chars ✅)
 12. [Tag 12] ([X] chars ✅)
 13. [Tag 13] ([X] chars ✅)
-*(Verification Check: Exactly 13 tags, 0 duplicates, all ≤20 characters including spaces)*
+*(Verification Check: Exactly 13 tags, all ≤20 characters including spaces, no phrase shared across >2 tags)*
 
 ATTRIBUTES:
 Style: [Value]    Occasion: [Value]    Recipient: [Value]    Category: Craft Supplies & Tools > Canvas & Surfaces > Stencils, Templates & Transfers > Cut Files
@@ -152,7 +152,7 @@ PINTEREST MARKETING BLOCK:
 PIN TITLE: [Pin title ≤100 chars]
 BOARD NAME: [Board name 25-40 chars]
 BOARD DESCRIPTION: [Board description 150-300 chars]
-PIN DESCRIPTION: [Pin description 220-232 chars, no hashtags]
+PIN DESCRIPTION: [Pin description 220-232 chars, no hashtags — count characters and explicitly expand/trim to land within 220-232 chars before finalizing]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 INDEXING SPREAD: Title ✅  ·  Tags (3+) ✅  ·  Attributes ✅  ·  Meta Zone ✅  ·  Alt Text ✅
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
