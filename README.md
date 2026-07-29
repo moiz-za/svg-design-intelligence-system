@@ -28,12 +28,14 @@ It functions as an expert **commercial product strategist, IP risk reviewer, buy
 | Feature | Description |
 | :--- | :--- |
 | 🛡️ **4-Stage IP Risk Gates** | Hard legal checkpoints (Keyword, Concept, Prompt, Final Artwork). **IP is a binary gate (PASS/MODIFY/BLOCK)** — high commercial scores can *never* override legal risk. |
-| 🌐 **Dual-Mode Research** | Uses **Live Etsy Search** when web browsing is enabled; falls back to qualitative reasoning with an explicit `Data Source` tag on free/offline models. |
+| 🌐 **Dual-Mode Research & Policy Verification** | Uses **Live Etsy Search & Policy Web Verification** when web browsing is enabled; falls back to qualitative reasoning with an explicit `Data Source` tag on free/offline models. |
 | 📊 **3-Level Scoring Architecture** | Evaluates **Opportunity Score** (State 6), **Concept Score** (State 9), and **Quality Score** (State 12) across weighted commercial dimensions. |
 | ✂️ **Cricut & Vector Ready** | Enforces vector production thresholds (min detail ≥ 1/40th width, no tiny floating shapes, closed outlines, controlled line weight). |
 | 🎭 **Buyer Psychology Layer** | Maps purchase motivations (Identity, Gift, Hobby, Emotion) and layers micro-niches to bypass oversaturated broad keywords. |
 | 🎨 **Multi-Tool Engine Prompts** | Engineered prompts optimized for **ChatGPT Images, Midjourney, Flux, Ideogram, Leonardo, and Gemini** using `prompts/engine-tuning-guide.md`. |
 | 🏷️ **Native 8-Phase Etsy SEO Engine** | State 13 executes an 8-phase listing engine: Policy Check, Keyword Overlap Scan, 140-char Front-Loaded Title, 13 Search Tags ≤20 chars, 5-Surface Indexing Spread, 8-Block Description with Etsy AI Disclosure, Alt Text & Pinterest Block, and Research Log Sync. |
+| 🔄 **Automated Dual-Repo Policy Sync** | Includes `scripts/sync_etsy_policy.py` to auto-sync policy and engine rulebooks bidirectionally with `etsy-seller-seo-system` with zero manual effort and zero policy drift. |
+| 📏 **Strict Title & Tag Guardrails** | Enforces 6–12 word title limit (max 14), mandatory formula `[Primary Keyword] [Style Descriptor] | [Format]`, prohibited subjective words stoplist (`cute`, `beautiful`, etc.), and refined tag overlap limit (max 2 tags share phrase cluster). |
 | 🆓 **100% Free Tier Compatible** | Full single-file portable edition available for free ChatGPT, Claude, Gemini, and Grok users. |
 
 ---
