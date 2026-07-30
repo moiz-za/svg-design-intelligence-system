@@ -1,6 +1,13 @@
 # Etsy SVG Design Intelligence System (ESVG-DIS) 🎨⚡
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](CHANGELOG.md) [![Workflow States](https://img.shields.io/badge/workflow_states-13-blue.svg)](workflow/01-canonical-state-machine.md) [![IP Gates](https://img.shields.io/badge/IP_gates-4-green.svg)](workflow/02-ip-gates.md) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md) [![Supported Tools](https://img.shields.io/badge/compatibility-Claude%20%7C%20ChatGPT%20%7C%20Gemini%20%7C%20Grok-orange.svg)](#using-this-for-free-no-paid-account-needed)
+<p align="left">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.2.0-blue.svg" alt="Version"></a>
+  <a href="workflow/01-canonical-state-machine.md"><img src="https://img.shields.io/badge/workflow_states-13-blue.svg" alt="Workflow States"></a>
+  <a href="workflow/02-ip-gates.md"><img src="https://img.shields.io/badge/IP_gates-4-green.svg" alt="IP Gates"></a>
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="#using-this-for-free-no-paid-account-needed"><img src="https://img.shields.io/badge/compatibility-Claude%20%7C%20ChatGPT%20%7C%20Gemini%20%7C%20Grok-orange.svg" alt="Supported Tools"></a>
+</p>
 
 > An honest, research-first AI skill for creating original, high-converting, and production-ready SVG product concepts for Etsy — before any image generation happens.
 
