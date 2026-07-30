@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.2.0 — Caveman Mode & System Laws
+
+Major update introducing **Caveman Output Mode** and **5 Immutable System Laws** across both Full Agent and Portable Single-File editions.
+
+**🦣 Caveman Output Mode (Token Efficiency):**
+- Output responses are high-density, bullet-first, zero-fluff by default ("Caveman Mode"), saving up to 70% of output tokens per turn.
+- Full multi-column concept matrices, raw research data, and prompt engineering rationale remain preserved in session state memory and are unlocked on demand (`"expand"`, `"full report"`, `"show details"`).
+
+**📜 5 Immutable System Laws:**
+- Added `playbooks/system-laws.md` establishing non-bypassable directives:
+  1. **Law 1: Immutable Pipeline Integrity** — Execute all 13 states, 4 IP gates, scoring levels, and 8 SEO listing phases sequentially without skipping.
+  2. **Law 2: Zero-Hallucination Evidence Traceability** — Empirical data or explicit `[Data Source: Reasoning Engine Fallback]` tagging.
+  3. **Law 3: Binary IP Supremacy** — IP Gates (1-4) are hard binary pass/modify/block checks; commercial scores can NEVER override an IP risk.
+  4. **Law 4: Caveman Output Protocol** — Concise, high-density responses by default; full details unlocked on request.
+  5. **Law 5: Native Listing Engine Mandate** — State 13 natively executes all 8 SEO listing phases in a single pass.
+
+**🔄 Automated Dual-Repo Policy Sync:**
+- Integrated `scripts/sync_etsy_policy.py` to auto-sync policy and listing engine rulebooks bidirectionally with `etsy-seller-seo-system` with zero drift.
+
+---
+
 ## v1.1.0 — Skill Depth, Live Research & Policy Alignment
 
 Built in direct response to a gap analysis against the companion

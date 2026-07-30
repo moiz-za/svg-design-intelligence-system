@@ -11,6 +11,8 @@ duplicated in two places. Same for scoring (States 6, 9): full detail
 in `workflow/03-scoring-architecture.md`. Same for retries: full
 detail in `workflow/04-retry-and-halt-logic.md`.
 
+All state transitions MUST strictly enforce `playbooks/system-laws.md` (The 5 Immutable System Laws) and output crisp, bullet-first responses per the Caveman Output Protocol (full details unlocked on user demand).
+
 ---
 
 ## Full Sequence

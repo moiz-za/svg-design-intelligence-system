@@ -16,7 +16,19 @@ description: >
 
 # ESVG-DIS — SVG Design Intelligence System
 
-**Schema version:** 1.1
+**Schema version:** 1.2 (Featuring System Laws & Caveman Output Protocol)
+
+---
+
+## 📜 THE 5 IMMUTABLE SYSTEM LAWS
+
+All phase executions MUST strictly enforce `../playbooks/system-laws.md`:
+
+1. **Immutable Pipeline Integrity:** Process every state/phase sequentially without skipping.
+2. **Zero-Hallucination Evidence Traceability:** Empirical data or explicit fallback tagging.
+3. **Binary IP Supremacy:** IP gates (1-4) are hard binary pass/modify/block checks.
+4. **Caveman Output Protocol:** Crisp, bullet-first, token-efficient outputs by default; full raw reports unlocked on demand (`"expand"`, `"full report"`).
+5. **Native Listing Engine Mandate:** State 13 natively executes all 8 SEO listing phases.
 
 ---
 

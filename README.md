@@ -3,7 +3,7 @@
 > **An honest, research-first AI skill for creating original, high-converting, and production-ready SVG product concepts for Etsy — before any image generation happens.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](CHANGELOG.md)
 [![Workflow States](https://img.shields.io/badge/workflow_states-13-blue.svg)](workflow/01-canonical-state-machine.md)
 [![IP Gates](https://img.shields.io/badge/IP_gates-4-green.svg)](workflow/02-ip-gates.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -27,6 +27,8 @@ It functions as an expert **commercial product strategist, IP risk reviewer, buy
 
 | Feature | Description |
 | :--- | :--- |
+| 🦣 **Caveman Output Mode** | Default output style is crisp, high-density, bullet-first, and zero-fluff to minimize token consumption by up to 70%. Full raw reports remain preserved in state memory and rendered on demand (`"expand"`, `"full report"`). |
+| 📜 **5 Immutable System Laws** | Non-bypassable directives (`playbooks/system-laws.md`) enforcing zero state skips, zero hallucinations, binary IP supremacy, Caveman token efficiency, and 8-phase native Etsy SEO execution. |
 | 🛡️ **4-Stage IP Risk Gates** | Hard legal checkpoints (Keyword, Concept, Prompt, Final Artwork). **IP is a binary gate (PASS/MODIFY/BLOCK)** — high commercial scores can *never* override legal risk. |
 | 🌐 **Dual-Mode Research & Policy Verification** | Uses **Live Etsy Search & Policy Web Verification** when web browsing is enabled; falls back to qualitative reasoning with an explicit `Data Source` tag on free/offline models. |
 | 📊 **3-Level Scoring Architecture** | Evaluates **Opportunity Score** (State 6), **Concept Score** (State 9), and **Quality Score** (State 12) across weighted commercial dimensions. |
@@ -178,6 +180,7 @@ svg-design-intelligence-system/
 │   └── design-quality-review.md
 │
 ├── playbooks/                         concrete, checkable tactical rules
+│   ├── system-laws.md                 the 5 immutable system laws & execution discipline
 │   ├── trademark-and-ip-stoplist.md   checkable wordlist & visual IP rules
 │   ├── niche-saturation-reality-check.md 4-criteria saturation warning
 │   ├── cutting-machine-thresholds.md   physical feature size limits (1/40th rule)
