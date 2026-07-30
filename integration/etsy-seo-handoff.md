@@ -48,6 +48,7 @@ When State 13 executes, the agent MUST run through all 8 execution phases sequen
 ### 📝 Phase 6: Full 8-Block Description & 160-Char Meta Zone (`listing-guide.md` §4)
 - **Meta Zone (First 160 chars):** Must contain the primary keyword and function as a complete product pitch.
 - **Length:** 250 to 700 words.
+- **No Emojis:** Zero emojis allowed in description text or section headers (prevents spam signals and ensures screen-reader accessibility).
 - **No Generic Openers:** Prohibit "Thank you for visiting" or "This listing is for".
 - **Structure:** Opening Hook → Value & Features → Included File Formats (SVG, PNG 300 DPI 4000x4000px, EPS, DXF, PDF) → Instant Delivery → Machine Compatibility (Cricut, Silhouette, Laser, Sublimation) → Usage License (Personal & Small Business Commercial up to 500 items) → Etsy 2026 AI Creation Disclosure → Closing.
 
@@ -116,29 +117,29 @@ Style: [Value]    Occasion: [Value]    Recipient: [Value]    Category: Craft Sup
 DESCRIPTION:
 [Meta zone — first 160 chars: "..."] ✅
 
-### 🌟 [Attention-Grabbing Product Hook Title]
+### [Attention-Grabbing Product Hook Title]
 [2-3 sentences targeting buyer persona, emotional trigger, and core craft use case]
 
-### 📁 Included File Formats
+### Included File Formats
 - **1x SVG File:** Clean, layered vector paths optimized for Cricut & Silhouette cutting.
 - **1x PNG File:** High-resolution 300 DPI transparent background (4000x4000px).
 - **1x EPS File:** Professional vector graphics editing format.
 - **1x DXF File:** Silhouette Studio Basic Edition format.
 - **1x PDF File:** Vector print & preview format.
 
-### ✂️ Machine & Software Compatibility
+### Machine & Software Compatibility
 - Cricut Design Space
 - Silhouette Studio (Designer & Basic Editions)
 - Brother ScanNCut
 - Laser Cutters (Glowforge, xTool, Omtech)
 - Sublimation Printers & Heat Press software
 
-### 📜 Usage Rights & Commercial License
+### Usage Rights & Commercial License
 - **Personal Use:** Unlimited personal crafting & gifts.
 - **Commercial Use:** Small Business Commercial License included for up to 500 physical end-products (t-shirts, mugs, totes, decals).
 - **Restrictions:** Reselling, sharing, or redistributing digital files in any format is strictly prohibited.
 
-## 🛡️ Etsy 2026 AI Creation Disclosure & Settings
+## Etsy 2026 AI Creation Disclosure & Settings
 - **About this listing dropdowns:**
   - *Who made it?* **I did**
   - *What is it?* **A finished product or digital file**
