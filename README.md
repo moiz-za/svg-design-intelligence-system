@@ -10,7 +10,7 @@
 
 > An honest, research-first AI skill for creating original, high-converting, and production-ready SVG product concepts for Etsy — before any image generation happens.
 
-**Created & Maintained by:** [Moiz Zoaib Ali](https://moiz.solutions) ([@moiz-za](https://github.com/moiz-za)) · **Tools Portal:** [tools.moiz.solutions](https://tools.moiz.solutions) · **Contact:** [contact@moiz.solutions](mailto:contact@moiz.solutions)
+**Created & Maintained by:** [Moiz Zoaib Ali](https://moiz.solutions) ([@moiz-za](https://github.com/moiz-za)) · **Tools Portal:** [tools.moiz.solutions](https://tools.moiz.solutions) · **Contact:** [193383930+moiz-za@users.noreply.github.com](mailto:193383930+moiz-za@users.noreply.github.com)
 
 ---
 
@@ -232,7 +232,7 @@ Engineered and maintained by **Moiz Zoaib Ali**:
 - **Personal Website:** [moiz.solutions](https://moiz.solutions)
 - **AI Tools Directory:** [tools.moiz.solutions](https://tools.moiz.solutions)
 - **GitHub Profile:** [@moiz-za](https://github.com/moiz-za)
-- **Contact Email:** [contact@moiz.solutions](mailto:contact@moiz.solutions)
+- **Contact Email:** [193383930+moiz-za@users.noreply.github.com](mailto:193383930+moiz-za@users.noreply.github.com)
 
 ---
 

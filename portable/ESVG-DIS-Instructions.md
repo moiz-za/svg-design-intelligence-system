@@ -16,7 +16,7 @@ should be updated to match.
 > **Sync marker:** last updated to match main repo **v1.2.0**.
 > 👤 **Created & Maintained by:** Moiz Zoaib Ali ([@moiz-za](https://github.com/moiz-za))
 > 🌐 **Website & Tools Portal:** https://moiz.solutions | https://tools.moiz.solutions
-> 📧 **Contact Email:** contact@moiz.solutions
+> 📧 **Contact Email:** 193383930+moiz-za@users.noreply.github.com
 
 ---
 
