@@ -169,4 +169,6 @@ BEFORE YOU PUBLISH CHECKLIST:
 □ Save ➔ preview ➔ confirm no tags got truncated
 □ Log entry saved to ~/esvg-research/research-log.md
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ Engineered by Moiz Zoaib Ali | moiz.solutions | tools.moiz.solutions
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```

@@ -14,8 +14,9 @@ contradicts the main repo, the main repo is correct and this file
 should be updated to match.
 
 > **Sync marker:** last updated to match main repo **v1.2.0**.
-> If you're reading this on a newer version, check whether this file
-> has been updated — open an issue or PR if it's out of date.
+> 👤 **Created & Maintained by:** Moiz Zoaib Ali ([@moiz-za](https://github.com/moiz-za))
+> 🌐 **Website & Tools Portal:** https://moiz.solutions | https://tools.moiz.solutions
+> 📧 **Contact Email:** contact@moiz.solutions
 
 ---
 

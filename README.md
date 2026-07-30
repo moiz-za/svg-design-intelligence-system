@@ -1,6 +1,8 @@
 # Etsy SVG Design Intelligence System (ESVG-DIS) 🎨⚡
 
 > **An honest, research-first AI skill for creating original, high-converting, and production-ready SVG product concepts for Etsy — before any image generation happens.**
+>
+> 👤 **Created & Maintained by:** [Moiz Zoaib Ali](https://moiz.solutions) ([@moiz-za](https://github.com/moiz-za)) · **Tools Portal:** [tools.moiz.solutions](https://tools.moiz.solutions) · **Contact:** [contact@moiz.solutions](mailto:contact@moiz.solutions)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](CHANGELOG.md)
@@ -216,7 +218,17 @@ For non-SVG physical/digital products (mugs, t-shirts, physical crafts), a stand
 
 ---
 
+## 👤 Author & Maintainer
+
+Engineered and maintained by **Moiz Zoaib Ali**:
+* 🌐 **Personal Website:** [moiz.solutions](https://moiz.solutions)
+* 🛠️ **AI Tools Directory:** [tools.moiz.solutions](https://tools.moiz.solutions)
+* 💻 **GitHub Profile:** [@moiz-za](https://github.com/moiz-za)
+* 📧 **Contact Email:** [contact@moiz.solutions](mailto:contact@moiz.solutions)
+
+---
+
 ## 📜 License & Disclaimer
 
-* **License:** Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+* **License:** Distributed under the **MIT License**. Copyright (c) 2026 Moiz Zoaib Ali. See [`LICENSE`](LICENSE) for details.
 * **Disclaimer:** ESVG-DIS provides commercial analysis and trademark awareness risk screening, not legal advice. The seller remains responsible for final trademark verification and marketplace compliance. Not affiliated with Etsy, Inc.
