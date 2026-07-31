@@ -10,7 +10,7 @@
 
 > An honest, research-first AI skill for creating original, high-converting, and production-ready SVG product concepts for Etsy — before any image generation happens.
 
-**Created & Maintained by:** [Moiz Zoaib Ali](https://moiz.solutions) ([@moiz-za](https://github.com/moiz-za)) · **Tools Portal:** [tools.moiz.solutions](https://tools.moiz.solutions) · **Contact:** [193383930+moiz-za@users.noreply.github.com](mailto:193383930+moiz-za@users.noreply.github.com)
+**Created & Maintained by:** [Moiz Zoaib Ali](https://moiz.solutions) ([@moiz-za](https://github.com/moiz-za)) · **Tools Portal:** [tools.moiz.solutions](https://tools.moiz.solutions)
 
 ---
 
@@ -50,13 +50,13 @@ After loading the skill, describe a product idea and the system runs a full 13-s
 ┌────────────────────────────────────────────────────────────┐
 │ OPPORTUNITY SCORE: 8.2/10 │
 ├────────────────────────────────────────────────────────────┤
-│ Demand: 8.5  ·  Buyer Intent: 8.0  ·  Competition Gap: 7.5 │
-│ IP Gate 1: ✅ PASS (keyword cleared)                        │
-│ Concept Score (top pick): 8.8/10 · Quality: 8.5/10          │
-│                                                             │
-│ Etsy Listing Title (≤140 chars):                            │
+│ Demand: 8.5 · Buyer Intent: 8.0 · Competition Gap: 7.5 │
+│ IP Gate 1: ✅ PASS (keyword cleared)            │
+│ Concept Score (top pick): 8.8/10 · Quality: 8.5/10     │
+│                               │
+│ Etsy Listing Title (≤140 chars):              │
 │ "Boho Mountain SVG · Wilderness Landscape | Digital Cut File"│
-│ Tags: #mountain #boho #wilderness #svg #cutfile #cricut …   │
+│ Tags: #mountain #boho #wilderness #svg #cutfile #cricut …  │
 └────────────────────────────────────────────────────────────┘
 ```
 
@@ -87,18 +87,18 @@ Full concept matrices, raw research data, and prompt engineering rationale remai
 
 ```
  1. INTAKE ──► 2. MARKET RESEARCH ──► 3. KEYWORD IP SCREENING [GATE 1]
-                                           │ PASS
-                                           ▼
+                      │ PASS
+                      ▼
  4. BUYER PSYCHOLOGY ──► 5. COMPETITION ANALYSIS ──► 6. OPPORTUNITY SCORING
-                                                           │ Score ≥ 7.5
-                                                           ▼
+                              │ Score ≥ 7.5
+                              ▼
  7-9. CREATIVE CONCEPT DEV [GATE 2: CONCEPT IP] ──► 10. PROMPT ENGINEERING
-                                                           │ [GATE 3: PROMPT IP]
-                                                           ▼
+                              │ [GATE 3: PROMPT IP]
+                              ▼
  11-13. ARTWORK PRODUCTION [GATE 4: FINAL IP] ──► 12. QUALITY REVIEW
-                                                   ──► 13. ETSY SEO HANDOFF
-                                                        (title, tags, desc,
-                                                         pricing, disclosure)
+                          ──► 13. ETSY SEO HANDOFF
+                            (title, tags, desc,
+                             pricing, disclosure)
 ```
 
 Each state checks the previous output before proceeding. Failed states trigger retry logic (with escalation after the 3rd attempt). IP is never negotiable — any gate can **BLOCK** the pipeline regardless of commercial score.
@@ -124,10 +124,10 @@ Each state checks the previous output before proceeding. Failed states trigger r
 
 1. Download `esvg-dis.skill` from the repository root.
 2. Unzip into your skills folder:
-   ```bash
-   mkdir -p ~/.claude/skills/svg-design-intelligence-system
-   unzip esvg-dis.skill -d ~/.claude/skills/svg-design-intelligence-system
-   ```
+  ```bash
+  mkdir -p ~/.claude/skills/svg-design-intelligence-system
+  unzip esvg-dis.skill -d ~/.claude/skills/svg-design-intelligence-system
+  ```
 3. Restart Claude Code/Cowork. The skill activates automatically when you ask about Etsy SVG product research.
 
 ### Option B — Any AI Model, Free or Paid (No Setup Needed)
@@ -147,64 +147,64 @@ Works on **ChatGPT (Free/Plus), Claude.ai (Free/Pro), Gemini (Free/Advanced), or
 
 ```
 svg-design-intelligence-system/
-├── README.md               ← you are here
-├── SYSTEM_INSTRUCTIONS.md   entry point for full multi-file version
-├── INSTALL.md               setup instructions (free and paid)
-├── CHANGELOG.md             version history
-├── LICENSE                  MIT License
-├── CONTRIBUTING.md          contribution guidelines
-├── esvg-dis.skill           packaged Claude Skill distribution archive
+├── README.md        ← you are here
+├── SYSTEM_INSTRUCTIONS.md  entry point for full multi-file version
+├── INSTALL.md        setup instructions (free and paid)
+├── CHANGELOG.md       version history
+├── LICENSE         MIT License
+├── CONTRIBUTING.md     contribution guidelines
+├── esvg-dis.skill      packaged Claude Skill distribution archive
 │
-├── skill/                   Claude Skill execution engine (17 phases)
-│   ├── SKILL.md
-│   └── scripts/
-│       └── bootstrap.py     state initializer (~/esvg-research/)
+├── skill/          Claude Skill execution engine (17 phases)
+│  ├── SKILL.md
+│  └── scripts/
+│    └── bootstrap.py   state initializer (~/esvg-research/)
 │
 ├── portable/
-│   └── ESVG-DIS-Instructions.md   single-file edition for free-tier users
+│  └── ESVG-DIS-Instructions.md  single-file edition for free-tier users
 │
-├── workflow/                process logic, IP gates, & scoring
-│   ├── 00-intake-and-interview.md
-│   ├── 01-canonical-state-machine.md
-│   ├── 02-ip-gates.md
-│   ├── 03-scoring-architecture.md
-│   └── 04-retry-and-halt-logic.md
+├── workflow/        process logic, IP gates, & scoring
+│  ├── 00-intake-and-interview.md
+│  ├── 01-canonical-state-machine.md
+│  ├── 02-ip-gates.md
+│  ├── 03-scoring-architecture.md
+│  └── 04-retry-and-halt-logic.md
 │
-├── knowledge/               subject-matter frameworks
-│   ├── market-intelligence.md
-│   ├── competition-intelligence.md
-│   ├── buyer-psychology.md
-│   ├── ip-risk-and-originality.md
-│   ├── commercial-opportunity-scoring.md
-│   ├── creative-strategy.md
-│   ├── concept-development.md
-│   └── design-quality-review.md
+├── knowledge/        subject-matter frameworks
+│  ├── market-intelligence.md
+│  ├── competition-intelligence.md
+│  ├── buyer-psychology.md
+│  ├── ip-risk-and-originality.md
+│  ├── commercial-opportunity-scoring.md
+│  ├── creative-strategy.md
+│  ├── concept-development.md
+│  └── design-quality-review.md
 │
-├── playbooks/               concrete, checkable tactical rules
-│   ├── system-laws.md
-│   ├── trademark-and-ip-stoplist.md
-│   ├── niche-saturation-reality-check.md
-│   ├── cutting-machine-thresholds.md
-│   └── honest-diagnosis-pointers.md
+├── playbooks/        concrete, checkable tactical rules
+│  ├── system-laws.md
+│  ├── trademark-and-ip-stoplist.md
+│  ├── niche-saturation-reality-check.md
+│  ├── cutting-machine-thresholds.md
+│  └── honest-diagnosis-pointers.md
 │
-├── prompts/                 prompt engineering & style templates
-│   ├── prompt-engineering-framework.md
-│   ├── svg-production-optimization.md
-│   ├── prompt-refinement-guide.md
-│   └── style-templates/
+├── prompts/         prompt engineering & style templates
+│  ├── prompt-engineering-framework.md
+│  ├── svg-production-optimization.md
+│  ├── prompt-refinement-guide.md
+│  └── style-templates/
 │
 ├── integration/
-│   ├── etsy-seo-handoff.md
-│   └── etsy-seo-engine/
+│  ├── etsy-seo-handoff.md
+│  └── etsy-seo-engine/
 │
 ├── examples/
-│   └── worked-examples.md   full pipeline walkthrough with real scores
+│  └── worked-examples.md  full pipeline walkthrough with real scores
 │
 └── documentation/
-    ├── glossary.md
-    ├── architecture-decisions.md
-    ├── usage-guide.md
-    └── roadmap.md
+  ├── glossary.md
+  ├── architecture-decisions.md
+  ├── usage-guide.md
+  └── roadmap.md
 ```
 
 ---
