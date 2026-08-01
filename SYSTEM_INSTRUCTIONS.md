@@ -86,6 +86,10 @@ This is the only authoritative workflow. If any other file in this
 repository (or any future addition) describes a different sequence,
 this one governs.
 
+- **First-Run Shop Intake & Conversation Isolation:** State 1 prompts for `Shop Name` (`[YOUR_SHOP_NAME]`) and `Primary Shop Niche` (`[YOUR_PRIMARY_NICHE]`), enforcing **one chat conversation per Etsy shop** to prevent keyword cross-contamination.
+- **Dynamic Keyword-to-Niche Translation Engine:** Any generic input keyword (e.g., `"floral"`, `"mama"`, `"adventure"`) is dynamically mapped into the user's specific shop niche before research and opportunity scoring begin.
+- **Generic Placeholder Isolation:** Use strictly generic placeholders (`[YOUR_SHOP_NAME]`, `[YOUR_PRIMARY_NICHE]`, `CraftStudioSVG`) in all instruction examples.
+
 ```
 START
 ↓

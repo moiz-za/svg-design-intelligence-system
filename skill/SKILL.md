@@ -29,6 +29,9 @@ All phase executions MUST strictly enforce `../playbooks/system-laws.md`:
 3. **Binary IP Supremacy:** IP gates (1-4) are hard binary pass/modify/block checks.
 4. **Caveman Output Protocol:** Crisp, bullet-first, token-efficient outputs by default; full raw reports unlocked on demand (`"expand"`, `"full report"`).
 5. **Native Listing Engine Mandate:** State 13 natively executes all 8 SEO listing phases.
+6. **First-Run Shop Intake & Conversation Isolation:** Prompt for `Shop Name` (`[YOUR_SHOP_NAME]`) and `Primary Shop Niche` (`[YOUR_PRIMARY_NICHE]`). Advise user to dedicate **one conversation per shop**.
+7. **Dynamic Keyword-to-Niche Translation:** Automatically map and translate broad input keywords (e.g. `"floral"`) into niche-specific opportunity phrases matching the user's bound shop niche.
+8. **Generic Placeholder Enforcement:** Never output or hardcode private shop names or personal details in instruction examples.
 
 ---
 

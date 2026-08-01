@@ -22,6 +22,28 @@ Do not skip straight to concept generation from a bare keyword.
 
 ---
 
+## 1.1 First-Run Shop Intake & Conversation Isolation Protocol
+
+Before establishing research context, the agent MUST establish shop and niche binding:
+
+1. **First-Run Check:** If `Shop Name` and `Primary Shop Niche` have not been established in the current conversation, prompt the user:
+   - 🏬 **Shop Name:** (e.g. `[YOUR_SHOP_NAME]` / `CraftStudioSVG`)
+   - 🎯 **Primary Shop Niche Focus:** (e.g. `[YOUR_PRIMARY_NICHE]` / `Custom Nursery Decor Niche`)
+
+2. **Single-Shop Conversation Isolation Advisory:**
+   Render the operational rule:
+   > ⚠️ **One Conversation Per Shop:** To prevent keyword cross-contamination and keep research memory laser-focused, please dedicate **one chat thread per Etsy shop**. All research, opportunity scores, and design concepts in this session will map directly to **[YOUR_SHOP_NAME]** ([YOUR_PRIMARY_NICHE]).
+
+3. **Dynamic Keyword-to-Niche Translation Engine:**
+   When the user inputs ANY broad or generic keyword (e.g., `"floral"`, `"vintage"`, `"mama"`, `"adventure"`), the system MUST automatically translate and adapt that keyword to fit the user's specified shop niche:
+   - *Example:* If Niche = `Baby Niche` & Keyword = `"floral"` ➔ Automatically translates and maps to `"baby floral nursery svg"`, `"floral baby bodysuit cut file"`, `"nursery floral milestone svg"`.
+   - *Example:* If Niche = `Outdoor / Camper Niche` & Keyword = `"floral"` ➔ Automatically translates and maps to `"floral camper life svg"`, `"floral RV living decal"`, `"floral outdoor camping cut file"`.
+
+4. **Generic Placeholder Enforcement:**
+   In all public system documentation and example outputs, use strictly generic placeholders (`[YOUR_SHOP_NAME]`, `[YOUR_PRIMARY_NICHE]`, `CraftStudioSVG`, `Nursery Decor Niche`). Never hardcode private shop names or personal details into public instruction files.
+
+---
+
 ## 2. Collection Philosophy
 
 Collect information progressively, not all at once:
