@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.3.0 — Shop Intake, Conversation Isolation & Dynamic Niche Mapping
+
+Major feature update introducing **First-Run Shop Intake**, **Single-Shop Conversation Isolation**, **Dynamic Keyword-to-Niche Translation**, and **Generic Placeholder Isolation**.
+
+- **🏬 First-Run Shop Intake (State 1):** Prompts for `Shop Name` (`[YOUR_SHOP_NAME]`) and `Primary Shop Niche Focus` (`[YOUR_PRIMARY_NICHE]`) at session startup.
+- **⚠️ One Conversation Per Shop Rule:** Enforces strict single-shop conversation isolation to prevent keyword cross-contamination and keep state memory laser-focused.
+- **🔄 Dynamic Keyword-to-Niche Translation Engine:** Automatically maps and translates any broad or generic input keyword (e.g. `"floral"`, `"vintage"`, `"mama"`) into niche-specific opportunity phrases matching the user's bound shop niche.
+- **🔒 Generic Placeholder Isolation:** Uses strictly generic placeholders (`[YOUR_SHOP_NAME]`, `[YOUR_PRIMARY_NICHE]`, `CraftStudioSVG`) across all open-source system instruction files with zero private shop details in example text.
+
+---
+
 ## v1.2.0 — Caveman Mode & System Laws
 
 Major update introducing **Caveman Output Mode** and **5 Immutable System Laws** across both Full Agent and Portable Single-File editions.

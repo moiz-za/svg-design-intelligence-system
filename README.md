@@ -4,7 +4,7 @@
 
 ### by [Moiz Solutions](https://tools.moiz.solutions)
 
-[![Version](https://img.shields.io/badge/version-1.2.0-blue?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.3.0-blue?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/moiz-za/svg-design-intelligence-system?style=flat-square&label=stars)](https://github.com/moiz-za/svg-design-intelligence-system)
 [![Last Commit](https://img.shields.io/github/last-commit/moiz-za/svg-design-intelligence-system?style=flat-square)](https://github.com/moiz-za/svg-design-intelligence-system/commits/main)
@@ -38,6 +38,11 @@
 ---
 
 ## 🚀 Features
+
+### 🏬 First-Run Shop Intake & Dynamic Niche Mapping
+- **Shop & Niche Binding (State 1):** Binds `Shop Name` (`[YOUR_SHOP_NAME]`) and `Primary Shop Niche Focus` (`[YOUR_PRIMARY_NICHE]`) at session startup.
+- **One Conversation Per Shop:** Enforces strict single-shop conversation isolation to eliminate keyword cross-contamination across shops.
+- **Dynamic Keyword-to-Niche Translation Engine:** Automatically maps and adapts ANY broad input keyword (e.g. `"floral"`, `"vintage"`, `"mama"`) into niche-specific opportunity phrases matching the user's bound shop niche.
 
 ### 🦣 Caveman Output Mode
 - Crisp, high-density, bullet-first default output — cuts token consumption by up to **70%**
