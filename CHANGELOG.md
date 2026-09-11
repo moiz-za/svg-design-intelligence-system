@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.3.1 — Archive Restoration, Path Sanitization & SellWren Links
+
+Maintenance release fixing the distribution archive regression and hardening the maintainer sync tooling.
+
+- **📦 `esvg-dis.skill` Archive Restoration:** The v1.3.0 archive accidentally shipped with only 3 files (SKILL.md + 2 scripts) instead of the full multi-folder layout — zip installs were missing all workflow, knowledge, playbooks, prompts, and integration content. Rebuilt to the full 47-entry layout matching the repository structure.
+- **🔧 `sync_etsy_policy.py` Path Fix:** Replaced hardcoded maintainer machine paths with auto-detection (repo-relative, with `ESVG_REPO`/`SELLER_REPO` env overrides). The script now works from any clone location, and syncing now rebuilds both skill archives (`esvg-dis.skill` and `etsy-seller.skill`).
+- **🛠️ SellWren Integration:** Added links to SellWren — the free point-and-click Etsy tools and live shop dashboard from the same team — in README, INSTALL, and the portable edition header.
+
+---
+
 ## v1.3.0 — Shop Intake, Conversation Isolation & Dynamic Niche Mapping
 
 Major feature update introducing **First-Run Shop Intake**, **Single-Shop Conversation Isolation**, **Dynamic Keyword-to-Niche Translation**, and **Generic Placeholder Isolation**.

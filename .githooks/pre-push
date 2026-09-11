@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# pre-push leak guard — blocks pushes containing private data patterns.
+# Enable once per clone:  git config core.hooksPath .githooks
+
+PATTERNS='Eighty9Crafts|ZPSCrafts|57438369|moiz-shop-intelligence|ETSY_SHOP_ID|lonelyscorpio|/Users/moiz'
+
+while read local_ref local_sha remote_ref remote_sha; do
+  # Determine the range of commits being pushed
+  if git cat-file -e "$remote_sha" 2>/dev/null; then
+    RANGE="$remote_sha..$local_sha"
+  else
+    RANGE="$local_sha"
+  fi
+
+  FILES=$(git diff --name-only --diff-filter=ACMRT "$RANGE" 2>/dev/null | grep -v '^esvg-dis\.skill$' || true)
+  [ -z "$FILES" ] && continue
+
+  for f in $FILES; do
+    git cat-file -e "$local_sha:$f" 2>/dev/null || continue
+    if git show "$local_sha:$f" | grep -nE "$PATTERNS" >/dev/null 2>&1; then
+      echo "❌ Leak Guard: private data pattern found in '$f'" >&2
+      git show "$local_sha:$f" | grep -nE "$PATTERNS" | head -3 >&2
+      echo "Push blocked. Remove the private data, or set ESVG paths via env vars in the sync script." >&2
+      exit 1
+    fi
+  done
+done
+
+exit 0

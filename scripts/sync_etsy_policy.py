@@ -4,6 +4,9 @@ Automated Etsy Policy & Engine Dual-Repo Sync Script
 Synchronizes rulebooks bidirectionally between:
   - svg-design-intelligence-system (integration/etsy-seo-engine/)
   - etsy-seller-seo-system (skill/references/)
+
+Maintainer utility — not needed for normal skill usage. Auto-detects both repos
+when cloned side by side; override locations with ESVG_REPO / SELLER_REPO env vars.
 """
 
 import os
@@ -14,12 +17,43 @@ import json
 import zipfile
 from pathlib import Path
 
-# Paths
-REPO_ESVG = Path('/Users/moiz/Documents/GitHub/svg-design-intelligence-system')
-REPO_SELLER = Path('/Users/moiz/Documents/GitHub/etsy-seller-seo-system')
+SELLER_REPO_DIRNAME = 'etsy-seller-seo-system'
+ESVG_REPO_DIRNAME = 'svg-design-intelligence-system'
 
-DIR_ESVG = REPO_ESVG / 'integration' / 'etsy-seo-engine'
-DIR_SELLER = REPO_SELLER / 'skill' / 'references'
+
+def _walk_up(start: Path, predicate):
+    current = start.resolve()
+    for candidate in [current] + list(current.parents):
+        if predicate(candidate):
+            return candidate
+    return None
+
+
+def detect_repos(script_path: Path):
+    """Locate both repo roots from the script's own location.
+
+    A seller repo has skill/references/ and no integration/etsy-seo-engine/;
+    an ESVG repo has integration/etsy-seo-engine/. If only one is found, the
+    other is looked up as a sibling directory.
+    """
+    p = script_path.resolve().parent
+    esvg = _walk_up(p, lambda c: (c / 'integration' / 'etsy-seo-engine').is_dir())
+    seller = _walk_up(p, lambda c: (c / 'skill' / 'references').is_dir()
+                      and not (c / 'integration' / 'etsy-seo-engine').is_dir())
+    if esvg is None and seller is not None:
+        esvg = seller.parent / ESVG_REPO_DIRNAME
+    if seller is None and esvg is not None:
+        seller = esvg.parent / SELLER_REPO_DIRNAME
+    return esvg, seller
+
+
+_SCRIPT_PATH = Path(__file__).resolve()
+_ESVG_FOUND, _SELLER_FOUND = detect_repos(_SCRIPT_PATH)
+REPO_SELLER = Path(os.environ.get('SELLER_REPO')) if os.environ.get('SELLER_REPO') else _SELLER_FOUND
+REPO_ESVG = Path(os.environ.get('ESVG_REPO')) if os.environ.get('ESVG_REPO') else _ESVG_FOUND
+
+DIR_ESVG = REPO_ESVG / 'integration' / 'etsy-seo-engine' if REPO_ESVG else None
+DIR_SELLER = REPO_SELLER / 'skill' / 'references' if REPO_SELLER else None
 
 FILES_TO_SYNC = ['listing-guide.md', 'seo-guide.md', 'policies.md']
 PLAYBOOKS = [
@@ -29,23 +63,29 @@ PLAYBOOKS = [
     'trademark-stoplist.md', 'video-brief.md'
 ]
 
+SKIP_NAMES = {'.DS_Store', '__pycache__', 'Thumbs.db', '.gitkeep'}
+
+
 def get_hash(filepath):
     if not filepath.exists():
         return None
     return hashlib.md5(filepath.read_bytes()).hexdigest()
+
 
 def get_mtime(filepath):
     if not filepath.exists():
         return 0
     return filepath.stat().st_mtime
 
+
 def sync_files():
     print("🔄 --- AUTOMATED ETSY POLICY & ENGINE DUAL-REPO SYNC ---")
-    if not DIR_ESVG.exists():
-        print(f"❌ ESVG directory not found: {DIR_ESVG}")
+    if DIR_ESVG is None or not DIR_ESVG.exists():
+        print(f"❌ ESVG repo not found (looked for sibling dir '{ESVG_REPO_DIRNAME}').")
+        print("   Set ESVG_REPO env var or clone both repos side by side.")
         return False
-    if not DIR_SELLER.exists():
-        print(f"⚠️ Standalone etsy-seller-seo-system repo not found at {DIR_SELLER}. Skipping cross-repo sync.")
+    if DIR_SELLER is None or not DIR_SELLER.exists():
+        print(f"⚠️ Standalone etsy-seller-seo-system repo not found (looked for sibling dir '{SELLER_REPO_DIRNAME}'). Skipping cross-repo sync.")
         return True
 
     synced_count = 0
@@ -106,15 +146,40 @@ def sync_files():
 
     return True
 
-def rebuild_packages():
-    print("📦 Rebuilding skill archives and re-syncing global plugins...")
 
-    # Rebuild ESVG skill archive
+def rebuild_seller_package():
+    """Rebuild etsy-seller.skill — skill/ + state-templates/ (zip install layout)."""
+    if REPO_SELLER is None:
+        return
+    output = REPO_SELLER / 'etsy-seller.skill'
+    if output.exists():
+        output.unlink()
+
+    with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as z:
+        for root, dirs, files in os.walk(REPO_SELLER / 'skill'):
+            for f in files:
+                fp = Path(root) / f
+                if f in SKIP_NAMES or f.endswith(('.pyc', '.pyo')):
+                    continue
+                z.write(fp, arcname=str(fp.relative_to(REPO_SELLER / 'skill')))
+        for root, dirs, files in os.walk(REPO_SELLER / 'state-templates'):
+            for f in files:
+                fp = Path(root) / f
+                if f in SKIP_NAMES or f.endswith(('.pyc', '.pyo')):
+                    continue
+                z.write(fp, arcname=str(fp.relative_to(REPO_SELLER)))
+
+    print(f"✅ Rebuilt etsy-seller.skill ({REPO_SELLER.name}: skill/ + state-templates/)")
+
+
+def rebuild_esvg_package():
+    """Rebuild esvg-dis.skill — full multi-folder layout matching the repo structure."""
+    if REPO_ESVG is None:
+        return
     output_esvg = REPO_ESVG / 'esvg-dis.skill'
     if output_esvg.exists():
         output_esvg.unlink()
 
-    SKIP_NAMES = {'.DS_Store', '__pycache__', 'Thumbs.db', '.gitkeep'}
     with zipfile.ZipFile(output_esvg, 'w', zipfile.ZIP_DEFLATED) as z:
         z.write(REPO_ESVG / 'skill' / 'SKILL.md', arcname='SKILL.md')
         if (REPO_ESVG / 'skill' / 'scripts' / 'bootstrap.py').exists():
@@ -130,32 +195,14 @@ def rebuild_packages():
                     fp = Path(root) / f
                     z.write(fp, arcname=str(fp.relative_to(REPO_ESVG)))
 
-    # Sync ESVG Plugin
-    plugin_dir = Path.home() / '.gemini' / 'config' / 'plugins' / 'esvg-dis-plugin'
-    skill_target = plugin_dir / 'skills' / 'esvg-dis'
-    if plugin_dir.exists():
-        shutil.rmtree(plugin_dir)
-    plugin_dir.mkdir(parents=True, exist_ok=True)
-    skill_target.mkdir(parents=True, exist_ok=True)
+    print(f"✅ Rebuilt esvg-dis.skill ({REPO_ESVG.name}: full multi-folder layout)")
 
-    plugin_json = {
-        'name': 'esvg-dis-plugin',
-        'version': '1.1.0',
-        'description': 'Etsy SVG Design Intelligence System (ESVG-DIS)',
-        'author': {'name': 'Moiz'},
-        'license': 'MIT'
-    }
-    with open(plugin_dir / 'plugin.json', 'w') as f:
-        json.dump(plugin_json, f, indent=2)
 
-    shutil.copy(REPO_ESVG / 'skill' / 'SKILL.md', skill_target / 'SKILL.md')
-    for d in ['workflow', 'knowledge', 'prompts', 'integration', 'playbooks', 'state-templates', 'examples', 'documentation']:
-        sp = REPO_ESVG / d
-        tp = skill_target / d
-        if sp.exists():
-            shutil.copytree(sp, tp, ignore=shutil.ignore_patterns('.DS_Store', '__pycache__'))
+def rebuild_packages():
+    print("📦 Rebuilding skill archives...")
+    rebuild_seller_package()
+    rebuild_esvg_package()
 
-    print("✅ esvg-dis.skill and global plugin updated successfully!")
 
 if __name__ == '__main__':
     sync_files()

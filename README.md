@@ -4,7 +4,7 @@
 
 ### by [Moiz Solutions](https://tools.moiz.solutions)
 
-[![Version](https://img.shields.io/badge/version-1.3.0-blue?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.3.1-blue?style=flat-square)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/moiz-za/svg-design-intelligence-system?style=flat-square&label=stars)](https://github.com/moiz-za/svg-design-intelligence-system)
 [![Last Commit](https://img.shields.io/github/last-commit/moiz-za/svg-design-intelligence-system?style=flat-square)](https://github.com/moiz-za/svg-design-intelligence-system/commits/main)
@@ -15,6 +15,8 @@
 **An honest, research-first AI skill for creating original, high-converting, and production-ready SVG product concepts for Etsy — before any image generation happens.**
 
 **Strategy & IP verification first, image generation last.** No subscription, no API keys, no hosted service. Works on free tiers of Claude, ChatGPT, Gemini, or Grok.
+
+> 💡 **Prefer point-and-click over prompts?** The same team builds [SellWren](https://sellwren.com) — free Etsy seller tools (tag verifier, title builder, IP scanner, description builder) plus a live shop dashboard on the official Etsy API.
 
 ---
 
@@ -253,6 +255,18 @@ For non-SVG physical/digital products (mugs, t-shirts, physical crafts), see the
 
 ---
 
+## 🛠️ Related: SellWren
+
+Want these checks applied to your real shop automatically, without prompting? [**SellWren**](https://sellwren.com) is a free Etsy seller toolkit from the same team:
+
+- **Free tools:** [sellwren.com/tools](https://sellwren.com/tools) — tag verifier, title builder, IP scanner, description builder. No account, nothing stored.
+- **Live dashboard demo:** [sellwren.com/demo-dashboard](https://sellwren.com/demo-dashboard) — income & winners, listing health, honest profit math from real receipts.
+- **SellWren for Desktop** (one-time license, your data stays on your machine) is coming soon — waitlist at [sellwren.com](https://sellwren.com).
+
+ESVG-DIS covers the product-creation pipeline (research, IP gates, concepts, prompts); SellWren covers daily shop monitoring and instant listing checks.
+
+---
+
 ## ❓ FAQ
 
 **Q: Is this a paid SaaS app?**  
@@ -284,7 +298,9 @@ Recent highlights:
 
 | Version | Date | Summary |
 |---------|------|---------|
-| **v1.2.0** | 2026-07 | Caveman Output Mode + 5 Immutable System Laws, dual-repo policy sync |
+| **v1.3.1** | 2026-09 | Archive restoration, sync script path fix, SellWren integration |
+| v1.3.0 | 2026-08 | First-Run Shop Intake, One Conversation Per Shop, Dynamic Keyword-to-Niche Translation |
+| v1.2.0 | 2026-07 | Caveman Output Mode + 5 Immutable System Laws, dual-repo policy sync |
 | v1.1.0 | 2026-06 | Live research, August 2026 Etsy policy alignment, SKILL.md rewrite, packaged `.skill` archive |
 | v1.0.0 | 2026-05 | Initial release — 13-state workflow, 4-gate IP architecture, 3-level scoring |
 
@@ -305,6 +321,7 @@ See full [CHANGELOG.md](./CHANGELOG.md) for details.
 Engineered and maintained by **Moiz Zoaib Ali**:
 - **Personal Website:** [moiz.solutions](https://moiz.solutions)
 - **AI Tools Directory:** [tools.moiz.solutions](https://tools.moiz.solutions)
+- **Free Etsy Seller Tools:** [SellWren](https://sellwren.com)
 - **GitHub Profile:** [@moiz-za](https://github.com/moiz-za)
 
 ---
@@ -318,6 +335,6 @@ Engineered and maintained by **Moiz Zoaib Ali**:
 
 <div align="center">
 
-**Built by [Moiz Solutions](https://tools.moiz.solutions)** · Report issues on [GitHub](https://github.com/moiz-za/svg-design-intelligence-system/issues)
+**Built by [Moiz Solutions](https://tools.moiz.solutions)** · Free Etsy tools: [SellWren](https://sellwren.com) · Report issues on [GitHub](https://github.com/moiz-za/svg-design-intelligence-system/issues)
 
 </div>

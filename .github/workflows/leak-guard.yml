@@ -1,0 +1,55 @@
+name: Leak Guard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan changed files for private data
+        run: |
+          set -e
+          # Determine the range of commits to scan
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            RANGE="${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}"
+          else
+            RANGE="${{ github.event.before }}..${{ github.sha }}"
+            # Force-push or first push fallback: scan everything in this commit
+            if ! git cat-file -e "${{ github.event.before }}" 2>/dev/null; then
+              RANGE="${{ github.sha }}"
+            fi
+          fi
+
+          echo "Scanning range: $RANGE"
+          FILES=$(git diff --name-only --diff-filter=ACMRT "$RANGE" 2>/dev/null | grep -v '^esvg-dis\.skill$' || true)
+
+          if [ -z "$FILES" ]; then
+            echo "No scannable text files changed."
+            exit 0
+          fi
+
+          PATTERNS='Eighty9Crafts|ZPSCrafts|57438369|moiz-shop-intelligence|ETSY_SHOP_ID|lonelyscorpio|/Users/moiz'
+          FOUND=0
+          for f in $FILES; do
+            [ -f "$f" ] || continue
+            if grep -nE "$PATTERNS" "$f" > /dev/null 2>&1; then
+              echo "::error file=$f::Private data pattern detected"
+              grep -nE "$PATTERNS" "$f" | head -3
+              FOUND=1
+            fi
+          done
+
+          if [ "$FOUND" -eq 1 ]; then
+            echo "❌ Leak Guard FAILED — private data patterns found in changed files. Push rejected."
+            exit 1
+          fi
+          echo "✅ Leak Guard passed — no private data patterns in changed files."

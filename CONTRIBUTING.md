@@ -4,6 +4,9 @@ ESVG-DIS is meant to stay accessible, transparent, reusable, and
 community-driven — see `documentation/usage-guide.md` §Open
 Source Philosophy. Contributions are welcome.
 
+Maintainers pushing from a local clone should enable the leak-guard
+hook once: `git config core.hooksPath .githooks`
+
 ---
 
 ## Before You Start

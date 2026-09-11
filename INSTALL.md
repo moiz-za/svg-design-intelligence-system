@@ -106,3 +106,13 @@ If you're using the portable doc, you don't need to — everything
 essential is condensed into that one file. If you're using the full
 multi-file version, start at `SYSTEM_INSTRUCTIONS.md`; it links to
 everything else in the right order.
+
+---
+
+## Next step: SellWren
+
+For instant point-and-click Etsy checks — tag verifier, title builder,
+IP scanner, description builder, plus a live shop dashboard — try the
+free tools at [sellwren.com/tools](https://sellwren.com/tools). Same
+team, same rulebooks. SellWren for Desktop (one-time license) is
+coming soon — waitlist at [sellwren.com](https://sellwren.com).
