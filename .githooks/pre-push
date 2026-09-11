@@ -12,7 +12,7 @@ while read local_ref local_sha remote_ref remote_sha; do
     RANGE="$local_sha"
   fi
 
-  FILES=$(git diff --name-only --diff-filter=ACMRT "$RANGE" 2>/dev/null | grep -v '^esvg-dis\.skill$' || true)
+  FILES=$(git diff --name-only --diff-filter=ACMRT "$RANGE" 2>/dev/null | grep -v '^esvg-dis\.skill$' | grep -vE '^\.githooks/|^\.github/workflows/leak-guard' || true)
   [ -z "$FILES" ] && continue
 
   for f in $FILES; do

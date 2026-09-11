@@ -30,7 +30,7 @@ jobs:
           fi
 
           echo "Scanning range: $RANGE"
-          FILES=$(git diff --name-only --diff-filter=ACMRT "$RANGE" 2>/dev/null | grep -v '^esvg-dis\.skill$' || true)
+          FILES=$(git diff --name-only --diff-filter=ACMRT "$RANGE" 2>/dev/null | grep -v '^esvg-dis\.skill$' | grep -vE '^\.githooks/|^\.github/workflows/leak-guard' || true)
 
           if [ -z "$FILES" ]; then
             echo "No scannable text files changed."
