@@ -2,7 +2,7 @@
 
 **Purpose:** automated scan of every generated title, tag, description, and attribute against a known-bad word list before output. The single most common cause of listing removal is using a trademarked term unknowingly. This playbook prevents that.
 
-**Where it runs:** as a final pass on every MODE 1 / MODE 2 / MODE 7 output before the listing is finalized. If any stoplist match is detected, output is BLOCKED and the user is asked to rephrase.
+**Where it runs:** as a final pass on every Mode 1 / Mode 2 output before the listing is finalized. If any stoplist match is detected, output is BLOCKED and the user is asked to rephrase.
 
 ---
 

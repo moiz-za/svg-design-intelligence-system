@@ -2,7 +2,7 @@
 
 **Purpose:** assign every listing a composite 0–100 health score so the user can prioritize which to fix first.
 
-**Where it runs:** every MODE 1/2 run computes and writes a fresh score. MODE 4 (shop audit) computes scores across all listings to find the worst.
+**Where it runs:** every Mode 1/2 run computes and writes a fresh score.
 
 ---
 
@@ -52,7 +52,7 @@
 |---|---|
 | Title reads naturally (not keyword chain) | 5 |
 | Description first sentence is product pitch, not greeting | 3 |
-| Description follows 8-block structure | 3 |
+| Description follows 9-block structure | 3 |
 | What's Included block uses only actual file formats user confirmed | 2 |
 | No "this listing is for" / "thank you for visiting" preamble | 2 |
 
@@ -69,7 +69,7 @@ If SQR data is not available (new listing or no impressions yet):
 - Estimate from proxies (mark with `*` to denote inferred):
   - Title clarity score (subjective, 0–5)
   - Hero image brief present and detailed (3 points)
-  - Price within competitive range (per MODE 8 context, 4 points)
+  - Price within competitive range (per Phase 4B competitor SERP context, 4 points)
   - Star Seller status of shop (3 points)
 - Max inferred score: 15
 - Always flag as inferential in the output
@@ -110,7 +110,7 @@ Any compliance fail = listing is at risk of removal regardless of SEO. A listing
 |---|---|---|
 | Excellent | 90–100 | High-performing listing. Don't break it. Minor refreshes only. |
 | Good | 75–89 | Solid. Specific component(s) have room. Targeted improvement, not full rewrite. |
-| Needs work | 60–74 | Real gaps. Run targeted MODE 5 / MODE 3 / hero image rewrite. |
+| Needs work | 60–74 | Real gaps. Run a targeted refresh or hero image rewrite. |
 | Broken | 40–59 | Multiple systems failing. Full MODE 1 rewrite warranted. |
 | Urgent | 0–39 | Compliance risk OR fundamental SEO failure OR conversion floor breached. Stop everything else and fix this first. |
 
@@ -144,5 +144,5 @@ Re-score after:                 [day count or after which MODE run]
 
 1. **Never inflate inferred scores.** When SQR/stats aren't available, the CTR + Conversion components together max out at ~10 inferred points instead of 30 measured points. The composite ceiling for a new listing without data is ~80, not 100. This is honest — you literally don't know what the listing's CTR is until day 14+.
 2. **Compliance failures cap the composite.** If Compliance < 5/10, cap the composite at 50 regardless of other components. A listing about to be removed for IP can't be "Good".
-3. **Score is written, not just displayed.** Every score write updates the listing's state file AND the Listings Index sheet in Shop_Master.xlsx.
+3. **Score is written, not just displayed.** Every score write updates the listing's state file in `~/etsy-listings/`.
 4. **Score change matters more than absolute score.** A listing going 45 → 78 in one MODE 1 rewrite is a clear win. A listing that was 85 and is now 82 after a "refresh" — that refresh broke something. Always show pre vs post.

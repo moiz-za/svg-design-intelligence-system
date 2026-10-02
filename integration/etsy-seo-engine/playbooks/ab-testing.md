@@ -2,7 +2,7 @@
 
 **Purpose:** Etsy has no built-in split-testing tool. You can only show one version of a listing at a time. But you can run sequential A/B tests over time, comparing two versions across equal-length windows.
 
-**Where it runs:** when the user has a listing that's mid-performing and wants to test variants — typically after a MODE 6 day-30 check-in showing the listing is alive but not winning.
+**Where it runs:** when the user has a listing that's mid-performing and wants to test variants — typically after a day-30 iteration diagnosis showing the listing is alive but not winning.
 
 ---
 
@@ -111,7 +111,7 @@ State note: an active A/B test sets the listing's `next_minor_refresh` to AFTER 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-After both windows complete, run MODE 6 with the results and the skill will declare a winner using the decision rule.
+After both windows complete, run the day-30 iteration diagnosis with the results and the skill will declare a winner using the decision rule.
 ```
 
 ---

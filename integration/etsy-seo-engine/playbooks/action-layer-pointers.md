@@ -199,7 +199,7 @@ In Phase 8 of every REWRITE / CREATE:
 1. If user provided stats → use them to classify (CTR / conversion / SEO / wrong-niche).
 2. If user did not provide stats → use heuristics:
    - Multiple silent-rejection tags found → tag-rejection routing
-   - Phase 4 difficulty = Very High AND generic product → platform-fit-check
+   - Phase 4C difficulty = Very High AND generic product → platform-fit-check
    - Otherwise → no out-of-scope warning; SEO rewrite is appropriate
 3. Display the matching pointer block AFTER the listing output, not before. The user still gets the rewrite; the pointer is supplementary.
 

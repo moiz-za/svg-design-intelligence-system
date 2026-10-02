@@ -2,7 +2,7 @@
 
 **Purpose:** Etsy buyers don't all search the same way. The same listing optimized for one intent will fail for another. Classify the primary keyword's intent, then frame the listing accordingly.
 
-**Where it runs:** Phase 3E (during keyword research). Output influences title, hero image brief, description block 1, Pinterest framing.
+**Where it runs:** Phase 4D (during keyword research). Output influences title, hero image brief, description block 1, Pinterest framing.
 
 ---
 
@@ -104,7 +104,7 @@ If gifting words are present, gifting wins — the "gift" framing is the most di
 
 ## How to use the classification
 
-After Phase 3 keyword research, output:
+After Phase 4 keyword research, output:
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -135,7 +135,7 @@ Then thread the framing rule through:
 ## Edge case: what if your product fits one intent but you want to capture another?
 
 You can dual-target by:
-- Using the primary intent's framing for title + Phase 1 SEO surfaces
+- Using the primary intent's framing for title + Phase 7 SEO surfaces
 - Using a SECONDARY tag set to capture the other intent
 - For gifting overlap: add 2–3 gifting-intent tags ("cat mom gift", "gift for cat mama") on a specific-hunt-framed listing
 

@@ -2,7 +2,7 @@
 
 **Purpose:** Etsy actively suppresses listings whose conversion rate falls below ~0.5% (impressions-to-orders ratio). This isn't an SEO problem — it's a quality-signal problem. No amount of keyword optimization fixes it.
 
-**Where it runs:** MODE 4 (shop audit) and MODE 6 (iteration check-in) flag this. This playbook diagnoses the cause and prescribes the action layer.
+**Where it runs:** the day-30 iteration diagnosis flags this. This playbook diagnoses the cause and prescribes the action layer.
 
 ---
 
@@ -46,7 +46,7 @@ CVR = orders / clicks. With low click counts, CVR is statistically unstable.
 For LOW CVR, audit in this order:
 
 1. **Photos vs description match.** Open the listing and ask: do the photos and description tell the same story? Common mismatch: photos show 20 designs but description says 12.
-2. **Price vs SERP context.** Run a quick MODE 8 lite — what are similar listings priced at? If you're 20%+ above median, that's likely it.
+2. **Price vs SERP context.** Run a quick Phase 4B SERP price check — what are similar listings priced at? If you're 20%+ above median, that's likely it.
 3. **Reviews displayed.** Even good reviews can hurt if displayed reviews mention something that contradicts the listing (e.g., "Worked great on Cricut once I converted the file"). Buyer reads: "needs file conversion"). Audit displayed reviews.
 4. **Description specifics.** Does the description clearly state: number of designs, exact formats, resolution, commercial use status, what's NOT included? Vagueness creates abandonment.
 5. **Hero image accuracy.** Is the hero image showing a state of the product the buyer cannot recreate themselves easily? (e.g., professional studio lighting on a mockup the buyer can't replicate). Adjust to lifestyle-realistic mockups.

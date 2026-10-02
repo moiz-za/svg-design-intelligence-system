@@ -1,4 +1,4 @@
-# Etsy SEO & Search Algorithm Guide — May 2026
+# Etsy SEO & Search Algorithm Guide — 2026
 
 ---
 
@@ -162,7 +162,7 @@ Syncing Etsy keywords with Pinterest metadata creates a compound SEO signal — 
 
 ## 9. Keyword Research Methodology (Evidence-Driven)
 
-The full process lives in SKILL.md Phase 3. Summary:
+The full process lives in SKILL.md Phase 4. Summary:
 
 ### Live Research Steps (run before every listing)
 
@@ -212,7 +212,7 @@ Within 6 weeks of a holiday relevant to the niche, run autocomplete on `[niche] 
 When a listing gets zero or near-zero impressions, the cause is one of these — in this order of likelihood:
 
 1. **Tag silently rejected (>20 chars).** Some tags are over the limit including spaces and were dropped on save. Open the listing editor and re-count every tag. Fix before anything else.
-2. **Primary keyword doesn't match any real buyer query.** The keyword was chosen from training data, blog opinion, or guesswork instead of live Etsy autocomplete. Re-run Phase 3 properly.
+2. **Primary keyword doesn't match any real buyer query.** The keyword was chosen from training data, blog opinion, or guesswork instead of live Etsy autocomplete. Re-run Phase 4 properly.
 3. **Indexing spread failure.** Primary keyword only appears in title; absent from tags / attributes / description / alt text. Apply §4.
 4. **Wrong category.** Etsy demotes listings that don't match their declared category. Re-pick the most specific subcategory.
 5. **Indexing wait period not yet passed.** If listing is under 72 hours old, this is normal. Wait.
@@ -258,8 +258,8 @@ The Etsy seller community recycles a lot of advice from earlier algorithm eras. 
 ### Myth 2 — "Manual renewal every Sunday boosts traffic"
 **Era of origin:** 2017–2020.
 **Why it worked then:** Etsy's recency-boost benefit on renewal was substantial.
-**Why it fails in 2026:** The boost has been progressively reduced. Current data shows ~5–15% impression bump for ~24–48 hours, costing $0.20 per renewal. Renewing 50 listings weekly = $40/month for marginal gain. Editing one field (per playbook `renewal-timing.md`) gives a stronger algorithmic signal at zero cost.
-**What to do instead:** Use MODE 5 (refresh protocol) — minor edits every 90 days.
+**Why it fails in 2026:** The boost has been progressively reduced. Current data shows ~5–15% impression bump for ~24–48 hours, costing $0.20 per renewal. Renewing 50 listings weekly = $40/month for marginal gain. Editing one field gives a stronger algorithmic signal at zero cost.
+**What to do instead:** Use the refresh protocol — minor edits every 90 days.
 
 ### Myth 3 — "Add hashtags to your Pinterest pins for reach"
 **Era of origin:** 2015–2020.
@@ -284,7 +284,7 @@ The Etsy seller community recycles a lot of advice from earlier algorithm eras. 
 
 ### Myth 7 — "Description doesn't matter for SEO, only tags do"
 **Era of origin:** Persistent legacy belief from when Etsy SEO was tag-heavy.
-**Why it fails in 2026:** Description text is indexed semantically. The first 160 chars (meta zone) carry significant NLP weight. ChatGPT Instant Checkout (live 2025) parses descriptions to recommend products. A weak description undermines listings with strong tags. The skill's `listing-guide.md §4` enforces the 8-block structure with primary keyword in the meta zone.
+**Why it fails in 2026:** Description text is indexed semantically. The first 160 chars (meta zone) carry significant NLP weight. ChatGPT Instant Checkout (live 2025) parses descriptions to recommend products. A weak description undermines listings with strong tags. The skill's `listing-guide.md §4` enforces the 9-block structure with primary keyword in the meta zone.
 
 ### Myth 8 — "Vibe first, specs last in descriptions"
 **Era of origin:** Lifestyle-brand advice from 2020+ Etsy gurus.
@@ -297,7 +297,30 @@ The Etsy seller community recycles a lot of advice from earlier algorithm eras. 
 
 ### Myth 10 — "More listings = more shop authority"
 **Era of origin:** Volume strategy from 2019–2022.
-**Reality in 2026:** 30 well-optimized, well-converting listings beat 200 mediocre ones. Etsy's algorithm weights shop quality score — a shop with many low-converting listings has a LOWER shop score than a focused shop with fewer high-converting listings. The skill's MODE 4 surfaces this as a shop-architecture issue.
+**Reality in 2026:** 30 well-optimized, well-converting listings beat 200 mediocre ones. Etsy's algorithm weights shop quality score — a shop with many low-converting listings has a LOWER shop score than a focused shop with fewer high-converting listings. The skill's diagnostics surface this as a shop-architecture issue.
+
+---
+
+## 13. Listing Title Guidance — Etsy Seller Handbook (April 27, 2026)
+
+Etsy published updated listing-title guidance on April 27, 2026 (Seller Handbook: "New Guidance for Listing Titles, and a Tool to Help"). Etsy search now takes a holistic view of the listing — title, tags, attributes, description, first photo, and reviews — so the title no longer has to carry every keyword. Keep titles clear and scannable, and move supporting detail to tags, attributes, and the description.
+
+**What belongs in a title:**
+- **The item noun, stated once** — e.g. "mug", "dress". Say clearly what the item is; do not repeat the noun.
+- **The top three objective descriptors** for the category — color, material, and size — plus one or two details that set the item apart.
+- **Holidays, occasions, or recipient types only if they are essential to what the item is** — e.g. "birthday candle", "Halloween costume".
+
+**Keep out of the title:**
+- **Subjective descriptors** (`beautiful`, `perfect`, `wonderful`, and the full prohibited stoplist in `listing-guide.md §1`) — move them to tags or attributes.
+- **How the item is sold** (`on sale`, `free shipping`) — remove entirely; Etsy badges this.
+- **Repeated words or phrases** — including repeated aspirational/gifting phrases like `gift for him`, `birthday present`, `personalized gift`.
+- Trademarked and brand names.
+
+**Length:** Etsy's guidance is to use **fewer than 15 words**. This system's hard guardrail is tighter and mandatory: **6–12 words, absolute maximum 14** (`listing-guide.md §1`).
+
+**Etsy's AI title tool (optional):** Etsy offers an optional AI-powered title suggestion tool in the search-visibility dashboard (Etsy.com and the Seller app) that proposes titles from the current title, first photo, and description. Suggestions are starting points, not directives — review before applying. Download a CSV of your listings first if you plan bulk edits.
+
+**Source:** Etsy Seller Handbook, "New Guidance for Listing Titles, and a Tool to Help" (April 27, 2026).
 
 ---
 

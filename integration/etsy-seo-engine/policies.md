@@ -1,4 +1,4 @@
-# Etsy Policies Reference — May 2026
+# Etsy Policies Reference — 2026
 
 This file is universal — it applies to ANY shop, ANY niche, ANY product type (digital, physical, handmade, vintage). Nothing is hardcoded.
 
@@ -162,6 +162,7 @@ Policy updated April 2, 2026. Enforcement begins August 11, 2026.
 - Do not claim "commercial use" if the source license does not permit it
 - Do not list features the buyer won't receive
 - Listings must not violate Etsy's Discrimination and Hateful Content Policy
+- **Listing titles (April 27, 2026):** Etsy published updated title guidance — keep titles clear and scannable and move supporting keywords to tags, attributes, and the description. See `seo-guide.md §13`.
 
 ---
 

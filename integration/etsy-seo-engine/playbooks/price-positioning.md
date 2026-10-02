@@ -2,7 +2,7 @@
 
 **Purpose:** Etsy ranks listings partly by predicted purchase likelihood, which is heavily influenced by price relative to comparable competitors. SEO alone cannot overcome a price out of the competitive range.
 
-**Where it runs:** MODE 8 (competitor study) extracts top-3 prices automatically. This playbook formalizes how to use that data.
+**Where it runs:** the Phase 4B competitor SERP scan extracts top-3 prices automatically. This playbook formalizes how to use that data.
 
 ---
 
@@ -18,7 +18,7 @@ The reverse is also true: a $1 listing in a category where buyers expect $10+ si
 
 ### Step 1 — Establish the SERP price range
 
-From MODE 8 output (or a manual check):
+From the Phase 4B competitor SERP output (or a manual check):
 - Capture prices of top 10 organic listings (skip ads)
 - Compute: min, median, max
 - Note distribution shape (tight cluster vs wide spread)
@@ -35,7 +35,7 @@ From MODE 8 output (or a manual check):
 
 ### Step 3 — Sanity-check against shop average
 
-Use `<shop>/shop-profile.md` "Average shop price". If the listing's price is significantly off your shop's normal range:
+Compare against the Phase 4B competitor SERP price band. If the listing's price is significantly off that range:
 - Either the listing is positioned wrong for your shop's brand
 - Or your shop is positioning inconsistently across listings (creates buyer confusion)
 

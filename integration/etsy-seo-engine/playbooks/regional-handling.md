@@ -2,7 +2,7 @@
 
 **Purpose:** Etsy buyers in different English-speaking regions use different language. A US-optimized listing misses 30–40% of UK/EU/AU buyers because the spelling and vocabulary are different. This playbook adds regional autocomplete seeds and adjusts tag strategy for multi-region shops.
 
-**Where it runs:** Phase 3G during keyword research. Triggered when the shop's `target_markets` field includes non-US regions.
+**Where it runs:** Phase 4A during keyword research. Triggered when the listing targets non-US regions.
 
 ---
 
@@ -62,10 +62,10 @@ If your shop ships to or targets UK/EU/AU, you should capture both.
 
 ---
 
-## Regional autocomplete seeds (in addition to Phase 3A)
+## Regional autocomplete seeds (in addition to Phase 4A)
 
 For a shop with target market including UK/EU:
-- Seed 4 in Phase 3A (`[niche] [holiday]`) — add UK variant if seasonal: e.g., `cat mum mothering sunday`
+- Seed 4 in Phase 4A (`[niche] [holiday]`) — add UK variant if seasonal: e.g., `cat mum mothering sunday`
 - Add an extra seed run: `[niche-UK-spelling] [product type]`
 
 For a shop with AU target:
@@ -92,7 +92,7 @@ This trades some US tag depth for broader regional reach. Tradeoff worth it ONLY
 REGIONAL HANDLING — <shop-slug>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Target markets:           [list from shop-profile.md]
+Target markets:           [list the target regions]
 
 Detected regional swap opportunities for primary cluster:
   US "<term>" → UK "<term>"
@@ -119,5 +119,5 @@ Date/currency format in description: <default to user's primary market; explicit
 
 1. **Don't do regional swaps for shops that only ship US.** Adding UK tags to a US-only shop wastes tag slots that could capture US long-tails.
 2. **Don't do regional swaps for global-universal niches.** "Wedding clipart" works in every English-speaking market — no swap needed for the niche itself, only for specific recipient/occasion language.
-3. **Test the impact.** After adding regional variants, run MODE 6 at day 30 with SQR data. If UK/EU/AU queries aren't showing meaningful impressions, those tags can be redirected back to US long-tails.
+3. **Test the impact.** After adding regional variants, run the day-30 iteration diagnosis with SQR data. If UK/EU/AU queries aren't showing meaningful impressions, those tags can be redirected back to US long-tails.
 4. **EU = many languages.** This playbook covers English variants only. For non-English EU markets (France, Germany, Spain, Italy), Etsy auto-translates — you cannot force foreign-language tags. Focus on universal terms + visual signaling in mockups.

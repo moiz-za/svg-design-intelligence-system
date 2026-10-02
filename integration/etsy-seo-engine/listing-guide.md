@@ -24,6 +24,7 @@
 - No trademarked names, brand names, or celebrity names.
 - No sales/shipping/price information — Etsy badges these automatically.
 - No promotional language: "on sale", "free", "best seller".
+- **Etsy April 2026 title guidance:** state the item (noun) once; include the top-3 descriptors (color, material, size); include holidays/occasions/recipients only if essential; avoid repeated aspirational/gifting phrases. Full guidance: `seo-guide.md §13`.
 
 ### Mandatory Formula
 ```
@@ -85,9 +86,9 @@ Count: every letter + every space = total
 
 **Check 2 — Evidence trace (every tag has a verified source):**
 Each tag must trace back to one of:
-- Etsy autocomplete suggestion (from Phase 3A)
-- Common 2–3 word phrase across SERP top 10 (from Phase 3B)
-- Buyer-intent expansion from Google or related-searches strip (from Phase 3D / 3A fallback)
+- Etsy autocomplete suggestion (from Phase 4A)
+- Common 2–3 word phrase across SERP top 10 (from Phase 4B)
+- Buyer-intent expansion from Google or related-searches strip (from Phase 4B / 4A fallback)
 
 If a tag has no source in the Evidence Log, it's a guess — reject and replace.
 
@@ -204,9 +205,9 @@ Attributes are not metadata. They are a search surface — Etsy indexes attribut
 | Primary Color | Yes — buyers filter and search by color | Pick the value that matches the most dominant color buyers would describe; align with autocomplete if a color appears in suggestions |
 | Secondary Color | Yes | Second strongest filterable color |
 | Material | Yes (physical) / blank or "Digital Download" (digital) | Use the exact material buyers search ("leather", "stainless steel", "linen") not made-up trade terms |
-| Style | **Critical keyword surface** | Use the style word buyers actually search — Boho, Funny, Minimalist, Vintage, Kawaii, Gothic, Rustic, Modern. This MUST match a phrase used in the Phase 3 evidence pool. |
+| Style | **Critical keyword surface** | Use the style word buyers actually search — Boho, Funny, Minimalist, Vintage, Kawaii, Gothic, Rustic, Modern. This MUST match a phrase used in the Phase 4 evidence pool. |
 | Occasion | **Critical keyword surface** | Birthday, Wedding, Christmas, Mother's Day, Everyday, Graduation. Pick the one(s) that appear in autocomplete / buyer-intent phrases. |
-| Recipient | **Critical keyword surface** | Her, Him, Friend, Mom, Teacher, Pet Lover, Couple, Kids. Pick the one matching buyer-intent phrases from Phase 3. |
+| Recipient | **Critical keyword surface** | Her, Him, Friend, Mom, Teacher, Pet Lover, Couple, Kids. Pick the one matching buyer-intent phrases from Phase 4. |
 | File Type | Yes (digital) | List formats exactly as the user provided — SVG, PNG, PDF, EPS, DXF, Canva. Do not invent formats. |
 | Size/Dimensions | Yes | Physical dimensions or digital canvas dimensions if applicable |
 | Pattern | Yes (where applicable) | Fabric, paper, or wallpaper pattern type |
@@ -232,13 +233,13 @@ Do NOT add a standalone tag for anything already covered by an attribute — tha
 ...for [who it's for]. [Key benefit]. [File formats / what's included]."] ✅
 ```
 
-### 8-Block Structure
+### 9-Block Structure
 
 **Block 1 — Hook (1–2 sentences)**
 Primary keyword in first 40 characters. First 160 characters = complete product pitch.
 Write as if you're describing the product to a person who has 5 seconds to decide.
 
-**Hook template depends on search intent** (classified in Phase 3E — see `playbooks/search-intent-classification.md`):
+**Hook template depends on search intent** (classified in Phase 4D — see `playbooks/search-intent-classification.md`):
 
 | Intent | What the first 160 chars should lead with | Template |
 |---|---|---|
@@ -419,7 +420,7 @@ Hero image alt text:        ✅
 **Input:** Existing title + all existing tags + existing description (+ ideally Shop Stats showing impressions/clicks/orders)
 
 ### Step 1 — Extract product details from existing listing
-Before running Phase 3 keyword research, read the existing description and extract:
+Before running Phase 4 keyword research, read the existing description and extract:
 - Product type and niche
 - File formats actually included
 - Commercial use status
@@ -452,7 +453,7 @@ If the diagnosis is purely CTR or conversion (impressions exist but clicks/sales
 Offer to still do the SEO rewrite if useful, but flag expected marginal impact. Get user confirmation before proceeding.
 
 ### Step 4 — Extract salvageable keywords from original
-Look for keywords in the original that DO appear in the new Phase 3 evidence pool — these can be kept. Discard the rest.
+Look for keywords in the original that DO appear in the new Phase 4 evidence pool — these can be kept. Discard the rest.
 
 ### Step 5 — Build new title, 13 verified tags (all three checks), full description using live research
 
@@ -482,7 +483,7 @@ Do NOT preserve the original structure if it violates the rules. Rewrite complet
 
 ### Step 2 — Clarify product details from user context
 
-### Step 3 — Build complete title, 13 verified tags (all three checks), full description using Phase 3 evidence pool
+### Step 3 — Build complete title, 13 verified tags (all three checks), full description using Phase 4 evidence pool
 
 ### Step 4 — Apply only what the user provided — no invented file formats or assumed features
 
