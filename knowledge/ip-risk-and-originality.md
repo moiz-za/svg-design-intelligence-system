@@ -30,6 +30,15 @@ actively *increase* uniqueness, not just screen out infringement.
 > longer compliant under "Designed by a seller". Originality
 > engineering is mandatory for platform longevity.
 
+> **Etsy AI & Image Policy Note (October 22, 2026):**
+> Seller-prompted AI art remains allowed when the seller plays a clear
+> creative role and discloses AI use in the listing description. AI
+> prompt bundles, AI-generated functional instructions, and
+> bot-generated listings are prohibited. Digital downloads must show a
+> real preview of the files buyers receive; physical, customised, and
+> pattern/recipe products need at least one real unedited photo. See
+> `integration/etsy-seo-engine/playbooks/ai-image-compliance.md`.
+
 ---
 
 ## 2. Risk Categories (Summary)

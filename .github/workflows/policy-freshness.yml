@@ -1,0 +1,84 @@
+name: Policy Freshness
+
+on:
+  schedule:
+    # First day of every month, 09:00 UTC
+    - cron: "0 9 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    name: Check Etsy policy baseline age
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check baseline
+        id: baseline
+        run: python3 scripts/check_policy_freshness.py --max-age-days 120
+
+      - name: Open or update review issue
+        if: steps.baseline.outputs.stale == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AGE_DAYS: ${{ steps.baseline.outputs.age_days }}
+          BASELINE: ${{ steps.baseline.outputs.baseline }}
+          BUDGET: ${{ steps.baseline.outputs.max_age_days }}
+        run: |
+          set -euo pipefail
+          gh label create policy-freshness \
+            --color FBCA04 \
+            --description "Monthly Etsy policy review" 2>/dev/null || true
+
+          OPEN=$(gh issue list --label policy-freshness --state open --json number --jq 'length')
+          if [ "$OPEN" != "0" ]; then
+            echo "An open policy-freshness issue already exists — not creating another."
+            exit 0
+          fi
+
+          cat > /tmp/policy-body.md <<EOF
+          The Etsy policy baseline in \`integration/etsy-seo-engine/policies.md\` is **${AGE_DAYS} days old** (baseline: ${BASELINE}, budget: ${BUDGET} days).
+
+          ## Review these sources
+
+          - https://www.etsy.com/legal/sellers/
+          - https://www.etsy.com/legal/creativity
+          - https://www.etsy.com/legal/policy/listing-image-requirements/253962679005
+          - https://www.etsy.com/seller-handbook/article/1275449912004
+          - https://www.etsy.com/legal/prohibited
+          - https://www.etsy.com/legal/ip
+
+          ## If nothing changed
+
+          1. Update the \`**Policy baseline: <day> <month> <year>.**\` line in \`integration/etsy-seo-engine/policies.md\`.
+          2. Run \`python3 scripts/sync_etsy_policy.py --build\`.
+          3. Commit both files and close this issue.
+
+          ## If something changed
+
+          The companion repo \`etsy-seller-seo-system\` is the policy source of truth. Update it first, then pull:
+
+          1. Update the rulebook in the seller repo, then run \`python3 scripts/sync_etsy_policy.py --from-seller\` here.
+          2. Mirror any behaviour change in \`portable/ESVG-DIS-Instructions.md\`, \`skill/SKILL.md\`, and \`integration/etsy-seo-handoff.md\`.
+          3. Add a \`CHANGELOG.md\` entry and bump the version (README badge + \`SYSTEM_INSTRUCTIONS.md\`).
+          4. Run \`python3 scripts/sync_etsy_policy.py --build\`.
+          5. Commit, tag, and close this issue.
+
+          See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md#policy-freshness) for the full checklist.
+          EOF
+
+          gh issue create \
+            --title "Policy review due: Etsy baseline is ${AGE_DAYS} days old" \
+            --label policy-freshness \
+            --body-file /tmp/policy-body.md
+
+      - name: Fail while stale
+        if: steps.baseline.outputs.stale == 'true'
+        run: |
+          echo "::error::Etsy policy baseline is ${{ steps.baseline.outputs.age_days }} days old. Review the open policy-freshness issue."
+          exit 1

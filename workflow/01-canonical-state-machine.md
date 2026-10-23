@@ -11,7 +11,7 @@ duplicated in two places. Same for scoring (States 6, 9): full detail
 in `workflow/03-scoring-architecture.md`. Same for retries: full
 detail in `workflow/04-retry-and-halt-logic.md`.
 
-All state transitions MUST strictly enforce `playbooks/system-laws.md` (The 5 Immutable System Laws) and output crisp, bullet-first responses per the Caveman Output Protocol (full details unlocked on user demand).
+All state transitions MUST strictly enforce `playbooks/system-laws.md` (The 6 Immutable System Laws) and output crisp, bullet-first responses per the Caveman Output Protocol (full details unlocked on user demand).
 
 ---
 
@@ -309,7 +309,9 @@ it is not one of these four dimensions.)
 **Purpose:** Generate the complete, native 2026 Etsy listing optimization package for the created SVG design product.
 Full detail: `integration/etsy-seo-handoff.md` and `integration/etsy-seo-engine/`.
 
-**Output:** Complete Native Etsy Listing Package — 140-character front-loaded title, 13 search tags (≤20 chars each, zero duplicates), competitive pricing recommendation, full listing description with file formats & machine compatibility, and Etsy 2026 AI Creation Disclosure settings ("I did" / "Made to order").
+**Gate 0 — AI & Image Compliance (mandatory):** Run `integration/etsy-seo-engine/playbooks/ai-image-compliance.md` before any listing phase. `BLOCKED` halts output; `ACTION REQUIRED` prepends the missing item to the publish checklist; `PASS` prints the compliance block once.
+
+**Output:** Complete Native Etsy Listing Package — 140-character front-loaded title, 13 search tags (≤20 chars each, zero duplicates), competitive pricing recommendation, 9-block listing description with file formats, machine compatibility and mandatory AI disclosure, product-type image plan (real file preview for digital downloads), AI & Image Compliance block, and Etsy AI Creation Disclosure settings ("I did" / "Made to order").
 
 **Transition:** → **END**
 
@@ -324,6 +326,7 @@ Full detail: `integration/etsy-seo-handoff.md` and `integration/etsy-seo-engine/
 | Opportunity Failure | No differentiation possible | Return to research, or halt if unimprovable |
 | Concept Failure | Too generic | Generate new concepts |
 | Prompt Failure | AI output unsuitable for SVG | Refine prompt |
+| AI/Image Compliance Failure | Prompt bundle, AI-authored instructions, bot-generated listing, missing image evidence, or undisclosed AI | Block or require the listed fix before delivery (see `integration/etsy-seo-engine/playbooks/ai-image-compliance.md`) |
 
 Full retry limits and terminal halt behavior for every row above:
 `workflow/04-retry-and-halt-logic.md`.

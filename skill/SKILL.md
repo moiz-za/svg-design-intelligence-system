@@ -20,7 +20,7 @@ description: >
 
 ---
 
-## 📜 THE 5 IMMUTABLE SYSTEM LAWS
+## 📜 THE 6 IMMUTABLE SYSTEM LAWS
 
 All phase executions MUST strictly enforce `../playbooks/system-laws.md`:
 
@@ -29,9 +29,13 @@ All phase executions MUST strictly enforce `../playbooks/system-laws.md`:
 3. **Binary IP Supremacy:** IP gates (1-4) are hard binary pass/modify/block checks.
 4. **Caveman Output Protocol:** Crisp, bullet-first, token-efficient outputs by default; full raw reports unlocked on demand (`"expand"`, `"full report"`).
 5. **Native Listing Engine Mandate:** State 13 natively executes all 8 SEO listing phases.
-6. **First-Run Shop Intake & Conversation Isolation:** Prompt for `Shop Name` (`[YOUR_SHOP_NAME]`) and `Primary Shop Niche` (`[YOUR_PRIMARY_NICHE]`). Advise user to dedicate **one conversation per shop**.
-7. **Dynamic Keyword-to-Niche Translation:** Automatically map and translate broad input keywords (e.g. `"floral"`) into niche-specific opportunity phrases matching the user's bound shop niche.
-8. **Generic Placeholder Enforcement:** Never output or hardcode private shop names or personal details in instruction examples.
+6. **AI & Image Compliance Supremacy:** Every listing passes the AI & Image Compliance Gate (State 13, Gate 0) before delivery — no prompt bundles, no AI-authored functional instructions, no bot-generated listings, mandatory AI disclosure, and product-type image evidence (real file preview for digital downloads; unedited real photo for physical/custom/pattern products).
+
+**Operational laws (7–9):**
+
+7. **First-Run Shop Intake & Conversation Isolation:** Prompt for `Shop Name` (`[YOUR_SHOP_NAME]`) and `Primary Shop Niche` (`[YOUR_PRIMARY_NICHE]`). Advise user to dedicate **one conversation per shop**.
+8. **Dynamic Keyword-to-Niche Translation:** Automatically map and translate broad input keywords (e.g. `"floral"`) into niche-specific opportunity phrases matching the user's bound shop niche.
+9. **Generic Placeholder Enforcement:** Never output or hardcode private shop names or personal details in instruction examples.
 
 ---
 
@@ -188,14 +192,16 @@ another prompt revision.
 
 Per `../integration/etsy-seo-handoff.md` and `../integration/etsy-seo-engine/`. Execute all **8 Mandatory Execution Phases**:
 
-1. **Policy & Algorithm Freshness Check & Automated Sync:** Verify output against August 11, 2026 Etsy Creativity Standards. In Portable/Web Mode, run a live web search for `"Etsy seller policies 2026"` / `"Etsy creativity standards"` to verify active rules. In Full System/CLI Mode, run `python3 scripts/sync_etsy_policy.py` to auto-sync local policy rulebooks across repositories.
+**Gate 0 — AI & Image Compliance (mandatory, before any phase):** Run `../integration/etsy-seo-engine/playbooks/ai-image-compliance.md` against the item, content type, and image plan. `⛔ BLOCKED` = do not output the listing package. `⚠️ ACTION REQUIRED` = output the package with the missing item prepended to the pre-publish checklist. `✅ PASS` = print the compliance block once. Product-type image evidence is mandatory — digital downloads need a real preview or excerpt of the actual files, not mockups alone.
+
+1. **Policy & Algorithm Freshness Check & Automated Sync:** Verify output against the **22 October 2026** policy baseline — Creativity Standards, Listing Image Requirements, and the AI-use announcement. In Portable/Web Mode, run a live web search for `"Etsy seller policies 2026"` / `"Etsy listing image requirements"` / `"Etsy AI policy"` to verify active rules. In Full System/CLI Mode, run `python3 scripts/sync_etsy_policy.py --from-seller` (one-way pull; the seller repo is the policy source of truth — never overwrite it with stale local files).
 2. **Keyword Cannibalization Prevention:** Check candidate primary keyword against `~/esvg-research/research-log.md`; issue overlap warning if already used.
 3. **Title Construction:** Formula: `[Primary Keyword] [Style/Theme Descriptor] | [Format or Use-Case]`. Max 140 characters. Primary focus keyword MUST be front-loaded in the **first 40 characters**. **Word Count Guardrail: MUST be 6–12 words (MAXIMUM 14 words).** Reject any title with 15+ words. **Prohibited Subjective Words Stoplist (ZERO ALLOWED):** `cute`, `adorable`, `beautiful`, `perfect`, `stunning`, `amazing`, `incredible`, `pretty`, `awesome`, `gorgeous`, `lovely`, `sweet`, `unique`, `best`, `top`, `wonderful`, `charming`.
 4. **13 Search Tags:** Exactly 13 tags, every tag **≤ 20 characters** (including spaces), no exact 2+ word phrase shared across more than 2 tags, character count listed per tag (`[Tag] ([X] chars ✅)`).
 5. **Attributes & Category Mapping:** Style, Occasion, Recipient mapped to Cut Files category (`Craft Supplies & Tools > Canvas & Surfaces > Stencils, Templates & Transfers > Cut Files`).
 6. **5-Surface Indexing Spread Check:** Verify primary keyword touches Title (first 40 chars), Tags (3+ tags), Attributes, Description Meta Zone (first 160 chars), and Hero Alt Text.
-7. **Full 8-Block Description:** Hook, File Formats (SVG, PNG 300 DPI, EPS, DXF, PDF), Cricut/Silhouette/Laser compatibility, License Terms (Personal & Small Business Commercial), and **Etsy 2026 AI Creation Disclosure settings** (*"I did"* / *"Made to order"*). **Zero emojis allowed in description text or section headers.**
-8. **Hero Alt Text & Pinterest Marketing Block:** 100-150 char alt text containing primary keyword, Pin title, Board name, Board description, Pin description (220-232 chars — write naturally first, then count characters and explicitly expand/trim to land within 220-232 chars before finalizing), and Pre-Publish Checklist.
+7. **Full 9-Block Description:** Hook, File Formats (SVG, PNG 300 DPI, EPS, DXF, PDF), Cricut/Silhouette/Laser compatibility, License Terms (Personal & Small Business Commercial), AI & Image Disclosure, and Closing. The **Etsy AI disclosure line is mandatory whenever AI generated the artwork** (`Created with AI assistance using my own prompts and refined by me.`), alongside the disclosure settings (*"I did"* / *"Made to order"*). **Zero emojis allowed in description text or section headers.**
+8. **Hero Alt Text, Image Plan & Pinterest Marketing Block:** 100-150 char alt text containing primary keyword, the product-type image plan (real file preview/excerpt for digital downloads; at least one unedited real photo for physical, customised, or pattern/recipe products), Pin title, Board name, Board description, Pin description (220-232 chars — write naturally first, then count characters and explicitly expand/trim to land within 220-232 chars before finalizing), the **AI & Image Compliance block** (item origin, content type, image plan, disclosure, gate result), and Pre-Publish Checklist.
 9. **No Short Summaries:** Do NOT output a soft summary or generic text — output the full, ready-to-copy listing package.
 
 ### Phase 17 — Write state (Cowork/Claude only)

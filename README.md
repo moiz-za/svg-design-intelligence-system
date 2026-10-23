@@ -4,7 +4,8 @@
 
 ### by [Moiz Solutions](https://tools.moiz.solutions)
 
-[![Version](https://img.shields.io/badge/version-1.3.1-blue?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.3.2-blue?style=flat-square)](CHANGELOG.md)
+[![Etsy policy](https://img.shields.io/badge/Etsy_policy-23_Oct_2026-green?style=flat-square)](integration/etsy-seo-engine/policies.md)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/moiz-za/svg-design-intelligence-system?style=flat-square&label=stars)](https://github.com/moiz-za/svg-design-intelligence-system)
 [![Last Commit](https://img.shields.io/github/last-commit/moiz-za/svg-design-intelligence-system?style=flat-square)](https://github.com/moiz-za/svg-design-intelligence-system/commits/main)
@@ -50,13 +51,21 @@
 - Crisp, high-density, bullet-first default output — cuts token consumption by up to **70%**
 - Full multi-column concept matrices, raw research data, and prompt rationale preserved in state — unlocked on demand (`"expand"`, `"full report"`)
 
-### 📜 5 Immutable System Laws
+### 📜 6 Immutable System Laws
 Non-bypassable directives (`playbooks/system-laws.md`):
 1. **Pipeline integrity** — all 13 states, 4 IP gates, and scoring run sequentially, zero skips
 2. **Zero-hallucination evidence traceability** — empirical data or explicit `[Data Source: Reasoning Engine Fallback]` tagging
 3. **Binary IP supremacy** — IP gates are hard PASS/MODIFY/BLOCK; commercial scores can *never* override legal risk
 4. **Caveman output protocol** — concise by default, details on request
 5. **Native listing engine mandate** — State 13 executes all 8 Etsy SEO phases in a single pass
+6. **AI & image compliance supremacy** — hard gate on prompt bundles, AI-authored instructions, bot listings, AI disclosure, and product-type image evidence
+
+### 🖼️ Etsy AI & Image Policy (22 Oct 2026)
+- **Digital downloads** need a real preview or excerpt of the actual files — mockups alone are no longer enough
+- **Physical, customised, and pattern/recipe products** need at least one real unedited photo
+- **AI use must be disclosed** in the description; AI imagery can never be the only image of a finished result
+- **Prohibited:** AI prompt bundles, AI-generated functional guides, and bot-generated listings
+- Full gate: `integration/etsy-seo-engine/playbooks/ai-image-compliance.md`
 
 ### 🔒 4-Stage Binary IP Risk Gates
 - Hard legal checkpoints: **Keyword, Concept, Prompt, Final Artwork**
@@ -78,11 +87,11 @@ Non-bypassable directives (`playbooks/system-laws.md`):
 - Engineered prompts optimized for **ChatGPT Images, Midjourney, Flux, Ideogram, Leonardo, and Gemini**
 
 ### 🏷️ Native 8-Phase Etsy SEO Engine (State 13)
-- Policy check, keyword overlap scan, 140-char title, 13 search tags ≤20 chars, 5-surface indexing, 8-block description with Etsy AI disclosure, alt text & Pinterest block, research log sync
+- Policy check, keyword overlap scan, 140-char title, 13 search tags ≤20 chars, 5-surface indexing, 9-block description with mandatory AI disclosure, AI & image compliance gate, alt text & Pinterest block, research log sync
 - **Strict title & tag guardrails** — 6–12 word limit (max 14), formula `[Primary Keyword] [Style Descriptor] | [Format]`, prohibited subjective words stoplist
 
 ### 🔄 Automated Dual-Repo Policy Sync
-- `scripts/sync_etsy_policy.py` auto-syncs policy and engine rulebooks bidirectionally with `etsy-seller-seo-system` — zero drift
+- `scripts/sync_etsy_policy.py --from-seller` pulls the rulebooks one-way from `etsy-seller-seo-system` (the policy source of truth) and rebuilds the skill archive — zero drift, no accidental upstream overwrites. `--build` rebuilds deterministically; `--check` verifies the committed archive in CI.
 
 ### 💸 100% Free-Tier Compatible
 - Full single-file portable edition (`portable/ESVG-DIS-Instructions.md`) for free ChatGPT, Claude, Gemini, and Grok users
@@ -253,6 +262,8 @@ For non-SVG physical/digital products (mugs, t-shirts, physical crafts), see the
 - **ESVG-DIS System** creates the right *product*.
 - **Etsy Seller SEO System** creates the right *listing*.
 
+The companion repo is the **policy source of truth** — its rulebooks are pulled into `integration/etsy-seo-engine/` one-way. See its plain-language [Etsy AI & Image Policy (October 2026)](https://github.com/moiz-za/etsy-seller-seo-system#etsy-ai--image-policy-october-2026) summary for the rules this repo enforces.
+
 ---
 
 ## 🛠️ Related: SellWren
@@ -298,7 +309,8 @@ Recent highlights:
 
 | Version | Date | Summary |
 |---------|------|---------|
-| **v1.3.1** | 2026-09 | Archive restoration, sync script path fix, SellWren integration |
+| **v1.3.2** | 2026-10 | Etsy 22 Oct 2026 AI & image policy: Law 6 compliance gate, digital-download preview rule, mandatory AI disclosure, one-way policy pull |
+| v1.3.1 | 2026-09 | Archive restoration, sync script path fix, SellWren integration |
 | v1.3.0 | 2026-08 | First-Run Shop Intake, One Conversation Per Shop, Dynamic Keyword-to-Niche Translation |
 | v1.2.0 | 2026-07 | Caveman Output Mode + 5 Immutable System Laws, dual-repo policy sync |
 | v1.1.0 | 2026-06 | Live research, August 2026 Etsy policy alignment, SKILL.md rewrite, packaged `.skill` archive |

@@ -79,6 +79,26 @@ touch existing architecture.
 
 ---
 
+## Policy Freshness & Archives
+
+Etsy policy changes on its own schedule. Two checks keep this repo honest:
+
+- **Policy baseline** — `integration/etsy-seo-engine/policies.md` carries a
+  `**Policy baseline: <date>.**` line. `python3 scripts/check_policy_freshness.py`
+  reports its age; the monthly `Policy Freshness` workflow opens an issue once
+  it passes 120 days. The companion repo `etsy-seller-seo-system` is the policy
+  source of truth — update it first, then pull with
+  `python3 scripts/sync_etsy_policy.py --from-seller`.
+- **Packaged archive** — `esvg-dis.skill` must match the repo tree.
+  `python3 scripts/sync_etsy_policy.py --build` rebuilds it deterministically,
+  and `python3 scripts/sync_etsy_policy.py --check` verifies it. CI fails when
+  they drift, because v1.3.0 shipped a broken archive exactly that way.
+
+Never run the legacy bidirectional sync when the seller repo may be newer — it
+compares mtimes and can overwrite an upstream release.
+
+---
+
 ## Reporting Issues
 
 Open an issue describing: which file, what's inconsistent or wrong,

@@ -1,0 +1,22 @@
+name: Archive Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify esvg-dis.skill matches the repo tree
+        run: |
+          set -euo pipefail
+          python3 scripts/sync_etsy_policy.py --check

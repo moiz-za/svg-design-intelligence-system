@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.3.2 — Etsy AI & Image Policy (22 Oct 2026)
+
+Policy release porting the v2.2.1 rulebooks from `etsy-seller-seo-system` (baseline 23 October 2026). Core product legality is unchanged — original, seller-prompted AI-assisted SVG cut files remain allowed with disclosure — but listing guidance is corrected.
+
+- **🖼️ Law 6 — AI & Image Compliance Supremacy:** new hard gate at State 13 (`integration/etsy-seo-engine/playbooks/ai-image-compliance.md`). Result is `PASS` / `ACTION REQUIRED` / `BLOCKED`, and `BLOCKED` halts the listing package.
+- **📁 Digital download preview rule:** digital downloads now require a real preview or excerpt of the actual files. Removed the old "never show just the file" hero guidance that conflicted with Etsy's Listing Image Requirements.
+- **📸 Product-type image evidence:** unedited real photo for physical/customised items, licensed POD mockups only, real finished-result photo for patterns/recipes/seeds, no AI-only finished-result imagery, no misleading edits.
+- **🤖 Mandatory AI disclosure:** the conditional Block 8 is now the 9-block AI & Image Disclosure. The disclosure line is required whenever AI generated the artwork; "unknown" AI status never produces a "no AI" claim.
+- **🚫 Prohibited categories:** AI prompt bundles, AI-generated functional instructions, and bot/bulk-generated listings are hard blocks.
+- **🇺🇸 California SB 1050** synthetic-performer guidance (effective 1 Jan 2027) in image, video, and Pinterest briefs.
+- **📚 Rulebook import:** `policies.md` (new §7 + 17-item audit), `listing-guide.md` (§6 rewritten, 9-block description), `seo-guide.md`, `listing-health-score.md`, and `ai-image-compliance.md` synced one-way from the seller repo.
+- **🔄 Sync hardening:** `sync_etsy_policy.py` adds `ai-image-compliance.md`, a `--from-seller` one-way pull (recommended, never writes upstream), a deterministic archive build, and `--check` for CI verification.
+- **✅ CI guards:** new `Archive Check` workflow fails when `esvg-dis.skill` drifts from the repo tree; new monthly `Policy Freshness` workflow opens an issue when the Etsy policy baseline passes 120 days.
+- **📱 Portable edition mirrored** and version markers updated to v1.3.2.
+- **🧹 Naming:** "8-block description" corrected to the canonical 9-block structure across all instruction files.
+
+---
+
 ## v1.3.1 — Archive Restoration, Path Sanitization & SellWren Links
 
 Maintenance release fixing the distribution archive regression and hardening the maintainer sync tooling.

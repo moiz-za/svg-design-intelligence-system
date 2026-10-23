@@ -6,15 +6,29 @@ This module embeds the complete 2026 Etsy SEO listing engine natively into ESVG-
 
 ---
 
+## 0. Gate 0 — AI & Image Compliance (mandatory)
+
+Before Phase 1, run `integration/etsy-seo-engine/playbooks/ai-image-compliance.md` against the item, content type, and image plan. The result outranks SEO: a non-compliant listing can be removed however well it ranks.
+
+| Result | Action |
+|---|---|
+| `⛔ BLOCKED` | Do **not** output the listing package. Explain the rule, cite the source, offer the compliant alternative. |
+| `⚠️ ACTION REQUIRED` | Output the package, but prepend the missing item to the pre-publish checklist. |
+| `✅ PASS` | Print the compliance block once (item origin, content type, image plan, disclosure, gate). |
+
+Non-negotiable: digital downloads need a **real preview or excerpt of the actual files**; physical, customised, and pattern/recipe products need **at least one real unedited photo**; AI imagery can never be the only image of a finished result; bot-generated listings and AI-authored functional instructions are prohibited.
+
+---
+
 ## 1. The 8 Mandatory Execution Phases
 
 When State 13 executes, the agent MUST run through all 8 execution phases sequentially, strictly following `integration/etsy-seo-engine/listing-guide.md`:
 
 ### 📋 Phase 1: Policy & Algorithm Freshness Check & Automated Sync
-- Verify current Etsy seller policies (`integration/etsy-seo-engine/policies.md`).
-- Ensure output complies with August 11, 2026 Etsy Creativity Standards (computerized tool usage disclosure rules).
-- **Portable / Web Mode:** When web browsing is enabled, execute a live web search for `"Etsy seller policies 2026"` / `"Etsy creativity standards"` to verify active marketplace rules before generating the listing package. Apply any newly detected policy rules directly to the output.
-- **Full System / CLI Mode:** Run `python3 scripts/sync_etsy_policy.py` to auto-sync policy and engine rulebooks bidirectionally between ESVG-DIS (`integration/etsy-seo-engine/`) and the standalone Etsy Seller SEO System (`skill/references/`) to guarantee zero policy drift.
+- Verify current Etsy seller policies (`integration/etsy-seo-engine/policies.md`) against the **22 October 2026** baseline — Creativity Standards, Listing Image Requirements, and the AI-use announcement.
+- Ensure output complies with the 22 October 2026 AI and listing-image rules and the August 11, 2026 computerized-tool originality rules.
+- **Portable / Web Mode:** When web browsing is enabled, execute a live web search for `"Etsy seller policies 2026"` / `"Etsy listing image requirements"` / `"Etsy AI policy"` to verify active marketplace rules before generating the listing package. Apply any newly detected policy rules directly to the output.
+- **Full System / CLI Mode:** Run `python3 scripts/sync_etsy_policy.py --from-seller` to pull policy and engine rulebooks one-way from the standalone Etsy Seller SEO System (`skill/references/`) into ESVG-DIS (`integration/etsy-seo-engine/`). Direction matters: the seller repo is the policy source of truth — never overwrite newer seller files with stale local copies.
 
 ### 🔍 Phase 2: Keyword Overlap & Cannibalization Prevention
 - Read existing keywords from `~/esvg-research/research-log.md`.
@@ -45,15 +59,16 @@ When State 13 executes, the agent MUST run through all 8 execution phases sequen
 - **Category:** `Craft Supplies & Tools > Canvas & Surfaces > Stencils, Templates & Transfers > Cut Files`
 - **Attributes:** Style, Occasion, Recipient. At least 1 attribute value MUST echo a word from the primary keyword cluster.
 
-### 📝 Phase 6: Full 8-Block Description & 160-Char Meta Zone (`listing-guide.md` §4)
+### 📝 Phase 6: Full 9-Block Description & 160-Char Meta Zone (`listing-guide.md` §4)
 - **Meta Zone (First 160 chars):** Must contain the primary keyword and function as a complete product pitch.
 - **Length:** 250 to 700 words.
 - **No Emojis:** Zero emojis allowed in description text or section headers (prevents spam signals and ensures screen-reader accessibility).
 - **No Generic Openers:** Prohibit "Thank you for visiting" or "This listing is for".
-- **Structure:** Opening Hook → Value & Features → Included File Formats (SVG, PNG 300 DPI 4000x4000px, EPS, DXF, PDF) → Instant Delivery → Machine Compatibility (Cricut, Silhouette, Laser, Sublimation) → Usage License (Personal & Small Business Commercial up to 500 items) → Etsy 2026 AI Creation Disclosure → Closing.
+- **Structure:** Opening Hook → Value & Features → Included File Formats (SVG, PNG 300 DPI 4000x4000px, EPS, DXF, PDF) → Instant Delivery → Machine Compatibility (Cricut, Silhouette, Laser, Sublimation) → Usage License (Personal & Small Business Commercial up to 500 items) → AI & Image Disclosure → Closing.
 
-### 🖼️ Phase 7: Hero Image Alt Text & Pinterest Marketing Block (`listing-guide.md` §6)
+### 🖼️ Phase 7: Hero Image Alt Text, Image Plan & Pinterest Marketing Block (`listing-guide.md` §6)
 - **Hero Alt Text:** 100–150 chars containing primary keyword.
+- **Image Plan:** Product-type compliant slot plan — slot 1 is the clearest true image of what the buyer receives; digital downloads include a real preview/excerpt of the actual files; physical/custom/pattern products lead with a real unedited photo.
 - **Pinterest Block:** Pin title (≤100 chars), Board name (25–40 chars), Board description (150–300 chars), Pin description (220–232 chars, no hashtags — write naturally first, then count characters and explicitly expand/trim to land within 220–232 chars before finalizing).
 
 ### 💾 Phase 8: Log Maintenance & Database Sync
@@ -139,14 +154,31 @@ DESCRIPTION:
 - **Commercial Use:** Small Business Commercial License included for up to 500 physical end-products (t-shirts, mugs, totes, decals).
 - **Restrictions:** Reselling, sharing, or redistributing digital files in any format is strictly prohibited.
 
-## Etsy 2026 AI Creation Disclosure & Settings
+## Etsy AI & Image Disclosure & Settings
 - **About this listing dropdowns:**
   - *Who made it?* **I did**
   - *What is it?* **A finished product or digital file**
   - *When was it made?* **Made to order / Recently made**
-- **Factual Description Transparency Note:**
-  *"Original vector illustration engineered with AI assistance and hand-curated vector path cleanup per Etsy 2026 Creativity Standards."*
+- **Mandatory Description Disclosure (AI-generated artwork):**
+  *"Created with AI assistance using my own prompts and refined by me."*
+- **If listing images were AI-edited (recommended):**
+  *"Some listing images were edited with AI tools for lighting and background; the item itself is shown accurately."*
+- Never claim "no AI", "100% handmade", or "hand-drawn" if AI use is unconfirmed.
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IMAGE PLAN (product-type compliant):
+Slot 1: [Clearest true image of what the buyer receives — real file preview for digital downloads]
+Slot 2: [Bundle grid / all designs or second real angle]
+Slot 3: [Close-up of best design or detail]
+Slot 4: [Lifestyle mockup — must match the delivered files exactly]
+Slot 5: [What's included infographic]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AI & IMAGE COMPLIANCE:
+Item origin:     [human-made / seller-prompted AI / unknown — do not guess]
+Content type:    [physical / digital design / functional instructions / prompt bundle]
+Image plan:      [real file preview / unedited photo confirmed / licensed POD mockup / ACTION REQUIRED: <what's missing>]
+Disclosure:      [required — added / required — MISSING / not stated — add only if AI was used]
+Gate:            ✅ PASS  ·  ⚠️ ACTION REQUIRED  ·  ⛔ BLOCKED
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 HERO IMAGE ALT TEXT (Etsy + Pinterest):
 [100-150 characters containing primary keyword for accessibility & search indexing]
@@ -164,6 +196,10 @@ BEFORE YOU PUBLISH CHECKLIST:
 □ All 13 tags updated (verify all ≤20 chars)
 □ Description updated (copy first 160 chars carefully into meta section)
 □ Attributes updated (Style / Occasion / Recipient)
+□ AI disclosure line present (if AI generated the artwork)
+□ Image plan uploaded (real file preview for digital; unedited real photo for physical)
+□ No AI-only image of a finished result; no misleading edits
+□ Listing reviewed and published by a human (no bulk/bot publishing)
 □ Hero image alt text updated (includes primary keyword)
 □ Category set to Cut Files
 □ Save ➔ preview ➔ confirm no tags got truncated

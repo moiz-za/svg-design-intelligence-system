@@ -1,10 +1,10 @@
 # Playbook — Immutable System Laws & Execution Discipline
 
-This playbook establishes the non-bypassable **5 Immutable System Laws** governing the Etsy SVG Design Intelligence System (ESVG-DIS). All AI agents, reasoning models, and portable single-file instructions MUST adhere strictly to these laws during workflow execution.
+This playbook establishes the non-bypassable **6 Immutable System Laws** governing the Etsy SVG Design Intelligence System (ESVG-DIS). All AI agents, reasoning models, and portable single-file instructions MUST adhere strictly to these laws during workflow execution.
 
 ---
 
-## 📜 The 5 Immutable System Laws
+## 📜 The 6 Immutable System Laws
 
 ### ⚖️ Law 1: Immutable Pipeline Integrity
 - **Directive:** Every workflow execution MUST process all 13 states, 4 IP gates, scoring levels, and 8 SEO listing phases sequentially without skipping, bypassing, or shortcutting any step.
@@ -24,7 +24,18 @@ This playbook establishes the non-bypassable **5 Immutable System Laws** governi
 
 ### 🏷️ Law 5: Native Listing Engine Mandate
 - **Directive:** State 13 MUST natively execute all 8 Etsy SEO Listing Phases in a single pass without relying on external handoff summaries.
-- **Rule:** Strictly enforce the Title Formula (`[Primary Keyword] [Style Descriptor] | [Format]`), Title Word Count Guardrail (6–12 words, max 14), Prohibited Subjective Words Stoplist (`cute`, `beautiful`, etc.), 13 Tags $\le 20$ chars each (max 2 tags sharing a phrase cluster), 8-Block Description, Etsy 2026 AI Creation Disclosure, Hero Alt Text, and Pinterest marketing block.
+- **Rule:** Strictly enforce the Title Formula (`[Primary Keyword] [Style Descriptor] | [Format]`), Title Word Count Guardrail (6–12 words, max 14), Prohibited Subjective Words Stoplist (`cute`, `beautiful`, etc.), 13 Tags $\le 20$ chars each (max 2 tags sharing a phrase cluster), 9-Block Description, mandatory AI & image disclosure, Hero Alt Text, and Pinterest marketing block.
+
+### 🖼️ Law 6: AI & Image Compliance Supremacy
+- **Directive:** Every listing output MUST pass the AI & Image Compliance Gate (`integration/etsy-seo-engine/playbooks/ai-image-compliance.md`) at State 13, Gate 0, before delivery. The gate result is hard: `✅ PASS`, `⚠️ ACTION REQUIRED`, or `⛔ BLOCKED`.
+- **Rule:** A `⛔ BLOCKED` result MUST stop the listing package — no title, tags, description, or alt text may be delivered. Enforce without exception:
+  - **AI prompt bundles** sold without finished artwork are prohibited.
+  - **AI-generated functional instructions** (patterns, recipes, plans, manuals, instructional guides) are prohibited.
+  - **Bot-generated or bulk-generated listings without individual human review** are prohibited — the user always reviews and publishes.
+  - **Seller-prompted AI creations require a description disclosure** — never claim "no AI", "100% handmade", or "hand-drawn" when AI use is unconfirmed.
+  - **Product-type image evidence is mandatory** — a real preview/excerpt of the actual files for digital downloads; at least one real unedited photo for physical, customised, and pattern/recipe/seed products. AI imagery may never be the only image of a finished result.
+  - **No misleading image edits** — colour, texture, condition, scale, and flaws must match what the buyer receives.
+  - **California SB 1050** (effective 1 Jan 2027) — flag and disclose AI-generated synthetic performers in images, video, or Pinterest creative.
 
 ---
 
@@ -33,5 +44,7 @@ Any execution exhibiting the following defects violates the System Laws and MUST
 - ❌ Skipping Intake, IP Gates, or Buyer Psychology states.
 - ❌ Generating an artwork prompt without passing IP Gate 2 (Concept IP) and Gate 3 (Prompt IP).
 - ❌ Outputting subjective filler words (`cute`, `stunning`, `perfect`) in titles.
-- ❌ Omitting the Etsy AI Creation Disclosure settings in State 13.
+- ❌ Omitting the AI & image disclosure in State 13.
+- ❌ Delivering a listing package without the AI & Image Compliance Gate result block.
+- ❌ Recommending "lifestyle mockup only" imagery for a digital download without a real file preview.
 - ❌ Outputting bloated, conversational prose when Caveman Mode is active.
